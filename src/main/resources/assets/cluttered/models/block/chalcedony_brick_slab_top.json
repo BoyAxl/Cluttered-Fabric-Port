@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "cluttered:block/chalcedony_bricks",
+    "side": "cluttered:block/chalcedony_bricks",
+    "top": "cluttered:block/chalcedony_bricks",
+    "particle": "#bottom"
+  }
+}

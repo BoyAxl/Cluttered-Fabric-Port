@@ -2,7 +2,7 @@ package net.redchujelly.cluttered.setup;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
@@ -26,7 +26,7 @@ public class FoliagePlacerTypeRegistration {
     public static final RegistryObject<FoliagePlacerType<RedMushroomFoliagePlacer>> RED_MUSHROOM_FOLIAGE_PLACER =
             FOLIAGE_PLACERS.register("red_mushroom_foliage_placer", () -> new FoliagePlacerType<>(RedMushroomFoliagePlacer.CODEC));
 
-    public static void register(IEventBus eventBus){
+    public static void register(BusGroup eventBus){
         FOLIAGE_PLACERS.register(eventBus);
     }
 }

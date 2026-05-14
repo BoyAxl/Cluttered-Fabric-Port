@@ -3,7 +3,7 @@ package net.redchujelly.cluttered.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -121,42 +121,42 @@ public class ClutteredItemTags extends ItemTagsProvider {
 
     public void tagNewWoodset(String woodType){
 
-        Item log = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_log")).asItem();
-        Item wood = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_wood")).asItem();
+        Item log = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_log")).asItem();
+        Item wood = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_wood")).asItem();
         Item strippedLog = null;
         Item strippedWood = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + "stripped_" + woodType + "_log"))) {
-            strippedLog = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + "stripped_" + woodType + "_log")).asItem();
-            strippedWood = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + "stripped_" + woodType + "_wood")).asItem();
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + "stripped_" + woodType + "_log"))) {
+            strippedLog = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + "stripped_" + woodType + "_log")).asItem();
+            strippedWood = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + "stripped_" + woodType + "_wood")).asItem();
         }
-        Item planks = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_planks")).asItem();
-        Item stairs = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_stairs")).asItem();
-        Item slab = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_slab")).asItem();
-        Item fence = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_fence")).asItem();
-        Item fenceGate = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_fence_gate")).asItem();
-        Item button = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_button")).asItem();
-        Item sign = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_sign"));
-        Item hangingSign = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_hanging_sign"));
-        Item pressurePlate = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_pressure_plate")).asItem();
+        Item planks = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_planks")).asItem();
+        Item stairs = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_stairs")).asItem();
+        Item slab = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_slab")).asItem();
+        Item fence = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_fence")).asItem();
+        Item fenceGate = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_fence_gate")).asItem();
+        Item button = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_button")).asItem();
+        Item sign = ForgeRegistries.ITEMS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_sign"));
+        Item hangingSign = ForgeRegistries.ITEMS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_hanging_sign"));
+        Item pressurePlate = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_pressure_plate")).asItem();
         Item door = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_door"))) {
-            door = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_door")).asItem();
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_door"))) {
+            door = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_door")).asItem();
         }
         Item trapdoor = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_trapdoor"))) {
-            trapdoor = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_trapdoor")).asItem();
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_trapdoor"))) {
+            trapdoor = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_trapdoor")).asItem();
         }
         Item window = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_window"))) {
-            window = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_window")).asItem();
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_window"))) {
+            window = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_window")).asItem();
         }
         Item bookshelf = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_bookshelf"))) {
-            bookshelf = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_bookshelf")).asItem();
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_bookshelf"))) {
+            bookshelf = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_bookshelf")).asItem();
         }
         Item leaves = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_leaves"))) {
-            leaves = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_leaves")).asItem();
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_leaves"))) {
+            leaves = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_leaves")).asItem();
         }
 
         tag(ItemTags.LOGS)
@@ -165,7 +165,7 @@ public class ClutteredItemTags extends ItemTagsProvider {
         tag(ItemTags.LOGS_THAT_BURN)
                 .add(log)
                 .add(wood);
-        tag(ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation( woodType + "_log"))).getKey())
+        tag(ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new Identifier( woodType + "_log"))).getKey())
                 .add(log)
                 .add(wood);
         if(strippedLog != null) {
@@ -175,7 +175,7 @@ public class ClutteredItemTags extends ItemTagsProvider {
             tag(ItemTags.LOGS_THAT_BURN)
                     .add(strippedLog)
                     .add(strippedWood);
-            tag(ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation( woodType + "_log"))).getKey())
+            tag(ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new Identifier( woodType + "_log"))).getKey())
                     .add(strippedLog)
                     .add(strippedWood);
         }

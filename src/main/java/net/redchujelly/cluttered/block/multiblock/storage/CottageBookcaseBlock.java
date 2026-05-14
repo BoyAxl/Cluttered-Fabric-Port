@@ -42,10 +42,10 @@ public class CottageBookcaseBlock extends MultiblockStorage {
     };
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pState.getValue(MULTIBLOCK_PART) != 1){
             return InteractionResult.FAIL;
-        } else if (pLevel.isClientSide) {
+        } else if (pLevel.isClientSide()) {
             return InteractionResult.SUCCESS;
         } else {
             BlockPos pos1 = findBlockState1(pPos, pLevel);

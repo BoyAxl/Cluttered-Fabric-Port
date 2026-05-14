@@ -1,5 +1,6 @@
 package net.redchujelly.cluttered.block.custom;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -11,8 +12,15 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import org.jetbrains.annotations.Nullable;
 
 public class CustomHorizontalWoodBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<CustomHorizontalWoodBlock> CODEC = simpleCodec(CustomHorizontalWoodBlock::new);
+
     protected CustomHorizontalWoodBlock(Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
     }
 
     @Override

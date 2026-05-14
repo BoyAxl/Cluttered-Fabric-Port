@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/deep_chalcedony_sun_block",
+    "particle": "#all"
+  }
+}

@@ -17,11 +17,13 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.redchujelly.cluttered.block.custom.furniture.PicketFenceGateOpen;
+import org.jspecify.annotations.Nullable;
 
 public class PicketFenceGateBlock extends CustomHorizontalBlock {
     private static final VoxelShape SHAPE_NS = Block.box(0,0,6,16,16,10);
@@ -69,8 +71,8 @@ public class PicketFenceGateBlock extends CustomHorizontalBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide){
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (!pLevel.isClientSide()){
             if (!pState.getValue(OPEN_STATE).equals(PicketFenceGateOpen.CLOSED)){
                 pLevel.setBlock(pPos, pState.setValue(OPEN_STATE, PicketFenceGateOpen.CLOSED), 10);
                 pLevel.playSound(null, pPos, SoundEvents.FENCE_GATE_CLOSE, SoundSource.BLOCKS);
@@ -88,12 +90,12 @@ public class PicketFenceGateBlock extends CustomHorizontalBlock {
                 pLevel.playSound(null, pPos, SoundEvents.FENCE_GATE_OPEN, SoundSource.BLOCKS);
             }
         }
-        return InteractionResult.sidedSuccess(pLevel.isClientSide);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
-    public void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, BlockPos pFromPos, boolean pIsMoving) {
-        if (!pLevel.isClientSide) {
+    protected void neighborChanged(BlockState pState, Level pLevel, BlockPos pPos, Block pBlock, @Nullable Orientation pOrientation, boolean pIsMoving) {
+        if (!pLevel.isClientSide()) {
             boolean powered = pLevel.hasNeighborSignal(pPos);
             PicketFenceGateOpen opensTo = powered ? PicketFenceGateOpen.FORWARD : PicketFenceGateOpen.CLOSED;
             if (pState.getValue(POWERED) != powered) {
@@ -121,7 +123,8 @@ public class PicketFenceGateBlock extends CustomHorizontalBlock {
         pBuilder.add(OPEN_STATE).add(POWERED);
     }
 
-    public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {
+    @Override
+    protected boolean isPathfindable(BlockState pState, PathComputationType pType) {
         switch (pType) {
             case LAND -> {
                 return !pState.getValue(OPEN_STATE).equals(PicketFenceGateOpen.CLOSED);

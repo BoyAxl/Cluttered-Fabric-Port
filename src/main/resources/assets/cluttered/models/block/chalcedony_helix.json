@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "cluttered:block/chalcedony_helix",
+    "side": "cluttered:block/chalcedony_helix",
+    "top": "cluttered:block/chalcedony_helix",
+    "particle": "#front"
+  }
+}

@@ -2,7 +2,7 @@ package net.redchujelly.cluttered.datagen;
 
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -69,7 +69,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
 
         simpleBlockWithItem(BlockRegistration.WILLOW_LEAVES.get(), models().cubeAll("willow_leaves", modLoc("block/willow_leaves")).renderType("cutout"));
         simpleBlockWithItem(BlockRegistration.WILLOW_SAPLING.get(), models().cross("willow_sapling", modLoc("block/willow_sapling")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_WILLOW_SAPLING.get(), models().singleTexture("potted_willow_sapling", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_WILLOW_SAPLING.get(), models().singleTexture("potted_willow_sapling", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.WILLOW_SAPLING.get())).renderType("cutout").ao(false));
 
         this.getVariantBuilder(BlockRegistration.WILLOW_VINES.get())
@@ -153,7 +153,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
 
         simpleBlockWithItem(BlockRegistration.POPLAR_LEAVES.get(), models().cubeAll("poplar_leaves", modLoc("block/poplar_leaves")).renderType("cutout"));
         simpleBlockWithItem(BlockRegistration.POPLAR_SAPLING.get(), models().cross("poplar_sapling", modLoc("block/poplar_sapling")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_POPLAR_SAPLING.get(), models().singleTexture("potted_poplar_sapling", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_POPLAR_SAPLING.get(), models().singleTexture("potted_poplar_sapling", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.POPLAR_SAPLING.get())).renderType("cutout").ao(false));
 
 
@@ -229,7 +229,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
         columnBlockWithItem(BlockRegistration.CRABAPPLE_BOOKSHELF, BlockRegistration.CRABAPPLE_PLANKS);
         simpleBlockWithItem(BlockRegistration.CRABAPPLE_LEAVES.get(), models().cubeAll("crabapple_leaves", modLoc("block/crabapple_leaves")).renderType("cutout"));
         simpleBlockWithItem(BlockRegistration.CRABAPPLE_SAPLING.get(), models().cross("crabapple_sapling", modLoc("block/crabapple_sapling")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_CRABAPPLE_SAPLING.get(), models().singleTexture("potted_crabapple_sapling", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_CRABAPPLE_SAPLING.get(), models().singleTexture("potted_crabapple_sapling", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.CRABAPPLE_SAPLING.get())).renderType("cutout").ao(false));
 
         signBlock(((StandingSignBlock) BlockRegistration.CRABAPPLE_SIGN.get()), ((WallSignBlock) BlockRegistration.CRABAPPLE_WALL_SIGN.get()),
@@ -307,7 +307,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
         columnBlockWithItem(BlockRegistration.SYCAMORE_BOOKSHELF, BlockRegistration.SYCAMORE_PLANKS);
         simpleBlockWithItem(BlockRegistration.SYCAMORE_LEAVES.get(), models().cubeAll("sycamore_leaves", modLoc("block/sycamore_leaves")).renderType("cutout"));
         simpleBlockWithItem(BlockRegistration.SYCAMORE_SAPLING.get(), models().cross("sycamore_sapling", modLoc("block/sycamore_sapling")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_SYCAMORE_SAPLING.get(), models().singleTexture("potted_sycamore_sapling", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_SYCAMORE_SAPLING.get(), models().singleTexture("potted_sycamore_sapling", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.SYCAMORE_SAPLING.get())).renderType("cutout").ao(false));
 
         //FLUORESCENT MAPLE WOODSET
@@ -341,7 +341,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
         simpleBlockWithItem(BlockRegistration.MAPLE_LEAVES.get(), models().cubeAll("fluorescent_maple_leaves", modLoc("block/fluorescent_maple_leaves")).renderType("cutout"));
         simpleBlockWithItem(BlockRegistration.MAPLE_LEAVES_FLOWERING.get(), models().cubeAll("flowering_fluorescent_maple_leaves", modLoc("block/flowering_fluorescent_maple_leaves")).renderType("cutout"));
         simpleBlockWithItem(BlockRegistration.MAPLE_SAPLING.get(), models().cross("fluorescent_maple_sapling", modLoc("block/fluorescent_maple_sapling")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_MAPLE_SAPLING.get(), models().singleTexture("potted_fluorescent_maple_sapling", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_MAPLE_SAPLING.get(), models().singleTexture("potted_fluorescent_maple_sapling", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.MAPLE_SAPLING.get())).renderType("cutout").ao(false));
 
         //BLUE MUSHROOM WOODSET
@@ -378,7 +378,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
         columnBlockWithItem(BlockRegistration.BLUE_MUSHROOM_BOOKSHELF, BlockRegistration.BLUE_MUSHROOM_PLANKS);
 
         simpleBlockWithItem(BlockRegistration.BLUE_MUSHROOM_SAPLING.get(), models().cross("blue_roundhead", modLoc("block/blue_roundhead")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_BLUE_MUSHROOM_SAPLING.get(), models().singleTexture("potted_blue_roundhead", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_BLUE_MUSHROOM_SAPLING.get(), models().singleTexture("potted_blue_roundhead", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.BLUE_MUSHROOM_SAPLING.get())).renderType("cutout").ao(false));
 
         signBlock(((StandingSignBlock) BlockRegistration.BLUE_MUSHROOM_SIGN.get()), ((WallSignBlock) BlockRegistration.BLUE_MUSHROOM_WALL_SIGN.get()),
@@ -424,7 +424,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
 
 
         simpleBlockWithItem(BlockRegistration.RED_MUSHROOM_SAPLING.get(), models().cross("fly_agaric", modLoc("block/fly_agaric")).renderType("cutout"));
-        simpleBlockWithItem(BlockRegistration.POTTED_RED_MUSHROOM_SAPLING.get(), models().singleTexture("potted_fly_agaric", new ResourceLocation("flower_pot_cross"), "plant",
+        simpleBlockWithItem(BlockRegistration.POTTED_RED_MUSHROOM_SAPLING.get(), models().singleTexture("potted_fly_agaric", new Identifier("flower_pot_cross"), "plant",
                 blockTexture(BlockRegistration.RED_MUSHROOM_SAPLING.get())).renderType("cutout").ao(false));
 
         signBlock(((StandingSignBlock) BlockRegistration.RED_MUSHROOM_SIGN.get()), ((WallSignBlock) BlockRegistration.RED_MUSHROOM_WALL_SIGN.get()),
@@ -459,8 +459,8 @@ public class ClutteredBlockstates extends BlockStateProvider {
         blockWithItem((BlockRegistration.CHALCEDONY_SMALL_TILES));
         blockWithItem((BlockRegistration.STARRY_CHISELED_CHALCEDONY));
         axisBlock((RotatedPillarBlock) BlockRegistration.CHALCEDONY_PILLAR.get(),
-                new ResourceLocation(Cluttered.MODID + ":block/chalcedony_pillar"),
-                new ResourceLocation(Cluttered.MODID + ":block/chalcedony_pillar_top" ));
+                new Identifier(Cluttered.MODID + ":block/chalcedony_pillar"),
+                new Identifier(Cluttered.MODID + ":block/chalcedony_pillar_top" ));
         blockItem(BlockRegistration.CHALCEDONY_PILLAR);
 
         directionalBlock(BlockRegistration.CHALCEDONY_PILLAR_BASE.get(), models().cubeColumn("block/chalcedony_pillar_base", modLoc("block/chalcedony_pillar_base"), modLoc("block/chalcedony_pillar_top")));
@@ -517,8 +517,8 @@ public class ClutteredBlockstates extends BlockStateProvider {
         blockWithItem((BlockRegistration.DEEP_CHALCEDONY_SMALL_TILES));
         blockWithItem((BlockRegistration.DEEP_STARRY_CHISELED_CHALCEDONY));
         axisBlock((RotatedPillarBlock) BlockRegistration.DEEP_CHALCEDONY_PILLAR.get(),
-                new ResourceLocation(Cluttered.MODID + ":block/deep_chalcedony_pillar"),
-                new ResourceLocation(Cluttered.MODID + ":block/deep_chalcedony_pillar_top"));
+                new Identifier(Cluttered.MODID + ":block/deep_chalcedony_pillar"),
+                new Identifier(Cluttered.MODID + ":block/deep_chalcedony_pillar_top"));
         blockItem(BlockRegistration.DEEP_CHALCEDONY_PILLAR);
 
         directionalBlock(BlockRegistration.DEEP_CHALCEDONY_PILLAR_BASE.get(), models().cubeColumn("block/deep_chalcedony_pillar_base", modLoc("block/deep_chalcedony_pillar_base"), modLoc("block/deep_chalcedony_pillar_top")));
@@ -576,8 +576,8 @@ public class ClutteredBlockstates extends BlockStateProvider {
         blockWithItem((BlockRegistration.MARBLE_SMALL_TILES));
         blockWithItem((BlockRegistration.STARRY_CHISELED_MARBLE));
         axisBlock((RotatedPillarBlock) BlockRegistration.MARBLE_PILLAR.get(),
-                new ResourceLocation(Cluttered.MODID + ":block/marble_pillar"),
-                new ResourceLocation(Cluttered.MODID + ":block/marble_pillar_top"));
+                new Identifier(Cluttered.MODID + ":block/marble_pillar"),
+                new Identifier(Cluttered.MODID + ":block/marble_pillar_top"));
         blockItem(BlockRegistration.MARBLE_PILLAR);
 
         directionalBlock(BlockRegistration.MARBLE_PILLAR_BASE.get(), models().cubeColumn("block/marble_pillar_base", modLoc("block/marble_pillar_base"), modLoc("block/marble_pillar_top")));
@@ -2118,8 +2118,8 @@ public class ClutteredBlockstates extends BlockStateProvider {
     }
 
     private void columnBlockWithItem(RegistryObject<Block> blockRegistryObject, RegistryObject<Block> topBlock) {
-        ResourceLocation sideTexture = modLoc("block/" + blockRegistryObject.getId().toString().replace("cluttered:", ""));
-        ResourceLocation endTexture = modLoc("block/" + topBlock.getId().toString().replace("cluttered:", ""));
+        Identifier sideTexture = modLoc("block/" + blockRegistryObject.getId().toString().replace("cluttered:", ""));
+        Identifier endTexture = modLoc("block/" + topBlock.getId().toString().replace("cluttered:", ""));
 
         simpleBlockWithItem(blockRegistryObject.get(), models().cubeColumn(blockRegistryObject.getId().toString(), sideTexture, endTexture));
     }
@@ -2129,21 +2129,21 @@ public class ClutteredBlockstates extends BlockStateProvider {
         if (!isWood) {
             woodType = log.getId().toString().replace("cluttered:", "").replace("_log", "");
             axisBlock((RotatedPillarBlock) log.get(),
-                    new ResourceLocation(Cluttered.MODID + ":block/" + woodType + "_log"),
-                    new ResourceLocation(Cluttered.MODID + ":block/" + woodType + "_log_top" ));
+                    new Identifier(Cluttered.MODID + ":block/" + woodType + "_log"),
+                    new Identifier(Cluttered.MODID + ":block/" + woodType + "_log_top" ));
         }
         else {
             woodType = log.getId().toString().replace("cluttered:", "").replace("_wood", "");
             axisBlock((RotatedPillarBlock) log.get(),
-                    new ResourceLocation(Cluttered.MODID + ":block/" + woodType + "_log"),
-                    new ResourceLocation(Cluttered.MODID + ":block/" + woodType + "_log"));
+                    new Identifier(Cluttered.MODID + ":block/" + woodType + "_log"),
+                    new Identifier(Cluttered.MODID + ":block/" + woodType + "_log"));
         }
         blockItem(log);
     }
 
     //From the Kaupenjoe 1.20.1 tutorial #34
 
-    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, Identifier texture) {
         ModelFile sign = models().sign(name(signBlock), texture);
         hangingSignBlock(signBlock, wallSignBlock, sign);
     }
@@ -2158,7 +2158,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
         return key(block).getPath();
     }
 
-    private ResourceLocation key(Block block) {
+    private Identifier key(Block block) {
         return ForgeRegistries.BLOCKS.getKey(block);
     }
 

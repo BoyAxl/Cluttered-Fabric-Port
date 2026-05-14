@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "cluttered:block/fluorescent_maple_hanging_sign"
+      }
+    }
+  ]
+}

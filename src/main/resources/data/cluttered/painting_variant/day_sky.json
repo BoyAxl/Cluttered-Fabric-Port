@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:day_sky",
+  "author": {
+    "translate": "painting.cluttered.day_sky.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.day_sky.title"
+  },
+  "width": 1
+}

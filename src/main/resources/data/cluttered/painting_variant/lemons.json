@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:lemons",
+  "author": {
+    "translate": "painting.cluttered.lemons.author"
+  },
+  "height": 1,
+  "title": {
+    "translate": "painting.cluttered.lemons.title"
+  },
+  "width": 1
+}

@@ -57,12 +57,12 @@ public class MushroomTVBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public boolean hasAnalogOutputSignal(BlockState pState) {
+    protected boolean hasAnalogOutputSignal(BlockState pState) {
         return true;
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState pState, Level pLevel, BlockPos pPos) {
+    protected int getAnalogOutputSignal(BlockState pState, Level pLevel, BlockPos pPos, Direction pDirection) {
         return pState.getValue(CHANNEL) * 3;
     }
 
@@ -71,8 +71,8 @@ public class MushroomTVBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (!pLevel.isClientSide()) {
             int channel = pState.getValue(CHANNEL);
             if (channel < 4){
                 channel++;
@@ -87,10 +87,9 @@ public class MushroomTVBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (!pIsMoving && !pState.is(pNewState.getBlock())) {
+    protected void affectNeighborsAfterRemoval(BlockState pState, net.minecraft.server.level.ServerLevel pLevel, BlockPos pPos, boolean pIsMoving) {
+        if (!pIsMoving) {
             this.updateNeighbors(pState, pLevel, pPos);
-            super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         }
     }
 

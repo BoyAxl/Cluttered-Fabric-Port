@@ -2,12 +2,13 @@ package net.redchujelly.cluttered.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.entity.ContainerUser;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -19,7 +20,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.redchujelly.cluttered.block.custom.furniture.storage.CardboardBoxBlock;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 public class CustomStorageBlockEntity extends RandomizableContainerBlockEntity {
     private NonNullList<ItemStack> items;
@@ -47,7 +49,7 @@ public class CustomStorageBlockEntity extends RandomizableContainerBlockEntity {
             }
 
             @Override
-            protected boolean isOwnContainer(Player player) {
+            public boolean isOwnContainer(Player player) {
                 return false;
             }
         };
@@ -74,7 +76,7 @@ public class CustomStorageBlockEntity extends RandomizableContainerBlockEntity {
             }
 
             @Override
-            protected boolean isOwnContainer(Player player) {
+            public boolean isOwnContainer(Player player) {
                 return false;
             }
         };
@@ -90,34 +92,39 @@ public class CustomStorageBlockEntity extends RandomizableContainerBlockEntity {
         this.items = pItems;
     }
 
-    protected void saveAdditional(CompoundTag pTag) {
-        super.saveAdditional(pTag);
-        if (!this.trySaveLootTable(pTag)) {
-            ContainerHelper.saveAllItems(pTag, this.items);
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        if (!this.trySaveLootTable(output)) {
+            ContainerHelper.saveAllItems(output, this.items);
         }
 
     }
 
-    public void load(CompoundTag pTag) {
-        super.load(pTag);
+    @Override
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        if (!this.tryLoadLootTable(pTag)) {
-            ContainerHelper.loadAllItems(pTag, this.items);
+        if (!this.tryLoadLootTable(input)) {
+            ContainerHelper.loadAllItems(input, this.items);
         }
 
     }
 
-    public void startOpen(Player pPlayer) {
-        if (!this.remove && !pPlayer.isSpectator()) {
-            this.openersCounter.incrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    @Override
+    public void startOpen(ContainerUser containerUser) {
+        LivingEntity entity = containerUser.getLivingEntity();
+        if (!this.remove && !entity.isSpectator()) {
+            this.openersCounter.incrementOpeners(entity, this.getLevel(), this.getBlockPos(), this.getBlockState(), containerUser.getContainerInteractionRange());
         }
 
     }
 
 
-    public void stopOpen(Player pPlayer) {
-        if (!this.remove && !pPlayer.isSpectator()) {
-            this.openersCounter.decrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    @Override
+    public void stopOpen(ContainerUser containerUser) {
+        LivingEntity entity = containerUser.getLivingEntity();
+        if (!this.remove && !entity.isSpectator()) {
+            this.openersCounter.decrementOpeners(entity, this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
 
     }

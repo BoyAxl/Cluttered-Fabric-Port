@@ -8,7 +8,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -38,9 +37,9 @@ public class ArmchairBlock extends MultiblockChair{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pState.getValue(OCCUPIED) && !pPlayer.isShiftKeyDown()){
-            if (!pLevel.isClientSide) {
+            if (!pLevel.isClientSide()) {
                 BlockPos otherHalf = getOtherHalfPos(pState, pPos);
                 boolean otherHalfReal = pLevel.getBlockState(otherHalf).is(this.asBlock());
                 float[] seatOffset = getSeatXZOffset(pState, pPos);
@@ -60,15 +59,16 @@ public class ArmchairBlock extends MultiblockChair{
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pCurrentPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         BlockPos otherHalfPos = getOtherHalfPos(pState, pCurrentPos);
+        BlockState updatedState = pState;
         if (pNeighborState.getBlock().equals(this.asBlock())){
             if (!pNeighborState.getValue(OCCUPIED) && pNeighborPos.equals(otherHalfPos)){
-                pLevel.setBlock(pCurrentPos, pState.setValue(OCCUPIED, false), 2);
+                updatedState = pState.setValue(OCCUPIED, false);
             }
         }
 
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pCurrentPos, pNeighborPos);
+        return super.updateShape(updatedState, pLevel, pTicks, pCurrentPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     @Override

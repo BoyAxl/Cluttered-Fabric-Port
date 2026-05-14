@@ -38,9 +38,9 @@ public class MultiblockChair extends MultiblockPlacer{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pState.getValue(OCCUPIED) && !pPlayer.isShiftKeyDown()){
-            if (!pLevel.isClientSide) {
+            if (!pLevel.isClientSide()) {
                 pLevel.setBlock(pPos, pState.setValue(OCCUPIED, true), 2);
                 Entity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
                 seat.setPos(pPos.getX() + .5, pPos.getY() - 1 + getSeatOffset(), pPos.getZ() + .5);
@@ -53,11 +53,10 @@ public class MultiblockChair extends MultiblockPlacer{
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+    protected void affectNeighborsAfterRemoval(BlockState pState, net.minecraft.server.level.ServerLevel pLevel, BlockPos pPos, boolean pMovedByPiston) {
         List<ChairEntity> chairBlocks = pLevel.getEntitiesOfClass(ChairEntity.class, new AABB(pPos));
         for (ChairEntity chair : chairBlocks){
-            chair.kill();
+            chair.kill(pLevel);
         }
     }
 

@@ -27,11 +27,11 @@ public class NonRotationalFurnitureBlock extends Block implements SimpleWaterlog
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         if(pState.getValue(WATERLOGGED)){
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            pTicks.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+        return super.updateShape(pState, pLevel, pTicks, pPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {

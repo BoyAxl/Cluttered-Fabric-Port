@@ -2,6 +2,10 @@
 	"credit": "Made with Blockbench",
 	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
+	"textures": {
+		"missing": "cluttered:block/blank_texture",
+		"particle": "#missing"
+	},
 	"elements": [
 		{
 			"from": [8, 0, 6],

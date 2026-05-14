@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/bricks_varying_1",
+    "particle": "#all"
+  }
+}

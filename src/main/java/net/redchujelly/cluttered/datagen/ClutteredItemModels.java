@@ -1,7 +1,7 @@
 package net.redchujelly.cluttered.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -307,14 +307,14 @@ public class ClutteredItemModels extends ItemModelProvider {
         blockitemFromModel(BlockRegistration.RED_MUSHROOM_WARDROBE);
         blockitemFromModel(BlockRegistration.RED_MUSHROOM_BED);
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(BlockRegistration.RED_MUSHROOM_TV.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/red_mushroom_tv_0"));
+                new Identifier(Cluttered.MODID, "block/red_mushroom_tv_0"));
 
         blockitemFromModel(BlockRegistration.BLUE_MUSHROOM_TABLE);
         blockitemFromModel(BlockRegistration.BLUE_MUSHROOM_LAMP);
         blockitemFromModel(BlockRegistration.BLUE_MUSHROOM_WARDROBE);
         blockitemFromModel(BlockRegistration.BLUE_MUSHROOM_BED);
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(BlockRegistration.BLUE_MUSHROOM_TV.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/blue_mushroom_tv_0"));
+                new Identifier(Cluttered.MODID, "block/blue_mushroom_tv_0"));
 
         blockitemFromModel(BlockRegistration.COTTAGE_CHAIR);
         blockitemFromModel(BlockRegistration.COTTAGE_ARMCHAIR);
@@ -542,7 +542,7 @@ public class ClutteredItemModels extends ItemModelProvider {
         blockitemFromModel(BlockRegistration.ANIMATED_FLAG_RAINBOW);
 
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(BlockRegistration.JAM_JARS.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/jam_jar_pyramid_assorted_a"));
+                new Identifier(Cluttered.MODID, "block/jam_jar_pyramid_assorted_a"));
 
         //MULTIBLOCK FURNITURE
         blockitemFromModel(BlockRegistration.DESK_BROWN);
@@ -623,7 +623,7 @@ public class ClutteredItemModels extends ItemModelProvider {
         blockitemFromModel(BlockRegistration.PASTEL_CHAIR);
         blockitemFromModel(BlockRegistration.PASTEL_STOOL);
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(BlockRegistration.PASTEL_LIGHT.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/pastel_light_wall"));
+                new Identifier(Cluttered.MODID, "block/pastel_light_wall"));
         blockitemFromModel(BlockRegistration.PASTEL_BED);
         blockitemFromModel(BlockRegistration.PASTEL_TABLE);
         blockitemFromModel(BlockRegistration.PASTEL_WARDROBE);
@@ -646,14 +646,14 @@ public class ClutteredItemModels extends ItemModelProvider {
         simplePaneBlockItem(BlockRegistration.FLOWERING_CARPET_POPLAR);
 
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(BlockRegistration.LUNAR_OBSERVATORY_JARS.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/lunar_observatory_jars_1"));
+                new Identifier(Cluttered.MODID, "block/lunar_observatory_jars_1"));
 
     }
 
     //From the Kaupenjoe Forge 1.20.1 tutorial #13
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> base) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture", new ResourceLocation(Cluttered.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(base.get()).getPath()));
+                .texture("texture", new Identifier(Cluttered.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(base.get()).getPath()));
     }
     public void balustradeItem(RegistryObject<Block> block) {
         String id = block.getId().toString().replace("cluttered:", "");
@@ -688,34 +688,34 @@ public class ClutteredItemModels extends ItemModelProvider {
 
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> base) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-                .texture("texture", new ResourceLocation(Cluttered.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(base.get()).getPath()));
+                .texture("texture", new Identifier(Cluttered.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(base.get()).getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Cluttered.MODID, "item/" + item.getId().getPath()));
+                new Identifier("item/generated")).texture("layer0",
+                new Identifier(Cluttered.MODID, "item/" + item.getId().getPath()));
     }
     private ItemModelBuilder simplePaneBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Cluttered.MODID, "block/" + item.getId().getPath().replace("_pane", "")));
+                new Identifier("item/generated")).texture("layer0",
+                new Identifier(Cluttered.MODID, "block/" + item.getId().getPath().replace("_pane", "")));
     }
     private ItemModelBuilder simplePaneBlockItem(RegistryObject<Block> item, String end) {
         return withExistingParent(item.getId().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Cluttered.MODID, "block/" + item.getId().getPath().replace("_pane", "") + end));
+                new Identifier("item/generated")).texture("layer0",
+                new Identifier(Cluttered.MODID, "block/" + item.getId().getPath().replace("_pane", "") + end));
     }
 
     private ItemModelBuilder blockitemFromModel(RegistryObject<Block> item){
         String model = item.getId().toString().replace("cluttered:", "");
         return withExistingParent(ForgeRegistries.BLOCKS.getKey(item.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/" + model));
+                new Identifier(Cluttered.MODID, "block/" + model));
     }
 
     private ItemModelBuilder garlandItem(RegistryObject<Block> item){
         String model = item.getId().toString().replace("cluttered:", "");
         return withExistingParent(ForgeRegistries.BLOCKS.getKey(item.get()).getPath(),
-                new ResourceLocation(Cluttered.MODID, "block/" + model + "_right"));
+                new Identifier(Cluttered.MODID, "block/" + model + "_right"));
     }
 }

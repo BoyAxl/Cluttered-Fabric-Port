@@ -1,17 +1,18 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.redchujelly.cluttered.setup.FoliagePlacerTypeRegistration;
 
 public class MapleFoliagePlacer extends FoliagePlacer {
-    public static final Codec<MapleFoliagePlacer> CODEC = RecordCodecBuilder.create(poplarFoliagePlacerInstance
+    public static final MapCodec<MapleFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(poplarFoliagePlacerInstance
             -> foliagePlacerParts(poplarFoliagePlacerInstance).apply(poplarFoliagePlacerInstance, MapleFoliagePlacer::new));
 
     public MapleFoliagePlacer(IntProvider pRadius, IntProvider pOffset) {
@@ -24,7 +25,7 @@ public class MapleFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
+    protected void createFoliage(WorldGenLevel pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
         float sizeMultiplier = (float) pRandom.nextInt(100, 130) / 100;
         int height = (int) (8 * sizeMultiplier);
         int radius = 4;

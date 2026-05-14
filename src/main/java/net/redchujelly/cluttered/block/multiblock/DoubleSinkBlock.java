@@ -11,7 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -48,14 +48,14 @@ public class DoubleSinkBlock extends MultiblockPlacer implements SimpleWaterlogg
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack itemStack = pPlayer.getItemInHand(pHand);
         if (itemStack.getItem().equals(Items.BUCKET) || itemStack.getItem().equals(Items.GLASS_BOTTLE)) {
-            if (!pLevel.isClientSide){
+            if (!pLevel.isClientSide()){
                 ItemStack filledItem;
                 SoundEvent sound;
                 if (itemStack.getItem().equals(Items.GLASS_BOTTLE)){
-                    filledItem = PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER);
+                    filledItem = PotionContents.createItemStack(Items.POTION, Potions.WATER);
                     sound = SoundEvents.BOTTLE_FILL;
                 }
                 else {
@@ -84,11 +84,11 @@ public class DoubleSinkBlock extends MultiblockPlacer implements SimpleWaterlogg
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         if(pState.getValue(WATERLOGGED)){
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            pTicks.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+        return super.updateShape(pState, pLevel, pTicks, pPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     @Override

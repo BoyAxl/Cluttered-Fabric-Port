@@ -1,5 +1,6 @@
 package net.redchujelly.cluttered.block.custom.furniture;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -25,6 +26,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SmallLampBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+    public static final MapCodec<SmallLampBlock> CODEC = simpleCodec(SmallLampBlock::new);
     //public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -42,6 +44,11 @@ public class SmallLampBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         //return state.getValue(LIT) ? 15 : 0;
         return 15;
@@ -53,11 +60,11 @@ public class SmallLampBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         if(pState.getValue(WATERLOGGED)){
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            pTicks.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+        return super.updateShape(pState, pLevel, pTicks, pPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
@@ -71,8 +78,8 @@ public class SmallLampBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     //@Override
-    //public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-    //    if (!pLevel.isClientSide){
+    //protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    //    if (!pLevel.isClientSide()){
     //        boolean lit = pState.getValue(LIT);
     //        pLevel.setBlock(pPos, pState.setValue(LIT, !lit), 2);
     //        pLevel.playSound(null, pPos, SoundEvents.LEVER_CLICK, SoundSource.BLOCKS);

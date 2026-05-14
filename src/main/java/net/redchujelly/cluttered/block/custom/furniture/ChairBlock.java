@@ -42,9 +42,9 @@ public class ChairBlock extends CustomHorizontalBlock implements SimpleWaterlogg
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pState.getValue(OCCUPIED) && !pPlayer.isShiftKeyDown()){
-            if (!pLevel.isClientSide) {
+            if (!pLevel.isClientSide()) {
                 pLevel.setBlock(pPos, pState.setValue(OCCUPIED, true), 2);
                 Entity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
                 seat.setPos(pPos.getX() + .5f, pPos.getY() - 1 + getSeatOffset(), pPos.getZ() + .5f);
@@ -62,11 +62,11 @@ public class ChairBlock extends CustomHorizontalBlock implements SimpleWaterlogg
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         if(pState.getValue(WATERLOGGED)){
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
+            pTicks.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
         }
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+        return super.updateShape(pState, pLevel, pTicks, pPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
@@ -84,11 +84,10 @@ public class ChairBlock extends CustomHorizontalBlock implements SimpleWaterlogg
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
-        super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
+    protected void affectNeighborsAfterRemoval(BlockState pState, net.minecraft.server.level.ServerLevel pLevel, BlockPos pPos, boolean pMovedByPiston) {
         List<ChairEntity> chairBlocks = pLevel.getEntitiesOfClass(ChairEntity.class, new AABB(pPos));
         for (ChairEntity chair : chairBlocks){
-            chair.kill();
+            chair.kill(pLevel);
         }
     }
 

@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:two_cats",
+  "author": {
+    "translate": "painting.cluttered.two_cats.author"
+  },
+  "height": 1,
+  "title": {
+    "translate": "painting.cluttered.two_cats.title"
+  },
+  "width": 1
+}

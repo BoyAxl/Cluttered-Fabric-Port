@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:frogman_washington",
+  "author": {
+    "translate": "painting.cluttered.frogman_washington.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.frogman_washington.title"
+  },
+  "width": 1
+}

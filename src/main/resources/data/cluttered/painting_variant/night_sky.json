@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:night_sky",
+  "author": {
+    "translate": "painting.cluttered.night_sky.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.night_sky.title"
+  },
+  "width": 1
+}

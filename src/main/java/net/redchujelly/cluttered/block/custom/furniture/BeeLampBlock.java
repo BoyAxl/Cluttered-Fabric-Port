@@ -46,8 +46,8 @@ public class BeeLampBlock extends SmallLampBlock{
     }
 
     //@Override
-    //public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-    //    if (!pLevel.isClientSide){
+    //protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    //    if (!pLevel.isClientSide()){
     //        boolean lit = pState.getValue(LIT);
     //        pLevel.setBlock(pPos, pState.setValue(LIT, !lit), 2);
     //        this.updateNeighbors(pState, pLevel, pPos);
@@ -57,11 +57,9 @@ public class BeeLampBlock extends SmallLampBlock{
     //}
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (!pIsMoving && !pState.is(pNewState.getBlock())) {
+    protected void affectNeighborsAfterRemoval(BlockState pState, net.minecraft.server.level.ServerLevel pLevel, BlockPos pPos, boolean pIsMoving) {
+        if (!pIsMoving) {
             this.updateNeighbors(pState, pLevel, pPos);
-
-            super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         }
     }
 

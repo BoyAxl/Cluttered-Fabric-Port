@@ -50,21 +50,21 @@ public class ShelfCandleBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack item = pPlayer.getItemInHand(pHand);
         if (!pState.getValue(LIT) && !pState.getValue(SmallFurnitureBlock.WATERLOGGED)){
             if (item.getItem() instanceof FlintAndSteelItem) {
-                if (!pLevel.isClientSide) {
+                if (!pLevel.isClientSide()) {
                     pLevel.setBlock(pPos, pState.setValue(LIT, true), 2);
                     pLevel.playSound(null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS);
                     if (item.isDamageableItem()) {
-                        item.hurtAndBreak(1, pPlayer, (player) -> player.broadcastBreakEvent(pHand));
+                        item.hurtAndBreak(1, pPlayer, pHand);
                     }
                 }
                 return InteractionResult.SUCCESS;
             }
         } else if (item.isEmpty() && pState.getValue(LIT)) {
-            if (!pLevel.isClientSide){
+            if (!pLevel.isClientSide()){
                 pLevel.setBlock(pPos, pState.setValue(LIT, false), 2);
                 pLevel.playSound(null, pPos, SoundEvents.CANDLE_EXTINGUISH, SoundSource.BLOCKS);
             }

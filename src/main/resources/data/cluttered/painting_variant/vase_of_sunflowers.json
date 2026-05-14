@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:vase_of_sunflowers",
+  "author": {
+    "translate": "painting.cluttered.vase_of_sunflowers.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.vase_of_sunflowers.title"
+  },
+  "width": 1
+}

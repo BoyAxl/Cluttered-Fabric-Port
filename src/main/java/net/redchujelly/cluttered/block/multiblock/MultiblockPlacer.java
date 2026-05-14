@@ -6,13 +6,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 public class MultiblockPlacer extends Block {
 
     public static final IntegerProperty MULTIBLOCK_PART = IntegerProperty.create("part", 1, 2);
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     //3D Array of the shape of the multiblock.
     //The first layer is supposed to be height(y), second is width(x) and third is depth(z)
@@ -72,7 +71,7 @@ public class MultiblockPlacer extends Block {
         int xOffset = 0;
         int zOffset = 0;
 
-        if (!(OGpos.getY() + maxHeight < level.getMaxBuildHeight())) {
+        if (!(OGpos.getY() + maxHeight < level.getMaxY())) {
             return null;
         }
         for(int y = 0; y < maxHeight; y++) {
@@ -132,7 +131,7 @@ public class MultiblockPlacer extends Block {
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pCurrentPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         BlockPos state1Pos = null;
         if (pState.getValue(getMultiblockPart()) != 1) {
             state1Pos = findBlockState1(pCurrentPos, pLevel);
@@ -141,12 +140,12 @@ public class MultiblockPlacer extends Block {
         }
         if (state1Pos != null) {
             if (!canSurvive(pLevel.getBlockState(state1Pos), pLevel, state1Pos)) {
-                pLevel.scheduleTick(pCurrentPos, this, 0);
+                pTicks.scheduleTick(pCurrentPos, this, 0);
             }
         } else {
-            pLevel.scheduleTick(pCurrentPos, this, 0);
+            pTicks.scheduleTick(pCurrentPos, this, 0);
         }
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pCurrentPos, pNeighborPos);
+        return super.updateShape(pState, pLevel, pTicks, pCurrentPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     @Override
@@ -184,7 +183,7 @@ public class MultiblockPlacer extends Block {
         return true;
     }
 
-    protected BlockPos findBlockState1(BlockPos currentPos, LevelAccessor level) {
+    protected BlockPos findBlockState1(BlockPos currentPos, LevelReader level) {
 
         if (!level.getBlockState(currentPos).hasProperty(FACING)) {
             return null;
@@ -215,7 +214,7 @@ public class MultiblockPlacer extends Block {
     //Computers love doing nested loops, btw. its their favorite activity; they told me that. its good for them.
     @Override
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-        if (!pLevel.isClientSide) {
+        if (!pLevel.isClientSide()) {
             Direction direction = pState.getValue(FACING);
             int[][][] multiblockShape = getMultiblockShape();
             int OGx = pPos.getX();

@@ -1,18 +1,19 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.redchujelly.cluttered.setup.FoliagePlacerTypeRegistration;
 
 public class SycamoreFoliagePlacer extends FoliagePlacer {
-    public static final Codec<SycamoreFoliagePlacer> CODEC = RecordCodecBuilder.create(sycamoreFoliagePlacerInstance
+    public static final MapCodec<SycamoreFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(sycamoreFoliagePlacerInstance
             -> foliagePlacerParts(sycamoreFoliagePlacerInstance).and(Codec.intRange(0, 16).fieldOf("height").forGetter(fp -> fp.height))
             .apply(sycamoreFoliagePlacerInstance, SycamoreFoliagePlacer::new));
 
@@ -34,7 +35,7 @@ public class SycamoreFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
+    protected void createFoliage(WorldGenLevel pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
         BlockPos nextPos = pAttachment.pos().above();
 
         if (pAttachment.doubleTrunk()){

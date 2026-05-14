@@ -55,8 +55,8 @@ public class CottageLampBlock extends MultiblockPlacer{
     }
 
     //@Override
-    //public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-    //    if (!pLevel.isClientSide) {
+    //protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    //    if (!pLevel.isClientSide()) {
     //        boolean lit = !pState.getValue(LIT);
     //        setOnAndOff(pLevel, pPos, pState, lit);
     //        pLevel.playSound(null, pPos, SoundEvents.LEVER_CLICK, SoundSource.BLOCKS);

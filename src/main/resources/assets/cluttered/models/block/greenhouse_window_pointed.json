@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "cluttered:block/greenhouse_window_overlapping_pointed_arches",
+    "particle": "#all"
+  }
+}

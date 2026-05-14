@@ -1,11 +1,12 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 
 public class RedMushroomTrunkPlacer extends TrunkPlacer {
-    public static final Codec<RedMushroomTrunkPlacer> CODEC = RecordCodecBuilder.create(redMushroomTrunkPlacerInstance ->
+    public static final MapCodec<RedMushroomTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(redMushroomTrunkPlacerInstance ->
             trunkPlacerParts(redMushroomTrunkPlacerInstance).apply(redMushroomTrunkPlacerInstance, RedMushroomTrunkPlacer::new));
 
     public RedMushroomTrunkPlacer(int pBaseHeight, int pHeightRandA, int pHeightRandB) {
@@ -31,8 +32,8 @@ public class RedMushroomTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
-        setDirtAt(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
+        placeBelowTrunkBlock(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
         List<FoliagePlacer.FoliageAttachment> foliageSpots = new ArrayList<>();
         int maxHeight = pFreeTreeHeight + pRandom.nextInt(heightRandA, heightRandB);
 

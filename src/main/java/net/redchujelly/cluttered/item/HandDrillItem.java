@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BedBlock;
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class HandDrillItem extends Item {
     public HandDrillItem(Properties pProperties) {
@@ -349,7 +351,7 @@ public class HandDrillItem extends Item {
         BlockState state = level.getBlockState(pos);
         BlockState nextState = getNextBlock(state);
         if (pContext.getPlayer().isCrouching()){
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 if (state.getBlock() instanceof MultiblockPlacer || state.getBlock() instanceof BedBlock){
                     return InteractionResult.CONSUME;
                 }
@@ -374,7 +376,7 @@ public class HandDrillItem extends Item {
             return InteractionResult.SUCCESS;
         }
         else if (nextState != null) {
-            if(!level.isClientSide){
+            if(!level.isClientSide()){
                 if (state.getBlock() instanceof BracketBlock){
                     level.setBlock(pos, nextState.setValue(BracketBlock.IS_UP, state.getValue(BracketBlock.IS_UP)).setValue(BracketBlock.OFFSET, state.getValue(BracketBlock.OFFSET)).setValue(BracketBlock.FACING, state.getValue(BracketBlock.FACING)), 3);
                 }
@@ -445,8 +447,8 @@ public class HandDrillItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("cluttered.hand_drill.tooltip"));
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    public void appendHoverText(ItemStack pStack, TooltipContext pContext, TooltipDisplay pDisplay, Consumer<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        pTooltipComponents.accept(Component.translatable("cluttered.hand_drill.tooltip"));
+        super.appendHoverText(pStack, pContext, pDisplay, pTooltipComponents, pIsAdvanced);
     }
 }

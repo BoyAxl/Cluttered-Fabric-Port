@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/lunar_observatory_jars",
+    "particle": "#all"
+  }
+}

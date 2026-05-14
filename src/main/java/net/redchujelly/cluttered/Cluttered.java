@@ -2,31 +2,29 @@ package net.redchujelly.cluttered;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.StandingSignRenderer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
+import net.minecraftforge.eventbus.api.listener.Priority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.MissingMappingsEvent;
 import net.redchujelly.cluttered.client.ChairEntityRenderer;
 import net.redchujelly.cluttered.config.ClutteredCommonConfigs;
-import net.redchujelly.cluttered.datagen.DataGeneration;
 import net.redchujelly.cluttered.setup.*;
 import net.redchujelly.cluttered.util.ClutteredFurnitureUpdater;
 import net.redchujelly.cluttered.util.ClutteredWoodTypes;
@@ -41,8 +39,8 @@ public class Cluttered {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public Cluttered() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public Cluttered(FMLJavaModLoadingContext context) {
+        BusGroup modEventBus = context.getModBusGroup();
 
         SoundRegistration.register(modEventBus);
         CreativeTabRegistration.register(modEventBus);
@@ -58,14 +56,16 @@ public class Cluttered {
 
         ClutteredLootModifiers.register(modEventBus);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ClutteredCommonConfigs.SPEC, "cluttered-common.toml");
+        context.registerConfig(ModConfig.Type.COMMON, ClutteredCommonConfigs.SPEC, "cluttered-common.toml");
 
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(DataGeneration::generate);
+        FMLCommonSetupEvent.getBus(modEventBus).addListener(this::commonSetup);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(this::addCreative);
+        ServerStartingEvent.BUS.addListener(this::onServerStarting);
+        MissingMappingsEvent.BUS.addListener(Priority.LOW, this::missingMappingsHandler);
 
-
-        MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+        if (FMLEnvironment.dist.isClient()) {
+            ClientModEvents.register(modEventBus);
+        }
 
     }
 
@@ -106,13 +106,11 @@ public class Cluttered {
 
     }
 
-    @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
     }
 
     //Replaces blocks and items from the outdated version of the mod
-    @SubscribeEvent(priority = EventPriority.LOW)
     public void missingMappingsHandler(MissingMappingsEvent event){
         if (!ClutteredCommonConfigs.REPLACE_OLD_CLUTTERED_FURNITURE.get()){
             return;
@@ -151,10 +149,13 @@ public class Cluttered {
     }
 
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
 
-        @SubscribeEvent
+        public static void register(BusGroup modEventBus) {
+            FMLClientSetupEvent.getBus(modEventBus).addListener(ClientModEvents::onClientSetup);
+            EntityRenderersEvent.RegisterRenderers.BUS.addListener(ClientModEvents::registerRenderers);
+        }
+
         public static void onClientSetup(FMLClientSetupEvent event) {
             Sheets.addWoodType(ClutteredWoodTypes.WILLOW);
             Sheets.addWoodType(ClutteredWoodTypes.FLOWERING_WILLOW);
@@ -168,9 +169,10 @@ public class Cluttered {
             Sheets.addWoodType(ClutteredWoodTypes.BLUE_MUSHROOM);
         }
 
-        @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event){
             event.registerEntityRenderer(EntityTypeRegistration.CHAIR_ENTITY.get(), ChairEntityRenderer::new);
+            event.registerBlockEntityRenderer(TileEntityRegistration.CLUTTERED_SIGN_BE.get(), StandingSignRenderer::new);
+            event.registerBlockEntityRenderer(TileEntityRegistration.CLUTTERED_HANGING_SIGN_BE.get(), HangingSignRenderer::new);
         }
     }
 }

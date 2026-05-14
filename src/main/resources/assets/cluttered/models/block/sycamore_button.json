@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "cluttered:block/sycamore_planks",
+    "particle": "#texture"
+  }
+}

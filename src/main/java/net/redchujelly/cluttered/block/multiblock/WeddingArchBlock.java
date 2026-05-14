@@ -6,7 +6,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -121,7 +120,7 @@ public class WeddingArchBlock extends MultiblockPlacer{
         int xOffset = 0;
         int zOffset = 0;
 
-        if (!(OGpos.getY() + maxHeight < level.getMaxBuildHeight())) {
+        if (!(OGpos.getY() + maxHeight < level.getMaxY())) {
             return null;
         }
         for(int y = 0; y < maxHeight; y++) {
@@ -158,7 +157,7 @@ public class WeddingArchBlock extends MultiblockPlacer{
     //Computers love doing nested loops, btw. its their favorite activity; they told me that. its good for them.
     @Override
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-        if (!pLevel.isClientSide) {
+        if (!pLevel.isClientSide()) {
             Direction direction = pState.getValue(FACING);
             int[][][] multiblockShape = getMultiblockShape();
             int OGx = pPos.getX();
@@ -195,21 +194,22 @@ public class WeddingArchBlock extends MultiblockPlacer{
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pCurrentPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
+        BlockState updatedState = pState;
         if (pDirection.equals(Direction.NORTH)){
-            pLevel.setBlock(pCurrentPos, pState.setValue(NORTH, connectsTo(pNeighborState)), 2);
+            updatedState = pState.setValue(NORTH, connectsTo(pNeighborState));
         }
         else if (pDirection.equals(Direction.SOUTH)){
-            pLevel.setBlock(pCurrentPos, pState.setValue(SOUTH, connectsTo(pNeighborState)), 2);
+            updatedState = pState.setValue(SOUTH, connectsTo(pNeighborState));
         }
         else if (pDirection.equals(Direction.EAST)){
-            pLevel.setBlock(pCurrentPos, pState.setValue(EAST, connectsTo(pNeighborState)), 2);
+            updatedState = pState.setValue(EAST, connectsTo(pNeighborState));
         }
         else if (pDirection.equals(Direction.WEST)){
-            pLevel.setBlock(pCurrentPos, pState.setValue(WEST, connectsTo(pNeighborState)), 2);
+            updatedState = pState.setValue(WEST, connectsTo(pNeighborState));
         }
 
-        return super.updateShape(pState, pDirection, pNeighborState, pLevel, pCurrentPos, pNeighborPos);
+        return super.updateShape(updatedState, pLevel, pTicks, pCurrentPos, pDirection, pNeighborPos, pNeighborState, pRandom);
     }
 
     private boolean connectsTo(BlockState pState) {

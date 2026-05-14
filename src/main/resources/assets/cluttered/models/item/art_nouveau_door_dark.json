@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cluttered:item/art_nouveau_door_dark",
+    "particle": "#layer0"
+  }
+}

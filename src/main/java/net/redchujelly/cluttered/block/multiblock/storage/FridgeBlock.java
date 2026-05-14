@@ -72,8 +72,8 @@ public class FridgeBlock extends MultiblockStorage{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide){
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pLevel.isClientSide()){
             return InteractionResult.SUCCESS;
         } else if (!pPlayer.isCrouching()){
             BlockPos pos1 = findBlockState1(pPos, pLevel);
@@ -105,7 +105,7 @@ public class FridgeBlock extends MultiblockStorage{
 
     @Override
     public IntegerProperty getMultiblockPart() {
-        return super.getMultiblockPart();
+        return MULTIBLOCK_PART;
     }
 
     @Override

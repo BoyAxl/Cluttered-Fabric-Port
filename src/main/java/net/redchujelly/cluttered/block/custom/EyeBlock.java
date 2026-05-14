@@ -9,6 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -21,6 +22,9 @@ import java.util.List;
 public class EyeBlock extends Block {
     public static final BooleanProperty LOOKING_LEFT = BooleanProperty.create("looking_left");
     public static final IntegerProperty BLINK_FRAME = IntegerProperty.create("frame", 0,5);
+    private static final int MIN_BLINK_DELAY = 60;
+    private static final int RANDOM_BLINK_DELAY = 100;
+
     public EyeBlock(Properties pProperties) {
 
         super(pProperties);
@@ -42,13 +46,21 @@ public class EyeBlock extends Block {
             }
             if (frame == 5){
                 pLevel.setBlock(pPos, pState.setValue(BLINK_FRAME, 0), 2);
+                this.scheduleNextBlink(pLevel, pPos, pRandom);
             }
         }
     }
 
     @Override
+    public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
+        if (!pLevel.isClientSide() && !pOldState.is(this)) {
+            this.scheduleNextBlink(pLevel, pPos, pLevel.getRandom());
+        }
+    }
+
+    @Override
     public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        if (!pLevel.isClientSide){
+        if (!pLevel.isClientSide()){
             float random = pRandom.nextFloat();
             if (random < 0.08){
                 pLevel.scheduleTick(pPos, this, 0);
@@ -65,10 +77,11 @@ public class EyeBlock extends Block {
         pBuilder.add(LOOKING_LEFT).add(BLINK_FRAME);
     }
 
-    @Override
+    private void scheduleNextBlink(Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        pLevel.scheduleTick(pPos, this, MIN_BLINK_DELAY + pRandom.nextInt(RANDOM_BLINK_DELAY));
+    }
+
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("cluttered.eye_block.tooltip"));
-
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 }

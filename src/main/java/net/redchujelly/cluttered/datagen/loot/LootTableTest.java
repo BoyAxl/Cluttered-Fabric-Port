@@ -1,7 +1,7 @@
 package net.redchujelly.cluttered.datagen.loot;
 
 import net.minecraft.data.loot.packs.VanillaChestLoot;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -14,11 +14,11 @@ import net.redchujelly.cluttered.setup.BlockRegistration;
 import java.util.function.BiConsumer;
 
 public class LootTableTest extends VanillaChestLoot {
-    private static final ResourceLocation SAPLING_CHEST_LOOT =
-            new ResourceLocation(Cluttered.MODID, "chests/sapling_chest_loot");
+    private static final Identifier SAPLING_CHEST_LOOT =
+            new Identifier(Cluttered.MODID, "chests/sapling_chest_loot");
 
     @Override
-    public void generate(BiConsumer<ResourceLocation, LootTable.Builder> pBuilder) {
+    public void generate(BiConsumer<Identifier, LootTable.Builder> pBuilder) {
         pBuilder.accept(SAPLING_CHEST_LOOT, LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                 .add(LootItem.lootTableItem(BlockRegistration.WILLOW_SAPLING.get()).setWeight(1)).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F)))
                 .add(LootItem.lootTableItem(BlockRegistration.POPLAR_SAPLING.get()).setWeight(1)).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F)))

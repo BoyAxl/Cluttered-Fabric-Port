@@ -5,12 +5,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.WallHangingSignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.redchujelly.cluttered.block.entity.ClutteredHangingSignBlockEntity;
 
 public class CustomWallHangingSignBlock extends WallHangingSignBlock {
-    public CustomWallHangingSignBlock(Properties pProperties, WoodType pType) {
-        super(pProperties, pType);
+    public CustomWallHangingSignBlock(BlockBehaviour.Properties pProperties, WoodType pType) {
+        super(pType, pProperties);
     }
 
     @Override
@@ -18,8 +19,4 @@ public class CustomWallHangingSignBlock extends WallHangingSignBlock {
         return new ClutteredHangingSignBlockEntity(pPos, pState);
     }
 
-    @Override
-    public String getDescriptionId() {
-        return this.asItem().getDescriptionId();
-    }
 }

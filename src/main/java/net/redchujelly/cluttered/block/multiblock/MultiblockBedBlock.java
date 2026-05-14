@@ -87,8 +87,8 @@ public class MultiblockBedBlock extends MultiblockPlacer{
         level.setBlock(pos, state.setValue(OCCUPIED, occupied), 2);
     }
 
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pLevel.isClientSide()) {
             return InteractionResult.CONSUME;
         } else {
             int part = pState.getValue(MULTIBLOCK_PART);
@@ -117,13 +117,13 @@ public class MultiblockBedBlock extends MultiblockPlacer{
                 Vec3 center = pPos.getCenter();
                 pLevel.explode(null, pLevel.damageSources().badRespawnPointExplosion(center), null, center, 5.0F, true, Level.ExplosionInteraction.BLOCK);
             } else if (pState.getValue(OCCUPIED)) {
-                pPlayer.displayClientMessage(Component.translatable("block.minecraft.bed.occupied"), true);
+                pPlayer.sendOverlayMessage(Component.translatable("block.minecraft.bed.occupied"));
 
                 return InteractionResult.SUCCESS;
             } else {
                 pPlayer.startSleepInBed(pPos).ifLeft((sleepingProblem) -> {
-                    if (sleepingProblem.getMessage() != null) {
-                        pPlayer.displayClientMessage(sleepingProblem.getMessage(), true);
+                    if (sleepingProblem.message() != null) {
+                        pPlayer.sendOverlayMessage(sleepingProblem.message());
                     }
                 });
             }
@@ -132,16 +132,16 @@ public class MultiblockBedBlock extends MultiblockPlacer{
     }
 
     public static boolean canSetSpawn(Level pLevel) {
-        return pLevel.dimensionType().bedWorks();
+        return !pLevel.environmentAttributes().getValue(net.minecraft.world.attribute.EnvironmentAttributes.BED_RULE, net.minecraft.core.BlockPos.ZERO).explodes();
     }
 
-    public void fallOn(Level pLevel, BlockState pState, BlockPos pPos, Entity pEntity, float pFallDistance) {
+    public void fallOn(Level pLevel, BlockState pState, BlockPos pPos, Entity pEntity, double pFallDistance) {
         super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance * 0.5F);
     }
 
-    public void updateEntityAfterFallOn(BlockGetter pLevel, Entity pEntity) {
+    public void updateEntityMovementAfterFallOn(BlockGetter pLevel, Entity pEntity) {
         if (pEntity.isSuppressingBounce()) {
-            super.updateEntityAfterFallOn(pLevel, pEntity);
+            super.updateEntityMovementAfterFallOn(pLevel, pEntity);
         } else {
             this.bounceUp(pEntity);
         }

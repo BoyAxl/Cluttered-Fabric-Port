@@ -42,18 +42,15 @@ public class PolaroidCameraBlock extends SmallFurnitureBlock{
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
     }
-
-    @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("cluttered.polaroid_camera.tooltip"));
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         ItemStack item = pPlayer.getItemInHand(pHand);
         if (item.is(Items.PAPER)){
-            if (!pLevel.isClientSide){
+            if (!pLevel.isClientSide()){
                 item.shrink(1);
                 Random r = new Random();
                 int rand = r.nextInt(0,OUTPUT_LIST.size());

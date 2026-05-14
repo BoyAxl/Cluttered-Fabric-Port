@@ -5,12 +5,11 @@ pluginManagement {
             name = 'MinecraftForge'
             url = 'https://maven.minecraftforge.net/'
         }
-        maven { url = 'https://maven.parchmentmc.org' }
     }
 }
 
 plugins {
-    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
 
-rootProject.name = 'cluttered-1-20-1-forge'
+rootProject.name = 'cluttered-26-1-2-forge'

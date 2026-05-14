@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:red_mushroom",
+  "author": {
+    "translate": "painting.cluttered.red_mushroom.author"
+  },
+  "height": 1,
+  "title": {
+    "translate": "painting.cluttered.red_mushroom.title"
+  },
+  "width": 1
+}

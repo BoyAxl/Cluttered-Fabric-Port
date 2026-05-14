@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cluttered:block/red_mushroom_window",
+    "particle": "#layer0"
+  }
+}

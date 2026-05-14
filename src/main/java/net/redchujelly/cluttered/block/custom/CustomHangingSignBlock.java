@@ -9,7 +9,7 @@ import net.redchujelly.cluttered.block.entity.ClutteredHangingSignBlockEntity;
 
 public class CustomHangingSignBlock extends CeilingHangingSignBlock {
     public CustomHangingSignBlock(Properties pProperties, WoodType pType) {
-        super(pProperties, pType);
+        super(pType, pProperties);
     }
 
     @Override

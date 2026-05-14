@@ -24,30 +24,22 @@ public class MultiblockStorage extends MultiblockPlacer implements EntityBlock {
     }
 
     @Override
-    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
-        if (!pState.is(pNewState.getBlock())) {
+    protected void affectNeighborsAfterRemoval(BlockState pState, net.minecraft.server.level.ServerLevel pLevel, BlockPos pPos, boolean pIsMoving) {
+        if (true) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof Container) {
                 Containers.dropContents(pLevel, pPos, (Container)blockEntity);
                 pLevel.updateNeighbourForOutputSignal(pPos, this);
             }
-
-            super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
         }
     }
 
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @javax.annotation.Nullable LivingEntity pPlacer, ItemStack pStack) {
-        if (pStack.hasCustomHoverName()) {
-            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof CustomStorageBlockEntity) {
-                ((CustomStorageBlockEntity) blockEntity).setCustomName(pStack.getHoverName());
-            }
-        }
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide){
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pLevel.isClientSide()){
             return InteractionResult.SUCCESS;
         } else {
             BlockPos pos1 = findBlockState1(pPos, pLevel);

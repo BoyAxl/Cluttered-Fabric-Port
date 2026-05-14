@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:van_gogh_flamenettle",
+  "author": {
+    "translate": "painting.cluttered.van_gogh_flamenettle.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.van_gogh_flamenettle.title"
+  },
+  "width": 1
+}

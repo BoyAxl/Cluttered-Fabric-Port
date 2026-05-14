@@ -1,11 +1,12 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -22,7 +23,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class MapleTrunkPlacer extends TrunkPlacer {
-    public static final Codec<MapleTrunkPlacer> CODEC = RecordCodecBuilder.create(mapleTrunkPlacerInstance ->
+    public static final MapCodec<MapleTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(mapleTrunkPlacerInstance ->
             trunkPlacerParts(mapleTrunkPlacerInstance).apply(mapleTrunkPlacerInstance, MapleTrunkPlacer::new));
     private static final Logger log = LoggerFactory.getLogger(MapleTrunkPlacer.class);
 
@@ -36,8 +37,8 @@ public class MapleTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
-        setDirtAt(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
+        placeBelowTrunkBlock(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
 
         List<Direction> directions = List.of(Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST);
         List<FoliagePlacer.FoliageAttachment> foliageAttachments = new ArrayList<>();
@@ -90,7 +91,7 @@ public class MapleTrunkPlacer extends TrunkPlacer {
                         if (j == branchLength){
                             tempHeight++;
                         }
-                        BlockState log = pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
+                        BlockState log = pConfig.trunkProvider.getState(pLevel, pRandom, pPos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
                         pBlockSetter.accept(pPos.above(tempHeight).relative(direction, j), (BlockState) Function.identity().apply(log));
                         j++;
                     }
@@ -113,7 +114,7 @@ public class MapleTrunkPlacer extends TrunkPlacer {
                         if (j == branchLength){
                             tempHeight++;
                         }
-                        BlockState log = pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
+                        BlockState log = pConfig.trunkProvider.getState(pLevel, pRandom, pPos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
                         pBlockSetter.accept(pPos.above(tempHeight).relative(direction, j), (BlockState) Function.identity().apply(log));
                         j++;
                     }
@@ -133,7 +134,7 @@ public class MapleTrunkPlacer extends TrunkPlacer {
                         if (j == branchLength){
                             tempHeight++;
                         }
-                        BlockState log = pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
+                        BlockState log = pConfig.trunkProvider.getState(pLevel, pRandom, pPos).setValue(RotatedPillarBlock.AXIS, direction.getAxis());
                         pBlockSetter.accept(pPos.above(tempHeight).relative(direction, j), (BlockState) Function.identity().apply(log));
                         j++;
                     }

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "cluttered:block/deep_chalcedony_bricks",
+    "side": "cluttered:block/deep_chalcedony_bricks",
+    "top": "cluttered:block/deep_chalcedony_bricks",
+    "particle": "#bottom"
+  }
+}

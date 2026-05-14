@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:ridley_dimension",
+  "author": {
+    "translate": "painting.cluttered.ridley_dimension.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.ridley_dimension.title"
+  },
+  "width": 2
+}

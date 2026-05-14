@@ -9,7 +9,7 @@ import net.redchujelly.cluttered.block.entity.ClutteredSignBlockEntity;
 
 public class CustomWallSignBlock extends WallSignBlock {
     public CustomWallSignBlock(Properties pProperties, WoodType pType) {
-        super(pProperties, pType);
+        super(pType, pProperties);
     }
 
     @Override
@@ -17,8 +17,4 @@ public class CustomWallSignBlock extends WallSignBlock {
         return new ClutteredSignBlockEntity(pPos, pState);
     }
 
-    @Override
-    public String getDescriptionId() {
-        return this.asItem().getDescriptionId();
-    }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "cluttered:block/flowering_crabapple_bookshelf",
+    "particle": "#texture"
+  }
+}

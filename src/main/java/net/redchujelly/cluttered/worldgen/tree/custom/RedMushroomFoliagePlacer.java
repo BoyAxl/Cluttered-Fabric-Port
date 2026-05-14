@@ -1,17 +1,18 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.redchujelly.cluttered.setup.FoliagePlacerTypeRegistration;
 
 public class RedMushroomFoliagePlacer extends FoliagePlacer {
-    public static final Codec<RedMushroomFoliagePlacer> CODEC = RecordCodecBuilder.create(redMushroomFoliagePlacerInstance
+    public static final MapCodec<RedMushroomFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(redMushroomFoliagePlacerInstance
             -> foliagePlacerParts(redMushroomFoliagePlacerInstance).and(Codec.intRange(0, 16).fieldOf("height").forGetter(fp -> fp.height))
             .apply(redMushroomFoliagePlacerInstance, RedMushroomFoliagePlacer::new));
 
@@ -28,7 +29,7 @@ public class RedMushroomFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
+    protected void createFoliage(WorldGenLevel pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
         float layerSize = (float) ( this.height / 5) - 0.001f;
         for (int i = 0; i < this.height;){
             if (i < 2 * layerSize){

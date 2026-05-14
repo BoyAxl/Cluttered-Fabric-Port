@@ -32,8 +32,8 @@ public class RubiksCubeBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide && pState.hasProperty(SOLVED)) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (!pLevel.isClientSide() && pState.hasProperty(SOLVED)) {
             pLevel.setBlock(pPos, pState.setValue(SOLVED, !pState.getValue(SOLVED)), 2);
             pLevel.playSound(null, pPos, SoundEvents.ARMOR_STAND_BREAK, SoundSource.BLOCKS);
         }

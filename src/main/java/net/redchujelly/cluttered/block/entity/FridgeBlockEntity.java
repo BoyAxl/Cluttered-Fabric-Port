@@ -4,6 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.ContainerUser;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -36,7 +38,7 @@ public class FridgeBlockEntity extends CustomStorageBlockEntity{
             }
 
             @Override
-            protected boolean isOwnContainer(Player player) {
+            public boolean isOwnContainer(Player player) {
                 return false;
             }
         };
@@ -47,16 +49,20 @@ public class FridgeBlockEntity extends CustomStorageBlockEntity{
         return Component.translatable("cluttered.fridge");
     }
 
-    public void startOpen(Player pPlayer) {
-        if (!this.remove && !pPlayer.isSpectator()) {
-            this.openersCounter.incrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    @Override
+    public void startOpen(ContainerUser containerUser) {
+        LivingEntity entity = containerUser.getLivingEntity();
+        if (!this.remove && !entity.isSpectator()) {
+            this.openersCounter.incrementOpeners(entity, this.getLevel(), this.getBlockPos(), this.getBlockState(), containerUser.getContainerInteractionRange());
         }
 
     }
 
-    public void stopOpen(Player pPlayer) {
-        if (!this.remove && !pPlayer.isSpectator()) {
-            this.openersCounter.decrementOpeners(pPlayer, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    @Override
+    public void stopOpen(ContainerUser containerUser) {
+        LivingEntity entity = containerUser.getLivingEntity();
+        if (!this.remove && !entity.isSpectator()) {
+            this.openersCounter.decrementOpeners(entity, this.getLevel(), this.getBlockPos(), this.getBlockState());
         }
 
     }

@@ -1,5 +1,6 @@
 package net.redchujelly.cluttered.block.custom.furniture;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -18,6 +19,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
 public class FlatDirectionalBlock extends FaceAttachedHorizontalDirectionalBlock {
+    public static final MapCodec<FlatDirectionalBlock> CODEC = simpleCodec(FlatDirectionalBlock::new);
 
     private static final VoxelShape SHAPE_NORTH = Block.box(0,0,14,16,16,16);
     private static final VoxelShape SHAPE_SOUTH = Block.box(0,0,0,16,16,2);
@@ -28,6 +30,11 @@ public class FlatDirectionalBlock extends FaceAttachedHorizontalDirectionalBlock
 
     public FlatDirectionalBlock(Properties pProperties) {
         super(pProperties);
+    }
+
+    @Override
+    protected MapCodec<? extends FaceAttachedHorizontalDirectionalBlock> codec() {
+        return CODEC;
     }
 
     @Override

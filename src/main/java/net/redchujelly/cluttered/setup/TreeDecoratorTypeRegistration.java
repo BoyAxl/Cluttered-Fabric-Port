@@ -2,7 +2,7 @@ package net.redchujelly.cluttered.setup;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
@@ -17,7 +17,7 @@ public class TreeDecoratorTypeRegistration {
             TREE_DECORATORS.register("willow_tree_decorator", () -> new TreeDecoratorType<>(WillowTreeDecorator.CODEC));
 
 
-    public static void register(IEventBus eventBus){
+    public static void register(BusGroup eventBus){
         TREE_DECORATORS.register(eventBus);
     }
 }

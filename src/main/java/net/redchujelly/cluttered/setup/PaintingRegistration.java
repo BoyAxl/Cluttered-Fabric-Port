@@ -1,74 +1,59 @@
 package net.redchujelly.cluttered.setup;
 
-import net.minecraft.world.entity.decoration.PaintingVariant;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.decoration.painting.PaintingVariant;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
 
+import java.util.Optional;
+
 public class PaintingRegistration {
     public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS =
             DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, Cluttered.MODID);
 
-    //16x16 PAINTINGS
-    public static final RegistryObject<PaintingVariant> MIMIKYU = PAINTING_VARIANTS.register("mimikyu",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> CANDLE = PAINTING_VARIANTS.register("candle",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> CAT_SHORT = PAINTING_VARIANTS.register("cat_short",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> BEACH_CROW = PAINTING_VARIANTS.register("crow_on_a_beach",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> EGGPLANTS = PAINTING_VARIANTS.register("eggplants_lynnhays",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> ETIENNE = PAINTING_VARIANTS.register("etienne_carolhoffnagle",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> FLOWER_POTS = PAINTING_VARIANTS.register("flower_pots",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> LEMONS = PAINTING_VARIANTS.register("lemons",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> RED_MUSHROOM = PAINTING_VARIANTS.register("red_mushroom",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> HEIDEDAHL = PAINTING_VARIANTS.register("stiefmutterchen_heidedahl",
-            () -> new PaintingVariant(16, 16));
-    public static final RegistryObject<PaintingVariant> TWO_CATS = PAINTING_VARIANTS.register("two_cats",
-            () -> new PaintingVariant(16, 16));
+    public static final RegistryObject<PaintingVariant> MIMIKYU = register("mimikyu", 1, 1);
+    public static final RegistryObject<PaintingVariant> CANDLE = register("candle", 1, 1);
+    public static final RegistryObject<PaintingVariant> CAT_SHORT = register("cat_short", 1, 1);
+    public static final RegistryObject<PaintingVariant> BEACH_CROW = register("crow_on_a_beach", 1, 1);
+    public static final RegistryObject<PaintingVariant> EGGPLANTS = register("eggplants_lynnhays", 1, 1);
+    public static final RegistryObject<PaintingVariant> ETIENNE = register("etienne_carolhoffnagle", 1, 1);
+    public static final RegistryObject<PaintingVariant> FLOWER_POTS = register("flower_pots", 1, 1);
+    public static final RegistryObject<PaintingVariant> LEMONS = register("lemons", 1, 1);
+    public static final RegistryObject<PaintingVariant> RED_MUSHROOM = register("red_mushroom", 1, 1);
+    public static final RegistryObject<PaintingVariant> HEIDEDAHL = register("stiefmutterchen_heidedahl", 1, 1);
+    public static final RegistryObject<PaintingVariant> TWO_CATS = register("two_cats", 1, 1);
 
-    //16x32 PAINTINGS
-    public static final RegistryObject<PaintingVariant> CAT_TALL = PAINTING_VARIANTS.register("cat_tall",
-            () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> DAY_SKY = PAINTING_VARIANTS.register("day_sky",
-            () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> NIGHT_SKY = PAINTING_VARIANTS.register("night_sky",
-            () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> FROGMAN = PAINTING_VARIANTS.register("frogman_washington",
-            () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> FLAMENETTLE = PAINTING_VARIANTS.register("van_gogh_flamenettle",
-            () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> SUNFLOWER_VASE = PAINTING_VARIANTS.register("vase_of_sunflowers",
-            () -> new PaintingVariant(16, 32));
-    public static final RegistryObject<PaintingVariant> WORM = PAINTING_VARIANTS.register("worm",
-            () -> new PaintingVariant(16, 32));
+    public static final RegistryObject<PaintingVariant> CAT_TALL = register("cat_tall", 1, 2);
+    public static final RegistryObject<PaintingVariant> DAY_SKY = register("day_sky", 1, 2);
+    public static final RegistryObject<PaintingVariant> NIGHT_SKY = register("night_sky", 1, 2);
+    public static final RegistryObject<PaintingVariant> FROGMAN = register("frogman_washington", 1, 2);
+    public static final RegistryObject<PaintingVariant> FLAMENETTLE = register("van_gogh_flamenettle", 1, 2);
+    public static final RegistryObject<PaintingVariant> SUNFLOWER_VASE = register("vase_of_sunflowers", 1, 2);
+    public static final RegistryObject<PaintingVariant> WORM = register("worm", 1, 2);
 
-    //32x16 PAINTINGS
-    public static final RegistryObject<PaintingVariant> BUTTERFLIES = PAINTING_VARIANTS.register("pinned_butterflies",
-            () -> new PaintingVariant(32, 16));
-    public static final RegistryObject<PaintingVariant> HORSE = PAINTING_VARIANTS.register("van_gogh_horse",
-            () -> new PaintingVariant(32, 16));
+    public static final RegistryObject<PaintingVariant> BUTTERFLIES = register("pinned_butterflies", 2, 1);
+    public static final RegistryObject<PaintingVariant> HORSE = register("van_gogh_horse", 2, 1);
 
-    //32x32 PAINTINGS
-    public static final RegistryObject<PaintingVariant> SUNFLOWER_GOLD = PAINTING_VARIANTS.register("gold_sunflower",
-            () -> new PaintingVariant(32, 32));
-    public static final RegistryObject<PaintingVariant> WHEATFIELD = PAINTING_VARIANTS.register("van_gogh_wheatfield",
-            () -> new PaintingVariant(32, 32));
-    public static final RegistryObject<PaintingVariant> RIDLEY_FIRE = PAINTING_VARIANTS.register("ridley_fire",
-            () -> new PaintingVariant(32, 32));
-    public static final RegistryObject<PaintingVariant> RIDLEY_DIMENSION = PAINTING_VARIANTS.register("ridley_dimension",
-            () -> new PaintingVariant(32, 32));
+    public static final RegistryObject<PaintingVariant> SUNFLOWER_GOLD = register("gold_sunflower", 2, 2);
+    public static final RegistryObject<PaintingVariant> WHEATFIELD = register("van_gogh_wheatfield", 2, 2);
+    public static final RegistryObject<PaintingVariant> RIDLEY_FIRE = register("ridley_fire", 2, 2);
+    public static final RegistryObject<PaintingVariant> RIDLEY_DIMENSION = register("ridley_dimension", 2, 2);
 
+    private static RegistryObject<PaintingVariant> register(String name, int width, int height) {
+        Identifier id = Identifier.fromNamespaceAndPath(Cluttered.MODID, name);
+        return PAINTING_VARIANTS.register(name, () -> new PaintingVariant(
+                width,
+                height,
+                id,
+                Optional.of(Component.translatable(id.toLanguageKey("painting", "title"))),
+                Optional.empty()));
+    }
 
-    public static void register(IEventBus eventBus){
+    public static void register(BusGroup eventBus) {
         PAINTING_VARIANTS.register(eventBus);
     }
 }

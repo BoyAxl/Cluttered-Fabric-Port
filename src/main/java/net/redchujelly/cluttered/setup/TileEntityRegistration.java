@@ -4,7 +4,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -12,7 +12,9 @@ import net.redchujelly.cluttered.Cluttered;
 import net.redchujelly.cluttered.block.entity.*;
 
 import java.util.Arrays;
+import java.util.Set;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class TileEntityRegistration {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
@@ -158,7 +160,7 @@ public class TileEntityRegistration {
             () -> TileEntityRegistration.CARDBOARD_BOX_BE, 2,  (RegistryObject<Block>[]) cardboardBox, "cardboard_box_be");
 
     public static final RegistryObject<BlockEntityType<ClutteredSignBlockEntity>> CLUTTERED_SIGN_BE = BLOCK_ENTITIES.register(
-            "cluttered_sign", () -> BlockEntityType.Builder.of(ClutteredSignBlockEntity::new,
+            "cluttered_sign", () -> new BlockEntityType<>(ClutteredSignBlockEntity::new, Set.of(
                             BlockRegistration.WILLOW_SIGN.get(),
                             BlockRegistration.WILLOW_WALL_SIGN.get(),
                             BlockRegistration.FLOWERING_WILLOW_SIGN.get(),
@@ -179,11 +181,11 @@ public class TileEntityRegistration {
                             BlockRegistration.BLUE_MUSHROOM_WALL_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_WALL_SIGN.get()
-                    ).build(null)
+                    ))
     );
 
     public static final RegistryObject<BlockEntityType<ClutteredHangingSignBlockEntity>> CLUTTERED_HANGING_SIGN_BE = BLOCK_ENTITIES.register(
-            "cluttered_hanging_sign", () -> BlockEntityType.Builder.of(ClutteredHangingSignBlockEntity::new,
+            "cluttered_hanging_sign", () -> new BlockEntityType<>(ClutteredHangingSignBlockEntity::new, Set.of(
                             BlockRegistration.WILLOW_HANGING_SIGN.get(),
                             BlockRegistration.WILLOW_WALL_HANGING_SIGN.get(),
                             BlockRegistration.FLOWERING_WILLOW_HANGING_SIGN.get(),
@@ -204,13 +206,13 @@ public class TileEntityRegistration {
                             BlockRegistration.BLUE_MUSHROOM_WALL_HANGING_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_HANGING_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_WALL_HANGING_SIGN.get()
-                    ).build(null)
+                    ))
     );
 
 
 
 
-    public static void register(IEventBus eventBus) {
+    public static void register(BusGroup eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
 
@@ -218,30 +220,30 @@ public class TileEntityRegistration {
     //Basically from the tanuki-decor code with some changes (i made it worse sorry)
     private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorage(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
 
-        return BLOCK_ENTITIES.register(name, () -> BlockEntityType.Builder.of((blockPos, blockState) ->
-                new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows), Arrays.stream(block).iterator().next().get())
-                .build(null));
+        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
+                new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows), blockSet(block)));
     }
 
     private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorageAndSounds(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name, SoundEvent openSound, SoundEvent closeSound){
 
-        return BLOCK_ENTITIES.register(name, () -> BlockEntityType.Builder.of((blockPos, blockState) ->
-                new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows, openSound, closeSound), Arrays.stream(block).iterator().next().get())
-                .build(null));
+        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
+                new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows, openSound, closeSound), blockSet(block)));
     }
 
     private static RegistryObject<BlockEntityType<FridgeBlockEntity>> registerFridge(Supplier<Supplier<BlockEntityType<FridgeBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
 
-        return BLOCK_ENTITIES.register(name, () -> BlockEntityType.Builder.of((blockPos, blockState) ->
-                new FridgeBlockEntity(type.get().get(), blockPos, blockState, rows), Arrays.stream(block).iterator().next().get())
-                .build(null));
+        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
+                new FridgeBlockEntity(type.get().get(), blockPos, blockState, rows), blockSet(block)));
     }
 
     private static RegistryObject<BlockEntityType<CardboardBoxBlockEntity>> registerCardboardBox(Supplier<Supplier<BlockEntityType<CardboardBoxBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
 
-        return BLOCK_ENTITIES.register(name, () -> BlockEntityType.Builder.of((blockPos, blockState) ->
-                new CardboardBoxBlockEntity(type.get().get(), blockPos, blockState, rows), Arrays.stream(block).iterator().next().get())
-                .build(null));
+        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
+                new CardboardBoxBlockEntity(type.get().get(), blockPos, blockState, rows), blockSet(block)));
+    }
+
+    private static Set<Block> blockSet(RegistryObject<Block>[] blocks) {
+        return Arrays.stream(blocks).map(RegistryObject::get).collect(Collectors.toSet());
     }
 
 }

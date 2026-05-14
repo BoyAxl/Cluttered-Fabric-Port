@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/chiseled_gold_block",
+    "particle": "#all"
+  }
+}

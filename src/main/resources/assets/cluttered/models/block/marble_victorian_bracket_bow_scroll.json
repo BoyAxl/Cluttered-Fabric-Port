@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/marble_victorian_bracket_bow_scroll",
+    "particle": "#all"
+  }
+}

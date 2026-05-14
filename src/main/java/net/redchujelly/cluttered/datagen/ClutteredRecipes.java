@@ -4,7 +4,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -141,7 +141,7 @@ public class ClutteredRecipes extends RecipeProvider {
                 .pattern("pb")
                 .pattern("pp")
                 .pattern("pb")
-                .define('b', ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation( "willow_log"))).getKey())
+                .define('b', ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new Identifier( "willow_log"))).getKey())
                 .define('p', BlockRegistration.WILLOW_PLANKS.get())
                 .unlockedBy("has_willow_planks", InventoryChangeTrigger.TriggerInstance.hasItems(
                         ItemPredicate.Builder.item().of(BlockRegistration.WILLOW_PLANKS.get()).build()))
@@ -6670,49 +6670,49 @@ public class ClutteredRecipes extends RecipeProvider {
 
     private void buildWoodsetRecipes(String woodType, Consumer<FinishedRecipe> consumer) {
 
-        Block log = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_log"));
-        Block wood = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_wood"));
+        Block log = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_log"));
+        Block wood = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_wood"));
         Block strippedLog = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + "stripped_" + woodType + "_log"))) {
-            strippedLog = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + "stripped_" + woodType + "_log"));
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + "stripped_" + woodType + "_log"))) {
+            strippedLog = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + "stripped_" + woodType + "_log"));
         }
         //Dont need this for now
-        //Block strippedWood = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + "stripped_" + woodType + "_wood"));
-        Block planks = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_planks"));
-        Block stairs = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_stairs"));
-        Block slab = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_slab"));
-        Block fence = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_fence"));
-        Block fenceGate = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_fence_gate"));
-        Block button = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_button"));
-        Item sign = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_sign"));
-        Item hangingSign = ForgeRegistries.ITEMS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_hanging_sign"));
-        Block pressurePlate = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_pressure_plate"));
+        //Block strippedWood = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + "stripped_" + woodType + "_wood"));
+        Block planks = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_planks"));
+        Block stairs = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_stairs"));
+        Block slab = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_slab"));
+        Block fence = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_fence"));
+        Block fenceGate = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_fence_gate"));
+        Block button = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_button"));
+        Item sign = ForgeRegistries.ITEMS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_sign"));
+        Item hangingSign = ForgeRegistries.ITEMS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_hanging_sign"));
+        Block pressurePlate = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_pressure_plate"));
         Block door = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_door"))) {
-            door = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_door"));
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_door"))) {
+            door = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_door"));
         }
         Block trapdoor = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_trapdoor"))) {
-            trapdoor = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_trapdoor"));
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_trapdoor"))) {
+            trapdoor = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_trapdoor"));
         }
         Block window = null;
         Block pane = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_window"))) {
-            window = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_window"));
-            pane = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_window_pane"));
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_window"))) {
+            window = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_window"));
+            pane = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_window_pane"));
         }
         Block bookshelf = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_bookshelf"))) {
-            bookshelf = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_bookshelf"));
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_bookshelf"))) {
+            bookshelf = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_bookshelf"));
         }
         Block wainscoting = null;
-        if (ForgeRegistries.BLOCKS.containsKey(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_wainscoting"))) {
-            wainscoting = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Cluttered.MODID + ":" + woodType + "_wainscoting"));
+        if (ForgeRegistries.BLOCKS.containsKey(new Identifier(Cluttered.MODID + ":" + woodType + "_wainscoting"))) {
+            wainscoting = ForgeRegistries.BLOCKS.getValue(new Identifier(Cluttered.MODID + ":" + woodType + "_wainscoting"));
         }
 
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, planks, 4)
-                .requires(ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation( woodType + "_log"))).getKey())
+                .requires(ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new Identifier( woodType + "_log"))).getKey())
                 .unlockedBy("has_" + woodType + "_log", InventoryChangeTrigger.TriggerInstance.hasItems(
                         ItemPredicate.Builder.item().of(log).build()))
                 .save(consumer);

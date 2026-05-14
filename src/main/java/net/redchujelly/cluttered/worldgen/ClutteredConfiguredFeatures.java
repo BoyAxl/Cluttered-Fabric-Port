@@ -1,10 +1,10 @@
 package net.redchujelly.cluttered.worldgen;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.resources.Identifier;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -31,14 +31,14 @@ public class ClutteredConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SYCAMORE_KEY = registerKey("sycamore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MAPLE_KEY = registerKey("fluorescent_maple");
 
-    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context){
+    public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context){
         register(context, WILLOW_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.WILLOW_LOG.get().defaultBlockState(), 1)
                         .add(BlockRegistration.FLOWERING_WILLOW_LOG.get().defaultBlockState(), 1).build()),
                 new WillowTrunkPlacer(6, 2, 6),
 
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.WILLOW_LEAVES.get().defaultBlockState(), 3)
                         .add(BlockRegistration.FLOWERING_WILLOW_LEAVES.get().defaultBlockState(), 2).build()),
                 new WillowFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1, 5),
@@ -48,13 +48,13 @@ public class ClutteredConfiguredFeatures {
         );
 
         register(context, POPLAR_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.POPLAR_LOG.get().defaultBlockState(), 1)
                         .add(BlockRegistration.FLOWERING_POPLAR_LOG.get().defaultBlockState(), 1).build()),
                 new StraightTrunkPlacer(6, 1, 3),
 
 
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.POPLAR_LEAVES.get().defaultBlockState(), 3)
                         .add(BlockRegistration.FLOWERING_POPLAR_LEAVES.get().defaultBlockState(), 2).build()),
                 new PoplarFoliagePlacer(ConstantInt.of(4), ConstantInt.of(5), 8),
@@ -83,13 +83,13 @@ public class ClutteredConfiguredFeatures {
         );
 
         register(context, CRABAPPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.CRABAPPLE_LOG.get().defaultBlockState(), 1)
                         .add(BlockRegistration.FLOWERING_CRABAPPLE_LOG.get().defaultBlockState(), 1).build()),
                 new CrabappleTrunkPlacer(4, 0, 2),
 
 
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.CRABAPPLE_LEAVES.get().defaultBlockState(), 2)
                         .add(BlockRegistration.FLOWERING_CRABAPPLE_LEAVES.get().defaultBlockState(), 5).build()),
                 new CrabappleFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 3),
@@ -112,7 +112,7 @@ public class ClutteredConfiguredFeatures {
                 new MapleTrunkPlacer(6, 1, 3),
 
 
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(BlockRegistration.MAPLE_LEAVES.get().defaultBlockState(), 25)
                         .add(BlockRegistration.MAPLE_LEAVES_FLOWERING.get().defaultBlockState(), 5).build()),
                 new MapleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(5)),
@@ -123,10 +123,10 @@ public class ClutteredConfiguredFeatures {
 
     //FROM KAUPENJOE 1.20.1 FORGE TUTORIAL
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Cluttered.MODID, name));
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(Cluttered.MODID, name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context,
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context,
                                                                                           ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration){
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }

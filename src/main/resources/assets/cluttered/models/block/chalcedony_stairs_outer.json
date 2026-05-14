@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "cluttered:block/raw_chalcedony",
+    "side": "cluttered:block/raw_chalcedony",
+    "top": "cluttered:block/raw_chalcedony",
+    "particle": "#bottom"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:van_gogh_horse",
+  "author": {
+    "translate": "painting.cluttered.van_gogh_horse.author"
+  },
+  "height": 1,
+  "title": {
+    "translate": "painting.cluttered.van_gogh_horse.title"
+  },
+  "width": 2
+}

@@ -69,17 +69,14 @@ public class BracketBlock extends SmallFurnitureBlock {
                 .setValue(OFFSET, behindState.is(BlockTags.FENCES) || behindState.is(BlockTags.WOODEN_FENCES))
                 .setValue(IS_UP, shouldBeUP);
     }
-
-    @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("cluttered.bracket.tooltip"));
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 
     //@Override
-    //public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    //protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
     //    if (pPlayer.getItemInHand(pHand).is(ItemRegistration.HAND_DRILL.get()) && pPlayer.isCrouching()){
-    //        if (!pLevel.isClientSide){
+    //        if (!pLevel.isClientSide()){
     //            pLevel.setBlock(pPos, pState.setValue(OFFSET, !pState.getValue(OFFSET)), 2);
     //            pLevel.playSound(null, pPos, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS);
     //        }

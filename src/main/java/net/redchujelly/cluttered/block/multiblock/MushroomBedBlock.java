@@ -61,8 +61,8 @@ public class MushroomBedBlock extends MultiblockBedBlock{
             };
     }
 
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pLevel.isClientSide()) {
             return InteractionResult.CONSUME;
         } else {
             int part = pState.getValue(MULTIBLOCK_PART);
@@ -84,13 +84,13 @@ public class MushroomBedBlock extends MultiblockBedBlock{
                 Vec3 center = pPos.getCenter();
                 pLevel.explode(null, pLevel.damageSources().badRespawnPointExplosion(center), null, center, 5.0F, true, Level.ExplosionInteraction.BLOCK);
             } else if (pState.getValue(OCCUPIED)) {
-                pPlayer.displayClientMessage(Component.translatable("block.minecraft.bed.occupied"), true);
+                pPlayer.sendOverlayMessage(Component.translatable("block.minecraft.bed.occupied"));
 
                 return InteractionResult.SUCCESS;
             } else {
                 pPlayer.startSleepInBed(pPos).ifLeft((sleepingProblem) -> {
-                    if (sleepingProblem.getMessage() != null) {
-                        pPlayer.displayClientMessage(sleepingProblem.getMessage(), true);
+                    if (sleepingProblem.message() != null) {
+                        pPlayer.sendOverlayMessage(sleepingProblem.message());
                     }
                 });
             }

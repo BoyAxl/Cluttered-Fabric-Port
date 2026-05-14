@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:gold_sunflower",
+  "author": {
+    "translate": "painting.cluttered.gold_sunflower.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.gold_sunflower.title"
+  },
+  "width": 2
+}

@@ -1,15 +1,16 @@
 package net.redchujelly.cluttered.entity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.phys.Vec3;
-import org.jetbrains.annotations.NotNull;
 
 public class ChairEntity extends Entity {
 
@@ -28,32 +29,37 @@ public class ChairEntity extends Entity {
     }
 
     @Override
-    protected void defineSynchedData() {
+    protected void defineSynchedData(SynchedEntityData.Builder entityData) {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compoundTag) {
+    protected void readAdditionalSaveData(ValueInput input) {
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compoundTag) {
+    protected void addAdditionalSaveData(ValueOutput output) {
     }
 
     @Override
     protected void removePassenger(Entity pPassenger) {
         this.teleportTo(this.getX(), this.getY() + 0.5f, this.getZ());
         super.removePassenger(pPassenger);
-        kill();
+        clearChair();
+        discard();
     }
 
     @Override
-    public void kill() {
+    public void kill(ServerLevel level) {
+        clearChair();
+        super.kill(level);
+    }
+
+    private void clearChair() {
         BlockState chair = CHAIR_LEVEL.getBlockState(CHAIR_POS);
         if (chair.hasProperty(BlockStateProperties.OCCUPIED)) {
             this.teleportTo(this.getX(), this.getY() + 0.5f, this.getZ());
             CHAIR_LEVEL.setBlock(CHAIR_POS, chair.setValue(BlockStateProperties.OCCUPIED, false), 2);
         }
-        super.kill();
     }
 
     @Override
@@ -62,7 +68,12 @@ public class ChairEntity extends Entity {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(Entity other) {
+        return false;
+    }
+
+    @Override
+    public boolean hurtServer(ServerLevel level, DamageSource source, float damage) {
         return false;
     }
 

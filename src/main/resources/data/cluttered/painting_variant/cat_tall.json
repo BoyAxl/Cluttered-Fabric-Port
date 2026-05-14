@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:cat_tall",
+  "author": {
+    "translate": "painting.cluttered.cat_tall.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.cat_tall.title"
+  },
+  "width": 1
+}

@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:candle",
+  "author": {
+    "translate": "painting.cluttered.candle.author"
+  },
+  "height": 1,
+  "title": {
+    "translate": "painting.cluttered.candle.title"
+  },
+  "width": 1
+}

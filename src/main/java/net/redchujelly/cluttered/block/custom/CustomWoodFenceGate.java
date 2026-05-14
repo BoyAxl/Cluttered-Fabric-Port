@@ -11,11 +11,11 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class CustomWoodFenceGate extends FenceGateBlock {
     public CustomWoodFenceGate(Properties props, SoundEvent openSound, SoundEvent closeSound) {
-        super(props, openSound, closeSound);
+        super(WoodType.OAK, props, openSound, closeSound);
     }
 
     public CustomWoodFenceGate(BlockBehaviour.Properties pProperties, WoodType pType){
-        super(pProperties, pType);
+        super(pType, pProperties);
     }
 
     @Override

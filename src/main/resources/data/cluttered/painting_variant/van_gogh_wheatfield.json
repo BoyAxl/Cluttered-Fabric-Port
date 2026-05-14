@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:van_gogh_wheatfield",
+  "author": {
+    "translate": "painting.cluttered.van_gogh_wheatfield.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.van_gogh_wheatfield.title"
+  },
+  "width": 2
+}

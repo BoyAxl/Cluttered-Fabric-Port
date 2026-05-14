@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/art_nouveau_door_dark_bottom",
+    "particle": "#all"
+  }
+}

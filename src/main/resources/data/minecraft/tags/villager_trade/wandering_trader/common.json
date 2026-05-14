@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "cluttered:wandering_trader/emerald_willow_sapling",
+    "cluttered:wandering_trader/emerald_poplar_sapling",
+    "cluttered:wandering_trader/emerald_blue_roundhead",
+    "cluttered:wandering_trader/emerald_fly_agaric",
+    "cluttered:wandering_trader/emerald_crabapple_sapling",
+    "cluttered:wandering_trader/emerald_sycamore_sapling",
+    "cluttered:wandering_trader/emerald_fluorescent_maple_sapling"
+  ]
+}

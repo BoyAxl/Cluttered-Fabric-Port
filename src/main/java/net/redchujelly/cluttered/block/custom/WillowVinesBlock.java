@@ -58,9 +58,9 @@ public class WillowVinesBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
+    protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
         if (!pState.canSurvive(pLevel, pPos)){
-            pLevel.scheduleTick(pPos, this, 1);
+            pTicks.scheduleTick(pPos, this, 1);
         }
         int gradient = 1;
         BlockPos abovePos = pPos.above();
@@ -92,7 +92,7 @@ public class WillowVinesBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
+    public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState) {
         return true;
     }
 

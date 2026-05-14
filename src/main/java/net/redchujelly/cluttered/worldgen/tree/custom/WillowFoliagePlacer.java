@@ -1,11 +1,12 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -18,7 +19,7 @@ import net.redchujelly.cluttered.setup.FoliagePlacerTypeRegistration;
 import java.util.List;
 
 public class WillowFoliagePlacer extends FoliagePlacer {
-    public static final Codec<WillowFoliagePlacer> CODEC = RecordCodecBuilder.create(willowFoliagePlacerInstance
+    public static final MapCodec<WillowFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(willowFoliagePlacerInstance
             -> foliagePlacerParts(willowFoliagePlacerInstance).and(Codec.intRange(0, 16).fieldOf("height").forGetter(fp -> fp.height))
             .and(Codec.intRange(0, 10).fieldOf("length").forGetter(fp -> fp.length)).apply(willowFoliagePlacerInstance, WillowFoliagePlacer::new));
 
@@ -37,7 +38,7 @@ public class WillowFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter foliageSetter, RandomSource randomSource,
+    protected void createFoliage(WorldGenLevel pLevel, FoliageSetter foliageSetter, RandomSource randomSource,
                                  TreeConfiguration treeConfiguration, int i, FoliageAttachment foliageAttachment, int i1, int i2, int i3) {
         BlockPos base = foliageAttachment.pos().above();
         placeLeavesRow(pLevel, foliageSetter, randomSource, treeConfiguration, base, 1, 0, foliageAttachment.doubleTrunk());

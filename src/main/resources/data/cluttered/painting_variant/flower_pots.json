@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:flower_pots",
+  "author": {
+    "translate": "painting.cluttered.flower_pots.author"
+  },
+  "height": 1,
+  "title": {
+    "translate": "painting.cluttered.flower_pots.title"
+  },
+  "width": 1
+}

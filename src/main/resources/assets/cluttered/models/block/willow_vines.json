@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/willow_vines_1",
+    "particle": "#all"
+  }
+}

@@ -3,7 +3,8 @@
 	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures": {
-		"particle": "cluttered:block/deep_chalcedony_victorian_bracket_bow_scroll"
+		"missing": "cluttered:block/blank_texture",
+		"particle": "#missing"
 	},
 	"elements": [
 		{

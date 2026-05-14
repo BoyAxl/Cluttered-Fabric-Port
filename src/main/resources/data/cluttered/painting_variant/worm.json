@@ -1,0 +1,11 @@
+{
+  "asset_id": "cluttered:worm",
+  "author": {
+    "translate": "painting.cluttered.worm.author"
+  },
+  "height": 2,
+  "title": {
+    "translate": "painting.cluttered.worm.title"
+  },
+  "width": 1
+}

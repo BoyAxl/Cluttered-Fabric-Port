@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cluttered:block/checkered_pink_strawberry_wallpaper",
+    "particle": "#all"
+  }
+}

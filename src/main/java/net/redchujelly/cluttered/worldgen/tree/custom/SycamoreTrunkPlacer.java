@@ -1,11 +1,12 @@
 package net.redchujelly.cluttered.worldgen.tree.custom;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -20,7 +21,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 public class SycamoreTrunkPlacer extends TrunkPlacer {
-    public static final Codec<SycamoreTrunkPlacer> CODEC = RecordCodecBuilder.create(crabappleTrunkPlacerInstance ->
+    public static final MapCodec<SycamoreTrunkPlacer> CODEC = RecordCodecBuilder.mapCodec(crabappleTrunkPlacerInstance ->
             trunkPlacerParts(crabappleTrunkPlacerInstance).apply(crabappleTrunkPlacerInstance, SycamoreTrunkPlacer::new));
 
     public SycamoreTrunkPlacer(int pBaseHeight, int pHeightRandA, int pHeightRandB) {
@@ -33,8 +34,8 @@ public class SycamoreTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
-        setDirtAt(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
+    public List<FoliagePlacer.FoliageAttachment> placeTrunk(WorldGenLevel pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
+        placeBelowTrunkBlock(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
         List<FoliagePlacer.FoliageAttachment> foliageSpots = new ArrayList<>();
         int maxHeight = pFreeTreeHeight + pRandom.nextInt(heightRandA, heightRandB);
         List<Direction> directions = new ArrayList<>(List.of(Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST));
@@ -80,7 +81,7 @@ public class SycamoreTrunkPlacer extends TrunkPlacer {
 
             int branchHeight = pRandom.nextInt(3, maxHeight - 2);
             int branchLength = pRandom.nextInt(2, 5);
-            BlockState log = pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, branchDirection.getAxis());
+            BlockState log = pConfig.trunkProvider.getState(pLevel, pRandom, pPos).setValue(RotatedPillarBlock.AXIS, branchDirection.getAxis());
             BlockPos nextPos = pPos;
 
             //places logs for branches

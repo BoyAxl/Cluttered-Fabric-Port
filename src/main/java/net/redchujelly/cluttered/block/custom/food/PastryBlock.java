@@ -41,8 +41,8 @@ public class PastryBlock extends SmallFurnitureBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (pLevel.isClientSide) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        if (pLevel.isClientSide()) {
             if (eat(pLevel, pPos, pState, pPlayer).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
@@ -62,7 +62,7 @@ public class PastryBlock extends SmallFurnitureBlock {
             pPlayer.awardStat(Stats.EAT_CAKE_SLICE);
             pPlayer.getFoodData().eat(this.hunger, this.saturation);
             pLevel.gameEvent(pPlayer, GameEvent.EAT, pPos);
-            pLevel.playSound(null, pPlayer.blockPosition(), SoundEvents.GENERIC_EAT, SoundSource.PLAYERS);
+            pLevel.playSound(null, pPlayer.blockPosition(), SoundEvents.GENERIC_EAT.value(), SoundSource.PLAYERS);
             pLevel.setBlock(pPos, BlockRegistration.PASTRY_PLATE.get().defaultBlockState().setValue(FACING, pState.getValue(FACING)), 2);
 
             return InteractionResult.SUCCESS;

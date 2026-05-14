@@ -34,9 +34,9 @@ public class JamJarsBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pPlayer.getItemInHand(pHand).isEmpty()){
-            if (!pLevel.isClientSide){
+            if (!pLevel.isClientSide()){
                 boolean stacked = pState.getValue(STACKED);
                 pLevel.setBlock(pPos, pState.setValue(STACKED, !stacked), 2);
             }

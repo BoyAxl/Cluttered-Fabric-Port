@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cluttered:block/flower_carpet_willow",
+    "particle": "#layer0"
+  }
+}

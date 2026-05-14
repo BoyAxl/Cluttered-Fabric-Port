@@ -51,9 +51,9 @@ public class GarlandBlock extends SmallFurnitureBlock{
     }
 
     @Override
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pPlayer.getItemInHand(pHand).is(ItemRegistration.HAND_DRILL.get()) && !pPlayer.isCrouching()){
-            if (!pLevel.isClientSide){
+            if (!pLevel.isClientSide()){
                 GarlandOffset oldOffset = pState.getValue(GarlandBlock.OFFSET);
                 GarlandOffset newOffset = OFFSET_MAP.get(oldOffset);
 
@@ -87,10 +87,7 @@ public class GarlandBlock extends SmallFurnitureBlock{
             GarlandOffset.RIGHT, GarlandOffset.LEFT,
             GarlandOffset.LEFT, GarlandOffset.NONE);
     }
-
-    @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
         pTooltip.add(Component.translatable("cluttered.garland.tooltip"));
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 }
