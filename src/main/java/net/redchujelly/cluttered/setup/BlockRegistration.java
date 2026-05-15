@@ -1,5 +1,8 @@
 package net.redchujelly.cluttered.setup;
 
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.FuelValueEvents;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -9,10 +12,10 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraftforge.eventbus.api.bus.BusGroup;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.redchujelly.cluttered.platform.BusGroup;
+import net.redchujelly.cluttered.platform.DeferredRegister;
+import net.redchujelly.cluttered.platform.FabricRegistries;
+import net.redchujelly.cluttered.platform.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
 import net.redchujelly.cluttered.block.custom.*;
 import net.redchujelly.cluttered.block.custom.food.BerryCakeBlock;
@@ -28,10 +31,16 @@ import net.redchujelly.cluttered.util.ClutteredWoodTypes;
 import net.redchujelly.cluttered.worldgen.tree.*;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class BlockRegistration {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cluttered.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(FabricRegistries.BLOCKS, Cluttered.MODID);
+    private static final List<FuelEntry> FUEL_ITEMS = new ArrayList<>();
+
+    private record FuelEntry(RegistryObject<? extends Item> item, int burnTime) {
+    }
 
 
     //WILLOW WOODSET
@@ -73,7 +82,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> WILLOW_SAPLING = registerFuelBlock("willow_sapling",
             () -> new SaplingBlock(WillowTreeGrower.INSTANCE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).setId(BLOCKS.key("willow_sapling")).mapColor(DyeColor.PURPLE)), 100);
     public static final RegistryObject<Block> POTTED_WILLOW_SAPLING = BLOCKS.register("potted_willow_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.WILLOW_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.WILLOW_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_willow_sapling"))));
 
     public static final RegistryObject<Block> WILLOW_SIGN = BLOCKS.register("willow_sign",
@@ -183,7 +192,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> POPLAR_SAPLING = registerFuelBlock("poplar_sapling",
             () -> new SaplingBlock(PoplarTreeGrower.INSTANCE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).setId(BLOCKS.key("poplar_sapling")).mapColor(DyeColor.YELLOW)), 100);
     public static final RegistryObject<Block> POTTED_POPLAR_SAPLING = BLOCKS.register("potted_poplar_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.POPLAR_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.POPLAR_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_poplar_sapling"))));
     
     public static final RegistryObject<Block> POPLAR_SIGN = BLOCKS.register("poplar_sign",
@@ -281,7 +290,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> CRABAPPLE_SAPLING = registerFuelBlock("crabapple_sapling",
             () -> new SaplingBlock(CrabappleTreeGrower.INSTANCE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).setId(BLOCKS.key("crabapple_sapling")).mapColor(DyeColor.PINK)), 100);
     public static final RegistryObject<Block> POTTED_CRABAPPLE_SAPLING = BLOCKS.register("potted_crabapple_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.CRABAPPLE_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.CRABAPPLE_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_crabapple_sapling"))));
 
     public static final RegistryObject<Block> CRABAPPLE_SIGN = BLOCKS.register("crabapple_sign",
@@ -379,7 +388,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> SYCAMORE_SAPLING = registerFuelBlock("sycamore_sapling",
             () -> new SaplingBlock(SycamoreTreeGrower.INSTANCE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).setId(BLOCKS.key("sycamore_sapling")).mapColor(DyeColor.GREEN)), 100);
     public static final RegistryObject<Block> POTTED_SYCAMORE_SAPLING = BLOCKS.register("potted_sycamore_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.SYCAMORE_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.SYCAMORE_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_sycamore_sapling"))));
 
     public static final RegistryObject<Block> SYCAMORE_SIGN = BLOCKS.register("sycamore_sign",
@@ -432,7 +441,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> MAPLE_SAPLING = registerFuelBlock("fluorescent_maple_sapling",
             () -> new SaplingBlock(MapleTreeGrower.INSTANCE, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING).setId(BLOCKS.key("fluorescent_maple_sapling")).lightLevel(p -> 6).mapColor(DyeColor.CYAN)), 100);
     public static final RegistryObject<Block> POTTED_MAPLE_SAPLING = BLOCKS.register("potted_fluorescent_maple_sapling",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.MAPLE_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.MAPLE_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_fluorescent_maple_sapling")).lightLevel(p -> 6)));
 
     public static final RegistryObject<Block> MAPLE_SIGN = BLOCKS.register("fluorescent_maple_sign",
@@ -480,7 +489,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> BLUE_MUSHROOM_WINDOW_PANE = registerBlock("blue_mushroom_window_pane",
             () -> new IronBarsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE).setId(BLOCKS.key("blue_mushroom_window_pane")).mapColor(DyeColor.BLUE).noOcclusion()));
     public static final RegistryObject<Block> POTTED_BLUE_MUSHROOM_SAPLING = BLOCKS.register("potted_blue_roundhead",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.BLUE_MUSHROOM_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.BLUE_MUSHROOM_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_blue_roundhead"))));
 
     public static final RegistryObject<Block> BLUE_MUSHROOM_SIGN = BLOCKS.register("blue_mushroom_sign",
@@ -527,7 +536,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> RED_MUSHROOM_WINDOW_PANE = registerBlock("red_mushroom_window_pane",
             () -> new IronBarsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS_PANE).setId(BLOCKS.key("red_mushroom_window_pane")).mapColor(DyeColor.RED).noOcclusion()));
     public static final RegistryObject<Block> POTTED_RED_MUSHROOM_SAPLING = BLOCKS.register("potted_fly_agaric",
-            () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), BlockRegistration.RED_MUSHROOM_SAPLING,
+            () -> new FlowerPotBlock(BlockRegistration.RED_MUSHROOM_SAPLING.get(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BIRCH_SAPLING).setId(BLOCKS.key("potted_fly_agaric"))));
 
     public static final RegistryObject<Block> RED_MUSHROOM_SIGN = BLOCKS.register("red_mushroom_sign",
@@ -2317,16 +2326,73 @@ public class BlockRegistration {
         return ItemRegistration.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().setId(ItemRegistration.ITEMS.key(name))));
     }
     private static <T extends Block> RegistryObject<Item> registerFuelBlockItem(String name, RegistryObject<T> block, int burnTime) {
-        return ItemRegistration.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().setId(ItemRegistration.ITEMS.key(name))) {
-            @Override
+        RegistryObject<Item> item = ItemRegistration.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().setId(ItemRegistration.ITEMS.key(name))) {
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
                 return burnTime;
             }
         });
+        FUEL_ITEMS.add(new FuelEntry(item, burnTime));
+        return item;
     }
 
     public static void register (BusGroup eventBus) {
         BLOCKS.register(eventBus);
     }
 
+    public static void registerFabricContent() {
+        registerFuelValues();
+        registerFlammableBlocks();
+        registerStrippableBlocks();
+    }
+
+    private static void registerFuelValues() {
+        FuelValueEvents.BUILD.register((builder, context) -> {
+            for (FuelEntry entry : FUEL_ITEMS) {
+                builder.add(entry.item().get(), entry.burnTime());
+            }
+        });
+    }
+
+    private static void registerFlammableBlocks() {
+        FlammableBlockRegistry registry = FlammableBlockRegistry.getDefaultInstance();
+
+        for (RegistryObject<? extends Block> entry : BLOCKS.entries()) {
+            Block block = entry.get();
+
+            if (block instanceof CustomLeavesBlock) {
+                registry.add(block, 30, 60);
+            } else if (block instanceof CustomLogLikeBlock) {
+                registry.add(block, 5, 5);
+            } else if (isWoodLike(block)) {
+                registry.add(block, 5, 20);
+            }
+        }
+    }
+
+    private static boolean isWoodLike(Block block) {
+        return block instanceof CustomWoodBlock
+                || block instanceof CustomHorizontalWoodBlock
+                || block instanceof CustomWoodSlabBlock
+                || block instanceof CustomWoodStairs
+                || block instanceof CustomWoodFenceBlock
+                || block instanceof CustomWoodFenceGate
+                || block instanceof WoodPicketFenceGateBlock
+                || block instanceof DoorBlock
+                || block instanceof TrapDoorBlock
+                || block instanceof ButtonBlock
+                || block instanceof PressurePlateBlock;
+    }
+
+    private static void registerStrippableBlocks() {
+        for (RegistryObject<? extends Block> entry : BLOCKS.entries()) {
+            Block block = entry.get();
+
+            if (block instanceof CustomLogLikeBlock logLikeBlock) {
+                Block strippedBlock = logLikeBlock.getFabricStrippedCounterpart();
+                if (strippedBlock != null) {
+                    StrippableBlockRegistry.registerCopyState(block, strippedBlock);
+                }
+            }
+        }
+    }
 }

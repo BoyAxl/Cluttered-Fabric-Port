@@ -6,15 +6,15 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraftforge.eventbus.api.bus.BusGroup;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.redchujelly.cluttered.platform.BusGroup;
+import net.redchujelly.cluttered.platform.DeferredRegister;
+import net.redchujelly.cluttered.platform.FabricRegistries;
+import net.redchujelly.cluttered.platform.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
 import net.redchujelly.cluttered.entity.ChairEntity;
 
 public class EntityTypeRegistration {
-    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Cluttered.MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(FabricRegistries.ENTITY_TYPES, Cluttered.MODID);
 
     public static final RegistryObject<EntityType<Entity>> CHAIR_ENTITY =  ENTITY_TYPES.register("chair_entity",
             () -> EntityType.Builder.of(ChairEntity::new, MobCategory.MISC)

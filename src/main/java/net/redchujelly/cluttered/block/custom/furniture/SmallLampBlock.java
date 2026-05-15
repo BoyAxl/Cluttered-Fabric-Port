@@ -47,8 +47,6 @@ public class SmallLampBlock extends HorizontalDirectionalBlock implements Simple
     protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
         return CODEC;
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         //return state.getValue(LIT) ? 15 : 0;
         return 15;

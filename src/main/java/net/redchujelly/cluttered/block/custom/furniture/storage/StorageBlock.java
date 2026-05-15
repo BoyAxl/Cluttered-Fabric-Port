@@ -50,7 +50,7 @@ public class StorageBlock extends SmallFurnitureBlock implements EntityBlock {
     }
 
 
-    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @javax.annotation.Nullable LivingEntity pPlacer, ItemStack pStack) {
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @org.jetbrains.annotations.Nullable LivingEntity pPlacer, ItemStack pStack) {
     }
 
     @Override

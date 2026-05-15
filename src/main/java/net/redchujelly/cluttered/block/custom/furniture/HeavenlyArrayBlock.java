@@ -17,8 +17,6 @@ public class HeavenlyArrayBlock extends SmallFurnitureBlock{
     public HeavenlyArrayBlock(Properties pProperties) {
         super(pProperties);
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return 4;
     }

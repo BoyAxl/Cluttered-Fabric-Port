@@ -73,8 +73,6 @@ public class ChairBlock extends CustomHorizontalBlock implements SimpleWaterlogg
         boolean isWaterlogged = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;
         return this.defaultBlockState().setValue(WATERLOGGED, isWaterlogged).setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
-
-    @Override
     public @Nullable PushReaction getPistonPushReaction(BlockState state) {
         return PushReaction.BLOCK;
     }

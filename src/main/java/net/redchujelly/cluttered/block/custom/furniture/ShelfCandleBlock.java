@@ -43,8 +43,6 @@ public class ShelfCandleBlock extends SmallFurnitureBlock{
         super(pProperties);
         this.registerDefaultState(defaultBlockState().setValue(LIT, false));
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return state.getValue(LIT) ? 10 : 0;
     }

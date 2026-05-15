@@ -44,8 +44,6 @@ public class CottageLampBlock extends MultiblockPlacer{
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return pState.getValue(MULTIBLOCK_PART) == 1 ? SHAPE_1 : SHAPE_2;
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         //if (state.getValue(LIT)){
         //    return 15;

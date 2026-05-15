@@ -2,14 +2,14 @@ package net.redchujelly.cluttered.setup;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.eventbus.api.bus.BusGroup;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.redchujelly.cluttered.platform.BusGroup;
+import net.redchujelly.cluttered.platform.DeferredRegister;
+import net.redchujelly.cluttered.platform.FabricRegistries;
+import net.redchujelly.cluttered.platform.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
 
 public class SoundRegistration {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Cluttered.MODID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(FabricRegistries.SOUND_EVENTS, Cluttered.MODID);
 
     public static final RegistryObject<SoundEvent> POLAROID_FLASH = registerSoundEvent("polaroid_flash");
 

@@ -1,6 +1,7 @@
 package net.redchujelly.cluttered.setup;
 
 import net.minecraft.resources.Identifier;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -12,7 +13,7 @@ public class TagRegistration {
     public static class Blocks {
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(Identifier.fromNamespaceAndPath(Cluttered.MODID, name));
+            return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Cluttered.MODID, name));
         }
     }
 
@@ -31,7 +32,7 @@ public class TagRegistration {
         public static final TagKey<Item> POLAROID_PICTURE = tag("polaroid_picture");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(Identifier.fromNamespaceAndPath(Cluttered.MODID, name));
+            return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Cluttered.MODID, name));
         }
     }
 }

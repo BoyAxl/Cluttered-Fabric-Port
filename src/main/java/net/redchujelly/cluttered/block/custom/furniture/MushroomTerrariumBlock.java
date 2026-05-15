@@ -26,8 +26,6 @@ public class MushroomTerrariumBlock extends NonRotationalFurnitureBlock{
         super(pProperties);
         GLOWING = isGlowshroom;
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return GLOWING ? 15 : 0;
     }

@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.registries.RegistryObject;
+import net.redchujelly.cluttered.platform.RegistryObject;
 import net.redchujelly.cluttered.setup.BlockRegistration;
 import net.redchujelly.cluttered.setup.SoundRegistration;
 import org.jetbrains.annotations.Nullable;

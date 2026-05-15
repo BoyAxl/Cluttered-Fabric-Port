@@ -71,7 +71,11 @@ public class MushroomSaplingBlock extends SaplingBlock {
         if (blockstate.is(BlockTags.OVERRIDES_MUSHROOM_LIGHT_REQUIREMENT)) {
             return true;
         } else {
-            return pLevel.getRawBrightness(pPos, 0) < 13 && blockstate.canSustainPlant(pLevel, blockpos, net.minecraft.core.Direction.UP, this);
+            return pLevel.getRawBrightness(pPos, 0) < 13
+                    && (blockstate.is(BlockTags.DIRT)
+                    || blockstate.is(Blocks.MYCELIUM)
+                    || blockstate.is(Blocks.SOUL_SOIL)
+                    || blockstate.getBlock() instanceof PlanterBoxBlock);
         }
     }
 }

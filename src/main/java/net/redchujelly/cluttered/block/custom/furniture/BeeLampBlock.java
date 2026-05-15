@@ -35,8 +35,6 @@ public class BeeLampBlock extends SmallLampBlock{
     public int getSignal(BlockState pState, BlockGetter pLevel, BlockPos pPos, Direction pDirection) {
         return redstone ? 15 : 0;
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return redstone ? 7 : 15;
     }
@@ -63,7 +61,6 @@ public class BeeLampBlock extends SmallLampBlock{
         }
     }
 
-    @Override
     public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
         return redstone;
     }

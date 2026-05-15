@@ -19,8 +19,6 @@ public class SteampunkLampBlock extends SmallFurnitureBlock{
     public SteampunkLampBlock(Properties pProperties) {
         super(pProperties);
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return 15;
     }

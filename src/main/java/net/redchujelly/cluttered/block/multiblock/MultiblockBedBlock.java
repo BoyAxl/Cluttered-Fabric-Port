@@ -44,7 +44,6 @@ public class MultiblockBedBlock extends MultiblockPlacer{
         this.registerDefaultState(this.defaultBlockState().setValue(OCCUPIED, false));
     }
 
-    @Override
     public boolean isBed(BlockState state, BlockGetter level, BlockPos pos, @Nullable Entity player) {
         return true;
     }
@@ -54,7 +53,6 @@ public class MultiblockBedBlock extends MultiblockPlacer{
         return SHAPE;
     }
 
-    @Override
     public Direction getBedDirection(BlockState state, LevelReader level, BlockPos pos) {
         return state.getValue(FACING);
     }
@@ -82,7 +80,6 @@ public class MultiblockBedBlock extends MultiblockPlacer{
     //    }
     //}
 
-    @Override
     public void setBedOccupied(BlockState state, Level level, BlockPos pos, LivingEntity sleeper, boolean occupied) {
         level.setBlock(pos, state.setValue(OCCUPIED, occupied), 2);
     }

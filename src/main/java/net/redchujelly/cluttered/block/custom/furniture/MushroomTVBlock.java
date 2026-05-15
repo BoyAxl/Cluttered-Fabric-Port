@@ -50,8 +50,6 @@ public class MushroomTVBlock extends SmallFurnitureBlock{
         boolean isWaterlogged = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;
         return this.defaultBlockState().setValue(WATERLOGGED, isWaterlogged).setValue(FACING, pContext.getHorizontalDirection());
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return state.getValue(CHANNEL) == 0 ? 0 : 6;
     }

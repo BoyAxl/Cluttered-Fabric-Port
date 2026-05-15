@@ -1,13 +1,14 @@
 package net.redchujelly.cluttered.setup;
 
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.bus.BusGroup;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.redchujelly.cluttered.platform.BusGroup;
+import net.redchujelly.cluttered.platform.DeferredRegister;
+import net.redchujelly.cluttered.platform.FabricRegistries;
+import net.redchujelly.cluttered.platform.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
 import net.redchujelly.cluttered.block.entity.*;
 
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 
 public class TileEntityRegistration {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Cluttered.MODID);
+            DeferredRegister.create(FabricRegistries.BLOCK_ENTITY_TYPES, Cluttered.MODID);
 
     /* In all honesty I don't know what this list is good for. The field it ultimately goes in apparently lists blocks that
     the block entity can be tied to? But I tried it without adding some and they worked fine so I dunno.
@@ -160,7 +161,7 @@ public class TileEntityRegistration {
             () -> TileEntityRegistration.CARDBOARD_BOX_BE, 2,  (RegistryObject<Block>[]) cardboardBox, "cardboard_box_be");
 
     public static final RegistryObject<BlockEntityType<ClutteredSignBlockEntity>> CLUTTERED_SIGN_BE = BLOCK_ENTITIES.register(
-            "cluttered_sign", () -> new BlockEntityType<>(ClutteredSignBlockEntity::new, Set.of(
+            "cluttered_sign", () -> FabricBlockEntityTypeBuilder.create(ClutteredSignBlockEntity::new,
                             BlockRegistration.WILLOW_SIGN.get(),
                             BlockRegistration.WILLOW_WALL_SIGN.get(),
                             BlockRegistration.FLOWERING_WILLOW_SIGN.get(),
@@ -181,11 +182,11 @@ public class TileEntityRegistration {
                             BlockRegistration.BLUE_MUSHROOM_WALL_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_WALL_SIGN.get()
-                    ))
+                    ).build()
     );
 
     public static final RegistryObject<BlockEntityType<ClutteredHangingSignBlockEntity>> CLUTTERED_HANGING_SIGN_BE = BLOCK_ENTITIES.register(
-            "cluttered_hanging_sign", () -> new BlockEntityType<>(ClutteredHangingSignBlockEntity::new, Set.of(
+            "cluttered_hanging_sign", () -> FabricBlockEntityTypeBuilder.create(ClutteredHangingSignBlockEntity::new,
                             BlockRegistration.WILLOW_HANGING_SIGN.get(),
                             BlockRegistration.WILLOW_WALL_HANGING_SIGN.get(),
                             BlockRegistration.FLOWERING_WILLOW_HANGING_SIGN.get(),
@@ -206,7 +207,7 @@ public class TileEntityRegistration {
                             BlockRegistration.BLUE_MUSHROOM_WALL_HANGING_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_HANGING_SIGN.get(),
                             BlockRegistration.RED_MUSHROOM_WALL_HANGING_SIGN.get()
-                    ))
+                    ).build()
     );
 
 
@@ -220,26 +221,34 @@ public class TileEntityRegistration {
     //Basically from the tanuki-decor code with some changes (i made it worse sorry)
     private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorage(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
 
-        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
-                new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows), blockSet(block)));
+        return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
+                .create((blockPos, blockState) -> new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows))
+                .addBlocks(blockSet(block))
+                .build());
     }
 
     private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorageAndSounds(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name, SoundEvent openSound, SoundEvent closeSound){
 
-        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
-                new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows, openSound, closeSound), blockSet(block)));
+        return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
+                .create((blockPos, blockState) -> new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows, openSound, closeSound))
+                .addBlocks(blockSet(block))
+                .build());
     }
 
     private static RegistryObject<BlockEntityType<FridgeBlockEntity>> registerFridge(Supplier<Supplier<BlockEntityType<FridgeBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
 
-        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
-                new FridgeBlockEntity(type.get().get(), blockPos, blockState, rows), blockSet(block)));
+        return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
+                .create((blockPos, blockState) -> new FridgeBlockEntity(type.get().get(), blockPos, blockState, rows))
+                .addBlocks(blockSet(block))
+                .build());
     }
 
     private static RegistryObject<BlockEntityType<CardboardBoxBlockEntity>> registerCardboardBox(Supplier<Supplier<BlockEntityType<CardboardBoxBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
 
-        return BLOCK_ENTITIES.register(name, () -> new BlockEntityType<>((blockPos, blockState) ->
-                new CardboardBoxBlockEntity(type.get().get(), blockPos, blockState, rows), blockSet(block)));
+        return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
+                .create((blockPos, blockState) -> new CardboardBoxBlockEntity(type.get().get(), blockPos, blockState, rows))
+                .addBlocks(blockSet(block))
+                .build());
     }
 
     private static Set<Block> blockSet(RegistryObject<Block>[] blocks) {

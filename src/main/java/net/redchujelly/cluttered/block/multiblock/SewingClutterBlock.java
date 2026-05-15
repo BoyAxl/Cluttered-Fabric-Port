@@ -33,8 +33,6 @@ public class SewingClutterBlock extends MultiblockPlacer{
     public SewingClutterBlock(Properties pProperties) {
         super(pProperties);
     }
-
-    @Override
     public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return state.getValue(MULTIBLOCK_PART).equals(2) ? 10 : 0;
     }
