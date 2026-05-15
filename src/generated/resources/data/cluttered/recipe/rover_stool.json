@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:rover_stool"
   },
-  "show_notification": false
+  "show_notification": true
 }

@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:violet_screen"
   },
-  "show_notification": false
+  "show_notification": true
 }

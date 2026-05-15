@@ -4,13 +4,15 @@ Documento de apoyo generado desde `src/generated/resources/data/cluttered/recipe
 
 Nota: el mod no trae una traducción oficial `es_cl.json`; los nombres en español de este documento son traducciones prácticas desde `en_us.json` y desde los IDs. El ID técnico aparece siempre entre paréntesis para que puedas buscar el objeto exacto en JEI/REI o en el libro de recetas.
 
-Total de recetas: `700`. Con forma: `630`. Sin forma: `69`. Horno: `1`.
+Total de recetas: `923`. Con forma: `631`. Sin forma: `81`. Horno: `1`. Cortapiedras: `210`.
 
 ## Cómo leer el documento
 
 - `[A][B][ ]` representa una fila de la mesa de crafteo; `[ ]` es un espacio vacío.
 - `#minecraft:...`, `#cluttered:...` o `#forge:...` indica una etiqueta: puedes usar cualquier ítem que pertenezca a esa etiqueta.
+- Las recetas de tipo `Cortapiedras` se hacen en el cortapiedras (`minecraft:stonecutter`), no en la mesa de crafteo.
 - Algunas variantes decorativas no tienen receta directa porque se obtienen usando el `Taladro manual` (`cluttered:hand_drill`) sobre otro bloque del mod.
+- El listado completo de recetas de cortapiedras está en `docs/cortapiedras_es_CL.md`.
 
 ## Obtención de maderas y brotes
 
@@ -22,6 +24,20 @@ Los troncos nuevos del mod, como `cluttered:willow_log`, no se fabrican en la me
 - También existen trades del vendedor ambulante para `poplar_sapling`, `crabapple_sapling`, `sycamore_sapling` y `fluorescent_maple_sapling`.
 
 ## Bloques de construcción
+
+### Bloque de oro cincelado (`cluttered:chiseled_gold_block`) x1
+
+- Tipo: Cortapiedras
+
+Ingrediente:
+- Bloque de oro (`minecraft:gold_block`)
+
+### Bloque de oro desde bloque de oro cincelado (`minecraft:gold_block`) x1
+
+- Tipo: Cortapiedras
+
+Ingrediente:
+- Bloque de oro cincelado (`cluttered:chiseled_gold_block`)
 
 ### Baldosas amarillas (`cluttered:tiles_yellow`) x4
 
@@ -161,7 +177,7 @@ Patrón:
 
 Ingredientes:
 - `a` = Fragmento de amatista (`minecraft:amethyst_shard`)
-- `l` = Lapislázuli lazuli (`minecraft:lapis_lazuli`)
+- `l` = Lapislázuli (`minecraft:lapis_lazuli`)
 - `q` = Cuarzo del Nether (`minecraft:quartz`)
 
 ### Calcedonia profunda ladrillos (`cluttered:deep_chalcedony_bricks`) x4
@@ -4545,7 +4561,7 @@ Ingredientes:
 - `l` = Lever (`minecraft:lever`)
 - `m` = Bloque de magma (`minecraft:magma_block`)
 
-### Bloque de apricot jam jar (`cluttered:jam_jar_apricot`) x1
+### Frasco de mermelada de damasco (`cluttered:jam_jar_apricot`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4560,10 +4576,10 @@ Patrón:
 Ingredientes:
 - `d` = Tinte marrón (`minecraft:brown_dye`)
 - `g` = Vidrio (`minecraft:glass`)
-- `h` = Sweet berries (`minecraft:sweet_berries`)
-- `s` = Sugar (`minecraft:sugar`)
+- `h` = Bayas dulces (`minecraft:sweet_berries`)
+- `s` = Azúcar (`minecraft:sugar`)
 
-### Bloque de blueberry jam jar (`cluttered:jam_jar_blueberry`) x1
+### Frasco de mermelada de arándano (`cluttered:jam_jar_blueberry`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4578,10 +4594,10 @@ Patrón:
 Ingredientes:
 - `d` = Tinte azul (`minecraft:blue_dye`)
 - `g` = Vidrio (`minecraft:glass`)
-- `h` = Sweet berries (`minecraft:sweet_berries`)
-- `s` = Sugar (`minecraft:sugar`)
+- `h` = Bayas dulces (`minecraft:sweet_berries`)
+- `s` = Azúcar (`minecraft:sugar`)
 
-### Bloque de cerezo jam jar (`cluttered:jam_jar_cherry`) x1
+### Frasco de mermelada de cereza (`cluttered:jam_jar_cherry`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4596,10 +4612,10 @@ Patrón:
 Ingredientes:
 - `d` = Tinte rojo (`minecraft:red_dye`)
 - `g` = Vidrio (`minecraft:glass`)
-- `h` = Sweet berries (`minecraft:sweet_berries`)
-- `s` = Sugar (`minecraft:sugar`)
+- `h` = Bayas dulces (`minecraft:sweet_berries`)
+- `s` = Azúcar (`minecraft:sugar`)
 
-### Bloque de miel jar (`cluttered:jam_jar_honey`) x1
+### Frasco de miel (`cluttered:jam_jar_honey`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4614,10 +4630,10 @@ Patrón:
 Ingredientes:
 - `d` = Tinte amarillo (`minecraft:yellow_dye`)
 - `g` = Vidrio (`minecraft:glass`)
-- `h` = Miel bottle (`minecraft:honey_bottle`)
-- `s` = Sugar (`minecraft:sugar`)
+- `h` = Botella de miel (`minecraft:honey_bottle`)
+- `s` = Azúcar (`minecraft:sugar`)
 
-### Bloque de naranjo marmalade jar (`cluttered:jam_jar_orange`) x1
+### Frasco de mermelada de naranja (`cluttered:jam_jar_orange`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4632,10 +4648,10 @@ Patrón:
 Ingredientes:
 - `d` = Tinte naranjo (`minecraft:orange_dye`)
 - `g` = Vidrio (`minecraft:glass`)
-- `h` = Sweet berries (`minecraft:sweet_berries`)
-- `s` = Sugar (`minecraft:sugar`)
+- `h` = Bayas dulces (`minecraft:sweet_berries`)
+- `s` = Azúcar (`minecraft:sugar`)
 
-### Bloque de strawberry jam jar (`cluttered:jam_jar_strawberry`) x1
+### Frasco de mermelada de frutilla (`cluttered:jam_jar_strawberry`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4650,8 +4666,92 @@ Patrón:
 Ingredientes:
 - `d` = Tinte rosado (`minecraft:pink_dye`)
 - `g` = Vidrio (`minecraft:glass`)
-- `h` = Sweet berries (`minecraft:sweet_berries`)
-- `s` = Sugar (`minecraft:sugar`)
+- `h` = Bayas dulces (`minecraft:sweet_berries`)
+- `s` = Azúcar (`minecraft:sugar`)
+
+### Frasco pequeño de mermelada de damasco (`cluttered:mini_jam_jar_apricot`) x4
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- Frasco de mermelada de damasco (`cluttered:jam_jar_apricot`)
+
+### Frasco pequeño de mermelada de arándano (`cluttered:mini_jam_jar_blueberry`) x4
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- Frasco de mermelada de arándano (`cluttered:jam_jar_blueberry`)
+
+### Frasco pequeño de mermelada de cereza (`cluttered:mini_jam_jar_cherry`) x4
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- Frasco de mermelada de cereza (`cluttered:jam_jar_cherry`)
+
+### Frasco pequeño de miel (`cluttered:mini_jam_jar_honey`) x4
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- Frasco de miel (`cluttered:jam_jar_honey`)
+
+### Frasco pequeño de mermelada de naranja (`cluttered:mini_jam_jar_orange`) x4
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- Frasco de mermelada de naranja (`cluttered:jam_jar_orange`)
+
+### Frasco pequeño de mermelada de frutilla (`cluttered:mini_jam_jar_strawberry`) x4
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- Frasco de mermelada de frutilla (`cluttered:jam_jar_strawberry`)
+
+### Frasco de mermelada de damasco desde pequeños (`cluttered:jam_jar_apricot_from_mini`) x1
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- 4x Frasco pequeño de mermelada de damasco (`cluttered:mini_jam_jar_apricot`)
+
+### Frasco de mermelada de arándano desde pequeños (`cluttered:jam_jar_blueberry_from_mini`) x1
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- 4x Frasco pequeño de mermelada de arándano (`cluttered:mini_jam_jar_blueberry`)
+
+### Frasco de mermelada de cereza desde pequeños (`cluttered:jam_jar_cherry_from_mini`) x1
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- 4x Frasco pequeño de mermelada de cereza (`cluttered:mini_jam_jar_cherry`)
+
+### Frasco de miel desde pequeños (`cluttered:jam_jar_honey_from_mini`) x1
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- 4x Frasco pequeño de miel (`cluttered:mini_jam_jar_honey`)
+
+### Frasco de mermelada de naranja desde pequeños (`cluttered:jam_jar_orange_from_mini`) x1
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- 4x Frasco pequeño de mermelada de naranja (`cluttered:mini_jam_jar_orange`)
+
+### Frasco de mermelada de frutilla desde pequeños (`cluttered:jam_jar_strawberry_from_mini`) x1
+
+- Tipo: Mesa de crafteo - sin forma
+
+Ingredientes:
+- 4x Frasco pequeño de mermelada de frutilla (`cluttered:mini_jam_jar_strawberry`)
 
 ### Blossom garland (`cluttered:garland_blossom`) x4
 
@@ -8318,7 +8418,7 @@ Patrón:
 Ingredientes:
 - `b` = Negro wool (`minecraft:black_wool`)
 - `g` = Oro nugget (`minecraft:gold_nugget`)
-- `l` = Lapislázuli lazuli (`minecraft:lapis_lazuli`)
+- `l` = Lapislázuli (`minecraft:lapis_lazuli`)
 
 ### Pain au chocolat (`cluttered:chocolate_croissant`) x1
 

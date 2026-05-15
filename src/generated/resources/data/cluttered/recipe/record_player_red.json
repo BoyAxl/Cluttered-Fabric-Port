@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:record_player_red"
   },
-  "show_notification": false
+  "show_notification": true
 }

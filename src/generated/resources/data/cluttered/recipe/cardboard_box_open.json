@@ -11,5 +11,5 @@
   "result": {
     "id": "cluttered:cardboard_box_open"
   },
-  "show_notification": false
+  "show_notification": true
 }

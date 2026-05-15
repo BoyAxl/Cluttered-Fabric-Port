@@ -11,5 +11,5 @@
   "result": {
     "id": "cluttered:stack_of_books_tall"
   },
-  "show_notification": false
+  "show_notification": true
 }

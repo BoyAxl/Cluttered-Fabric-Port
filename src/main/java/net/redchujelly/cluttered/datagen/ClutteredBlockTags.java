@@ -36,7 +36,8 @@ public class ClutteredBlockTags extends BlockTagsProvider {
                 .add(BlockRegistration.BLUE_MUSHROOM_CAP.get())
                 .add(BlockRegistration.RED_MUSHROOM_CAP.get())
                 .add(BlockRegistration.EYE_BLOCK.get())
-                .add(BlockRegistration.SMALL_BUSH.get());
+                .add(BlockRegistration.SMALL_BUSH.get())
+                .add(BlockRegistration.GLOW_FLOWER.get());
 
         tag(BlockTags.ENCHANTMENT_POWER_PROVIDER)
                 .add(BlockRegistration.WILLOW_BOOKSHELF_BLACK_CAT.get())
@@ -496,6 +497,7 @@ public class ClutteredBlockTags extends BlockTagsProvider {
                 .add(BlockRegistration.CARD_INDEX.get())
                 .add(BlockRegistration.ENVELOPE_STACK.get())
                 .add(BlockRegistration.FLOWER_DESK_LAMP.get())
+                .add(BlockRegistration.GLOW_FLOWER.get())
 
                 .add(BlockRegistration.FLOWER_SHELF_BLUE.get())
                 .add(BlockRegistration.FLOWER_SHELF_GREEN.get())
@@ -706,6 +708,12 @@ public class ClutteredBlockTags extends BlockTagsProvider {
                 .add(BlockRegistration.CHERRY_JAR_BLOCK.get())
                 .add(BlockRegistration.ORANGE_JAR_BLOCK.get())
                 .add(BlockRegistration.BLUEBERRY_JAR_BLOCK.get())
+                .add(BlockRegistration.MINI_HONEY_JAR_BLOCK.get())
+                .add(BlockRegistration.MINI_STRAWBERRY_JAR_BLOCK.get())
+                .add(BlockRegistration.MINI_APRICOT_JAR_BLOCK.get())
+                .add(BlockRegistration.MINI_CHERRY_JAR_BLOCK.get())
+                .add(BlockRegistration.MINI_ORANGE_JAR_BLOCK.get())
+                .add(BlockRegistration.MINI_BLUEBERRY_JAR_BLOCK.get())
                 .add(BlockRegistration.BLACK_CAT_WINDOW.get())
                 .add(BlockRegistration.BLACK_CAT_WINDOW_PANE.get())
 

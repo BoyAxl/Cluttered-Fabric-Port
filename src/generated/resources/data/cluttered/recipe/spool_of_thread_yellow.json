@@ -14,5 +14,5 @@
   "result": {
     "id": "cluttered:spool_of_thread_yellow"
   },
-  "show_notification": false
+  "show_notification": true
 }

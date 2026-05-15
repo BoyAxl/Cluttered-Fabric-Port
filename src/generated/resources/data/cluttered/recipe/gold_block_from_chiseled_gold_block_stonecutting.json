@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:chiseled_gold_block",
+  "result": {
+    "id": "minecraft:gold_block"
+  }
+}

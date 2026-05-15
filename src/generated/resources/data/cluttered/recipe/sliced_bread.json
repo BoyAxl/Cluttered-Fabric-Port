@@ -12,5 +12,5 @@
   "result": {
     "id": "cluttered:sliced_bread"
   },
-  "show_notification": false
+  "show_notification": true
 }

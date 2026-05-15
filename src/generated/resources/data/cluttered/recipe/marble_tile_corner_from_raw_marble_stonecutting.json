@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:raw_marble",
+  "result": {
+    "id": "cluttered:marble_tile_corner"
+  }
+}

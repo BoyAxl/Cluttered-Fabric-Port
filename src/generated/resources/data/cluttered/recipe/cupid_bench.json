@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:cupid_bench"
   },
-  "show_notification": false
+  "show_notification": true
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "minecraft:pink_tulip",
+    "g": "minecraft:glowstone_dust"
+  },
+  "pattern": [
+    "gfg",
+    " g "
+  ],
+  "result": {
+    "id": "cluttered:glow_flower"
+  },
+  "show_notification": true
+}

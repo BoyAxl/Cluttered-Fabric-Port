@@ -10,5 +10,5 @@
   "result": {
     "id": "cluttered:antique_library_books"
   },
-  "show_notification": false
+  "show_notification": true
 }

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:colosseo_pillar",
+  "result": {
+    "id": "cluttered:colosseo_pillar_top"
+  }
+}

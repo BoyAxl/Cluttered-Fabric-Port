@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:deep_raw_chalcedony",
+  "result": {
+    "id": "cluttered:deep_chalcedony_subway_tiles"
+  }
+}

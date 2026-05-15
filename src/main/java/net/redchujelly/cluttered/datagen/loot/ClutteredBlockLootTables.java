@@ -765,6 +765,12 @@ public class ClutteredBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockRegistration.ORANGE_JAR_BLOCK.get());
         dropSelf(BlockRegistration.HONEY_JAR_BLOCK.get());
         dropSelf(BlockRegistration.BLUEBERRY_JAR_BLOCK .get());
+        dropSelf(BlockRegistration.MINI_STRAWBERRY_JAR_BLOCK.get());
+        dropSelf(BlockRegistration.MINI_CHERRY_JAR_BLOCK.get());
+        dropSelf(BlockRegistration.MINI_APRICOT_JAR_BLOCK.get());
+        dropSelf(BlockRegistration.MINI_ORANGE_JAR_BLOCK.get());
+        dropSelf(BlockRegistration.MINI_HONEY_JAR_BLOCK.get());
+        dropSelf(BlockRegistration.MINI_BLUEBERRY_JAR_BLOCK.get());
         dropSelf(BlockRegistration.BLUEBERRY_JAR_BLOCK .get());
         dropSelf(BlockRegistration.BLUEBERRY_JAR_BLOCK .get());
 
@@ -779,6 +785,7 @@ public class ClutteredBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockRegistration.BRASS_KEY.get());
         dropSelf(BlockRegistration.ENVELOPE_STACK.get());
         dropSelf(BlockRegistration.FLOWER_DESK_LAMP.get());
+        dropSelf(BlockRegistration.GLOW_FLOWER.get());
         dropSelf(BlockRegistration.FLOWER_SHELF_BLUE.get());
         dropSelf(BlockRegistration.FLOWER_SHELF_GREEN.get());
         dropSelf(BlockRegistration.FLOWER_SHELF_PASTEL_YELLOW.get());

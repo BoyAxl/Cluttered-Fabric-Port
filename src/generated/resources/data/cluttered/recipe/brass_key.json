@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:brass_key"
   },
-  "show_notification": false
+  "show_notification": true
 }

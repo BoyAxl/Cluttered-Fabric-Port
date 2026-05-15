@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:tiles_yellow",
+  "result": {
+    "id": "cluttered:subway_tiles_yellow"
+  }
+}

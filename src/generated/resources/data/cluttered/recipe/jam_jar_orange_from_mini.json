@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:mini_jam_jar_orange",
+    "cluttered:mini_jam_jar_orange",
+    "cluttered:mini_jam_jar_orange",
+    "cluttered:mini_jam_jar_orange"
+  ],
+  "result": {
+    "id": "cluttered:jam_jar_orange"
+  },
+  "show_notification": true
+}

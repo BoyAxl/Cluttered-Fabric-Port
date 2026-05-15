@@ -1020,6 +1020,7 @@ public class CreativeTabRegistration {
                         output.accept(BlockRegistration.DESK_GREEN_CLUTTERED.get());
                         output.accept(BlockRegistration.DESK_BROWN_CLUTTERED.get());
                         output.accept(BlockRegistration.FLOWER_DESK_LAMP.get());
+                        output.accept(BlockRegistration.GLOW_FLOWER.get());
 
                         //POLAROIDS
                         output.accept(BlockRegistration.POLAROID_CAMERA.get());
@@ -1180,6 +1181,12 @@ public class CreativeTabRegistration {
                         output.accept(BlockRegistration.SALT_PEPPER_SHAKERS.get());
                         output.accept(BlockRegistration.ASSORTED_SPICE_JARS.get());
                         output.accept(BlockRegistration.JAM_JARS.get());
+                        output.accept(BlockRegistration.MINI_STRAWBERRY_JAR_BLOCK.get());
+                        output.accept(BlockRegistration.MINI_CHERRY_JAR_BLOCK.get());
+                        output.accept(BlockRegistration.MINI_APRICOT_JAR_BLOCK.get());
+                        output.accept(BlockRegistration.MINI_ORANGE_JAR_BLOCK.get());
+                        output.accept(BlockRegistration.MINI_HONEY_JAR_BLOCK.get());
+                        output.accept(BlockRegistration.MINI_BLUEBERRY_JAR_BLOCK.get());
                         output.accept(BlockRegistration.ASSORTED_GLASS_JARS.get());
                         output.accept(BlockRegistration.SMALL_GLASS_JARS.get());
                         output.accept(BlockRegistration.WINE_BOTTLES.get());

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:marble_polished",
+  "result": {
+    "id": "cluttered:marble_bricks"
+  }
+}

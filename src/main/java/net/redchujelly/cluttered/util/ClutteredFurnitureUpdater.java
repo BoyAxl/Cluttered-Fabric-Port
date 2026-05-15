@@ -258,7 +258,7 @@ public class ClutteredFurnitureUpdater {
         UPDATED_BLOCK_MAP.put("luphie_mushroom_tv", BlockRegistration.RED_MUSHROOM_TV.get());
         UPDATED_BLOCK_MAP.put("luphie_angry_bee_lamp", BlockRegistration.BEE_LAMP_ANGRY.get());
         UPDATED_BLOCK_MAP.put("luphie_bee_lamp", BlockRegistration.BEE_LAMP.get());
-        UPDATED_BLOCK_MAP.put("luphie_glow_flower", BlockRegistration.FLOWER_DESK_LAMP.get());
+        UPDATED_BLOCK_MAP.put("luphie_glow_flower", BlockRegistration.GLOW_FLOWER.get());
         UPDATED_BLOCK_MAP.put("luphie_antique_sewing_machine", BlockRegistration.SEWING_MACHINE_ANTIQUE.get());
         UPDATED_BLOCK_MAP.put("luphie_art_academy_box_of_paint", BlockRegistration.BOX_OF_PAINTS.get());
         UPDATED_BLOCK_MAP.put("luphie_assorted_jam_jars", BlockRegistration.JAM_JARS.get());
@@ -294,7 +294,7 @@ public class ClutteredFurnitureUpdater {
         UPDATED_BLOCK_MAP.put("luphie_hanging_plant_b", BlockRegistration.HANGING_PLANT_POT_FLOWERS.get());
         UPDATED_BLOCK_MAP.put("luphie_honeycomb_lamp", BlockRegistration.HONEYCOMB_LAMP.get());
         UPDATED_BLOCK_MAP.put("luphie_jam_jar_pyramid", BlockRegistration.JAM_JARS.get());
-        UPDATED_BLOCK_MAP.put("luphie_mini_jam_jar_cube", BlockRegistration.CHERRY_JAR_BLOCK.get());
+        UPDATED_BLOCK_MAP.put("luphie_mini_jam_jar_cube", BlockRegistration.JAM_JARS.get());
         UPDATED_BLOCK_MAP.put("luphie_key", BlockRegistration.BRASS_KEY.get());
         UPDATED_BLOCK_MAP.put("luphie_lunar_observatory_basket_of_papers", BlockRegistration.LUNAR_OBSERVATORY_PAPER_BASKET.get());
         UPDATED_BLOCK_MAP.put("luphie_lunar_observatory_globe", BlockRegistration.LUNAR_OBSERVATORY_GLOBE.get());

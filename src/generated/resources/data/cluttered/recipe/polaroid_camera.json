@@ -15,5 +15,5 @@
   "result": {
     "id": "cluttered:polaroid_camera"
   },
-  "show_notification": false
+  "show_notification": true
 }

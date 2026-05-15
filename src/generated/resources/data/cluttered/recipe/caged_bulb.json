@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:caged_bulb"
   },
-  "show_notification": false
+  "show_notification": true
 }

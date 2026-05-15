@@ -591,13 +591,13 @@ public class BlockRegistration {
     public static final RegistryObject<Block> CHALCEDONY_PILLAR_IONIC = registerBlock("chalcedony_pillar_ionic",
             () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_ionic")).mapColor(DyeColor.WHITE)));
     public static final RegistryObject<Block> STARRY_CHALCEDONY_PILLAR = registerBlock("chalcedony_pillar_starry",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 5)));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> STARRY_CHALCEDONY_PILLAR_BASE = registerBlock("chalcedony_pillar_starry_base",
-            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry_base")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 5)));
+            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry_base")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> STARRY_CHALCEDONY_PILLAR_DORIC = registerBlock("chalcedony_pillar_starry_doric",
-            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry_doric")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 5)));
+            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry_doric")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> STARRY_CHALCEDONY_PILLAR_IONIC = registerBlock("chalcedony_pillar_starry_ionic",
-            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry_ionic")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 5)));
+            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("chalcedony_pillar_starry_ionic")).noOcclusion().mapColor(DyeColor.WHITE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> CHALCEDONY_TEXTILES = registerBlock("textile_block_chalcedony",
             () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BRICKS).setId(BLOCKS.key("textile_block_chalcedony")).mapColor(DyeColor.WHITE)));
 
@@ -663,13 +663,13 @@ public class BlockRegistration {
     public static final RegistryObject<Block> DEEP_CHALCEDONY_PILLAR_IONIC = registerBlock("deep_chalcedony_pillar_ionic",
             () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_ionic")).mapColor(DyeColor.LIGHT_BLUE)));
     public static final RegistryObject<Block> DEEP_STARRY_CHALCEDONY_PILLAR = registerBlock("deep_chalcedony_pillar_starry",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 5)));
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> DEEP_STARRY_CHALCEDONY_PILLAR_BASE = registerBlock("deep_chalcedony_pillar_starry_base",
-            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry_base")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 5)));
+            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry_base")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> DEEP_STARRY_CHALCEDONY_PILLAR_DORIC = registerBlock("deep_chalcedony_pillar_starry_doric",
-            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry_doric")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 5)));
+            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry_doric")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> DEEP_STARRY_CHALCEDONY_PILLAR_IONIC = registerBlock("deep_chalcedony_pillar_starry_ionic",
-            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry_ionic")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 5)));
+            () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("deep_chalcedony_pillar_starry_ionic")).noOcclusion().mapColor(DyeColor.LIGHT_BLUE).lightLevel(p -> 7)));
     public static final RegistryObject<Block> DEEP_CHALCEDONY_TEXTILES = registerBlock("textile_block_deep_chalcedony",
             () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BRICKS).setId(BLOCKS.key("textile_block_deep_chalcedony")).mapColor(DyeColor.LIGHT_BLUE)));
 
@@ -1310,17 +1310,29 @@ public class BlockRegistration {
             () -> new DirectionalPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_PILLAR).setId(BLOCKS.key("colosseo_pillar_top")).mapColor(DyeColor.RED)));
 
     public static final RegistryObject<Block> HONEY_JAR_BLOCK = registerBlock("jam_jar_honey",
-            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_honey")).sound(SoundType.SCULK_CATALYST)));
+            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_honey")).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> ORANGE_JAR_BLOCK = registerBlock("jam_jar_orange",
-            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_orange")).sound(SoundType.SCULK_CATALYST)));
+            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_orange")).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> CHERRY_JAR_BLOCK = registerBlock("jam_jar_cherry",
-            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_cherry")).sound(SoundType.SCULK_CATALYST)));
+            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_cherry")).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> STRAWBERRY_JAR_BLOCK = registerBlock("jam_jar_strawberry",
-            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_strawberry")).sound(SoundType.SCULK_CATALYST)));
+            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_strawberry")).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> BLUEBERRY_JAR_BLOCK = registerBlock("jam_jar_blueberry",
-            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_blueberry")).sound(SoundType.SCULK_CATALYST)));
+            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_blueberry")).sound(SoundType.GLASS)));
     public static final RegistryObject<Block> APRICOT_JAR_BLOCK = registerBlock("jam_jar_apricot",
-            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_apricot")).sound(SoundType.SCULK_CATALYST)));
+            () -> new CustomHorizontalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jar_apricot")).sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> MINI_HONEY_JAR_BLOCK = registerBlock("mini_jam_jar_honey",
+            () -> new SingleJamJarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("mini_jam_jar_honey")).sound(SoundType.GLASS).noOcclusion()));
+    public static final RegistryObject<Block> MINI_ORANGE_JAR_BLOCK = registerBlock("mini_jam_jar_orange",
+            () -> new SingleJamJarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("mini_jam_jar_orange")).sound(SoundType.GLASS).noOcclusion()));
+    public static final RegistryObject<Block> MINI_CHERRY_JAR_BLOCK = registerBlock("mini_jam_jar_cherry",
+            () -> new SingleJamJarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("mini_jam_jar_cherry")).sound(SoundType.GLASS).noOcclusion()));
+    public static final RegistryObject<Block> MINI_STRAWBERRY_JAR_BLOCK = registerBlock("mini_jam_jar_strawberry",
+            () -> new SingleJamJarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("mini_jam_jar_strawberry")).sound(SoundType.GLASS).noOcclusion()));
+    public static final RegistryObject<Block> MINI_BLUEBERRY_JAR_BLOCK = registerBlock("mini_jam_jar_blueberry",
+            () -> new SingleJamJarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("mini_jam_jar_blueberry")).sound(SoundType.GLASS).noOcclusion()));
+    public static final RegistryObject<Block> MINI_APRICOT_JAR_BLOCK = registerBlock("mini_jam_jar_apricot",
+            () -> new SingleJamJarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("mini_jam_jar_apricot")).sound(SoundType.GLASS).noOcclusion()));
 
     public static final RegistryObject<Block> ART_NOUVEAU_DOOR = registerFuelBlock("art_nouveau_door",
             () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR).setId(BLOCKS.key("art_nouveau_door")).mapColor(DyeColor.YELLOW)), 300);
@@ -1489,6 +1501,8 @@ public class BlockRegistration {
             () -> new FlatClutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_WOOL).setId(BLOCKS.key("envelope_stack")).sound(SoundType.SPORE_BLOSSOM).strength(0.2f)));
     public static final RegistryObject<Block> FLOWER_DESK_LAMP = registerBlock("flower_desk_lamp",
             () -> new FlowerDeskLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_WOOL).setId(BLOCKS.key("flower_desk_lamp")).strength(0.4f).sound(SoundType.CHERRY_LEAVES).lightLevel(p -> 15)));
+    public static final RegistryObject<Block> GLOW_FLOWER = registerBlock("glow_flower",
+            () -> new GlowFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TULIP).setId(BLOCKS.key("glow_flower")).strength(0.2f).sound(SoundType.SPORE_BLOSSOM).lightLevel(p -> 14).noOcclusion()));
     public static final RegistryObject<Block> FLOWER_SHELF_BLUE = registerBlock("flower_shelf_blue",
             () -> new FlowerShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("flower_shelf_blue")).strength(0.4f)));
     public static final RegistryObject<Block> FLOWER_SHELF_GREEN = registerBlock("flower_shelf_green",
@@ -1831,7 +1845,7 @@ public class BlockRegistration {
             () -> new PokTaPokHoopSnakesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).setId(BLOCKS.key("pok_ta_pok_hoop_snakes"))));
 
     public static final RegistryObject<Block> JAM_JARS = registerBlock("jam_jars",
-            () -> new JamJarsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jars"))));
+            () -> new JamJarsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("jam_jars")).sound(SoundType.GLASS)));
 
     public static final RegistryObject<Block> WATERING_CAN = registerBlock("watering_can",
             () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).setId(BLOCKS.key("watering_can")).strength(1.0f)));
@@ -2053,7 +2067,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> LUNAR_OBSERVATORY_PEDESTAL = registerBlock("lunar_observatory_pedestal_table",
             () -> new LunarObservatoryPedestalTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("lunar_observatory_pedestal_table")).mapColor(DyeColor.RED)));
     public static final RegistryObject<Block> MERMAID_PEARL = registerBlock("mermaid_pearl",
-            () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).setId(BLOCKS.key("mermaid_pearl")).mapColor(DyeColor.RED).lightLevel(p -> 8)));
+            () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).setId(BLOCKS.key("mermaid_pearl")).mapColor(DyeColor.RED).lightLevel(p -> 10)));
     public static final RegistryObject<Block> PAINT_WATER_JAR = registerBlock("paint_water_jar",
             () -> new SmallFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("paint_water_jar")).mapColor(DyeColor.WHITE)));
     public static final RegistryObject<Block> PASTRY_PLATE = registerBlock("pastry_plate",

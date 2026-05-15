@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:jam_jar_strawberry"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:mini_jam_jar_strawberry"
+  },
+  "show_notification": true
+}

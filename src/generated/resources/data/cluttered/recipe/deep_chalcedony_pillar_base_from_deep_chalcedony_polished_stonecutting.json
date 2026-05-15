@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:deep_chalcedony_polished",
+  "result": {
+    "id": "cluttered:deep_chalcedony_pillar_base"
+  }
+}

@@ -14,5 +14,5 @@
   "result": {
     "id": "cluttered:traditional_radio"
   },
-  "show_notification": false
+  "show_notification": true
 }

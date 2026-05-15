@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:raw_chalcedony",
+  "result": {
+    "id": "cluttered:chalcedony_brick_slab",
+    "count": 2
+  }
+}

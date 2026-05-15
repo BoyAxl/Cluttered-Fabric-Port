@@ -414,6 +414,7 @@ public class ClutteredItemModels extends ItemModelProvider {
         blockitemFromModel(BlockRegistration.BRASS_KEY);
         blockitemFromModel(BlockRegistration.ENVELOPE_STACK);
         blockitemFromModel(BlockRegistration.FLOWER_DESK_LAMP);
+        blockitemFromModel(BlockRegistration.GLOW_FLOWER);
         blockitemFromModel(BlockRegistration.FLOWER_SHELF_BLUE);
         blockitemFromModel(BlockRegistration.FLOWER_SHELF_GREEN);
         blockitemFromModel(BlockRegistration.FLOWER_SHELF_PINK);

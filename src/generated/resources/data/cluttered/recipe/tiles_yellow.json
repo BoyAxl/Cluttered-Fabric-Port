@@ -12,5 +12,5 @@
     "count": 4,
     "id": "cluttered:tiles_yellow"
   },
-  "show_notification": false
+  "show_notification": true
 }

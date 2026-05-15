@@ -16,5 +16,5 @@
   "result": {
     "id": "cluttered:rubiks_cube"
   },
-  "show_notification": false
+  "show_notification": true
 }

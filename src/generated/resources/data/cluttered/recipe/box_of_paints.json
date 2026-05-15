@@ -15,5 +15,5 @@
   "result": {
     "id": "cluttered:box_of_paints"
   },
-  "show_notification": false
+  "show_notification": true
 }

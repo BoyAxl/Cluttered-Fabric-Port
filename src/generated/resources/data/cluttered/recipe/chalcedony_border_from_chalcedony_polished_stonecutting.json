@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:chalcedony_polished",
+  "result": {
+    "id": "cluttered:chalcedony_border"
+  }
+}

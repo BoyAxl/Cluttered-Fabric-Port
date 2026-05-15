@@ -16,5 +16,5 @@
   "result": {
     "id": "cluttered:salt_pepper_shakers"
   },
-  "show_notification": false
+  "show_notification": true
 }

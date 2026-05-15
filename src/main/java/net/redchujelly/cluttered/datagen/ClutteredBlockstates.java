@@ -994,6 +994,18 @@ public class ClutteredBlockstates extends BlockStateProvider {
                 modLoc("block/jam_jar_apricot_side"),
                 modLoc("block/jam_jar_apricot_side")).texture("particle", "block/jam_jar_apricot_side"));
         blockItem(BlockRegistration.APRICOT_JAR_BLOCK);
+        hFacingBlockWithCustomModel(BlockRegistration.MINI_HONEY_JAR_BLOCK);
+        blockItem(BlockRegistration.MINI_HONEY_JAR_BLOCK);
+        hFacingBlockWithCustomModel(BlockRegistration.MINI_ORANGE_JAR_BLOCK);
+        blockItem(BlockRegistration.MINI_ORANGE_JAR_BLOCK);
+        hFacingBlockWithCustomModel(BlockRegistration.MINI_CHERRY_JAR_BLOCK);
+        blockItem(BlockRegistration.MINI_CHERRY_JAR_BLOCK);
+        hFacingBlockWithCustomModel(BlockRegistration.MINI_STRAWBERRY_JAR_BLOCK);
+        blockItem(BlockRegistration.MINI_STRAWBERRY_JAR_BLOCK);
+        hFacingBlockWithCustomModel(BlockRegistration.MINI_BLUEBERRY_JAR_BLOCK);
+        blockItem(BlockRegistration.MINI_BLUEBERRY_JAR_BLOCK);
+        hFacingBlockWithCustomModel(BlockRegistration.MINI_APRICOT_JAR_BLOCK);
+        blockItem(BlockRegistration.MINI_APRICOT_JAR_BLOCK);
 
         this.getVariantBuilder(BlockRegistration.EYE_BLOCK.get())
                 .partialState()
@@ -1758,6 +1770,7 @@ public class ClutteredBlockstates extends BlockStateProvider {
         hFacingBlockWithCustomModel(BlockRegistration.BRASS_KEY);
         hFacingBlockWithCustomModel(BlockRegistration.ENVELOPE_STACK);
         hFacingBlockWithCustomModel(BlockRegistration.FLOWER_DESK_LAMP);
+        hFacingBlockWithCustomModel(BlockRegistration.GLOW_FLOWER);
         hFacingBlockWithCustomModel(BlockRegistration.FLOWER_SHELF_BLUE);
         hFacingBlockWithCustomModel(BlockRegistration.FLOWER_SHELF_GREEN);
         hFacingBlockWithCustomModel(BlockRegistration.FLOWER_SHELF_PASTEL_YELLOW);

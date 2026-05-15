@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mini_jam_jar_apricot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cluttered:mini_jam_jar_apricot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cluttered:jam_jar_apricot_from_mini"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mini_jam_jar_apricot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cluttered:jam_jar_apricot_from_mini"
+    ]
+  }
+}

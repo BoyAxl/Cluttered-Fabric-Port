@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:lemon_table"
   },
-  "show_notification": false
+  "show_notification": true
 }

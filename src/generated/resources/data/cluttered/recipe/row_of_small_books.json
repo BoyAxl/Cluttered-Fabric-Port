@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:row_of_small_books"
   },
-  "show_notification": false
+  "show_notification": true
 }

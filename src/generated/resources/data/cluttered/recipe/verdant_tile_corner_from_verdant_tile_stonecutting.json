@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "cluttered:verdant_tile",
+  "result": {
+    "id": "cluttered:verdant_tile_corner"
+  }
+}

@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:wine_bottle_rack"
   },
-  "show_notification": false
+  "show_notification": true
 }

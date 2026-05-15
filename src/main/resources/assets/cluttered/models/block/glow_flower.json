@@ -1,0 +1,9 @@
+{
+  "parent": "cluttered:custom/glow_flower",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "cluttered:block/glow_flower",
+    "all": "cluttered:block/glow_flower",
+    "particle": "cluttered:block/glow_flower"
+  }
+}

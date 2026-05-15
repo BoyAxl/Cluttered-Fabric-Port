@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:drying_herbs"
   },
-  "show_notification": false
+  "show_notification": true
 }

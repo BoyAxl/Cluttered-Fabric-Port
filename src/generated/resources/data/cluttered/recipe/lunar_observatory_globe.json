@@ -13,5 +13,5 @@
   "result": {
     "id": "cluttered:lunar_observatory_globe"
   },
-  "show_notification": false
+  "show_notification": true
 }
