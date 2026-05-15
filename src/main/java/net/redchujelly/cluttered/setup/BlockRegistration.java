@@ -2053,7 +2053,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> LUNAR_OBSERVATORY_PEDESTAL = registerBlock("lunar_observatory_pedestal_table",
             () -> new LunarObservatoryPedestalTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("lunar_observatory_pedestal_table")).mapColor(DyeColor.RED)));
     public static final RegistryObject<Block> MERMAID_PEARL = registerBlock("mermaid_pearl",
-            () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).setId(BLOCKS.key("mermaid_pearl")).mapColor(DyeColor.RED)));
+            () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).setId(BLOCKS.key("mermaid_pearl")).mapColor(DyeColor.RED).lightLevel(p -> 8)));
     public static final RegistryObject<Block> PAINT_WATER_JAR = registerBlock("paint_water_jar",
             () -> new SmallFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("paint_water_jar")).mapColor(DyeColor.WHITE)));
     public static final RegistryObject<Block> PASTRY_PLATE = registerBlock("pastry_plate",
