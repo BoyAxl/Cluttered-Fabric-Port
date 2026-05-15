@@ -1,30 +1,98 @@
 # Cluttered
 
-The github repository for the Cluttered mod!!!
+![Cluttered logo](docs/cluttered_logo.png)
 
-This mod is fully rewritten, and no longer an MCreator mod.
-I've learned to code entirely for this, so apologies for anything that's not well done.
-Huge thanks to Kaupenjoe and McJty for their modding tutorials!
+The GitHub repository for the Cluttered mod.
 
-## Unofficial Minecraft 26.1.2 Fabric Port
+Cluttered is a furniture and decoration mod originally created by YellowChuJelly. This repository is currently carrying an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.1.2.
 
-This branch contains an unofficial port of Cluttered 3.0.3 for:
+## Unofficial Fabric Port
+
+This branch targets:
 
 - Minecraft 26.1.2
 - Fabric Loader 0.19.2
 - Fabric API 0.148.0+26.1.2
+- Java 25
 
-This is not an official upstream release. It was ported from the Forge 3.0 codebase and restored with the official 3.0.3 assets/data so it can run on Minecraft 26.1.2 with Fabric.
+The generated jar uses an `unofficial` suffix so it is easy to distinguish from official releases:
 
-The generated jar is named with an `unofficial` suffix to make the build easy to distinguish from official releases.
+```text
+build/libs/cluttered-3.0.3-26.1.2-fabric-unofficial.jar
+```
 
-## Known Notes
+This is not an official upstream release, and it is not a Forge jar.
 
-- Shader packs are not specially supported by this port.
-- Blocks that emit light use vanilla Minecraft lighting, which most shader packs can read normally.
-- Forge-only datagen and global loot modifier source files are excluded from the Fabric build.
-- If you distribute the jar, also share the source for this modified version, as required by the GPL-3.0 license.
+## Included Port Work
 
-## License
+- Ported Cluttered 3.0.3 from the Forge codebase to Fabric.
+- Restored the official 3.0.3 models, blockstates, textures, item definitions, language entries, paintings, recipes, loot tables, and tags.
+- Added Fabric registration for blocks, items, creative tabs, entities, block entities, render layers, composting, flammables, burn times, stripping, painting variants, and client renderers.
+- Fixed multiple Fabric gameplay issues found during in-game testing, including storage block entities, record players, multiblock beds, and chair seating orientation.
+- Added recipe-book unlock notifications so new recipes appear when the player obtains relevant ingredients.
+- Added survival recipe fixes for Fabric tag and item name changes.
+- Added in-game light emission to decorative objects that should visibly glow, including lamps, pearls, glow-themed objects, and deep chalcedony star variants.
+- Restored the old `glow_flower`/flower lamp content from an older Cluttered build.
+- Added small single-flavor jam jars while keeping the original larger jam jar blocks.
+- Added glass-like block sounds for jam jars.
+- Added stonecutter recipe coverage for decorative material families.
 
-Cluttered declares GNU GPL 3.0 licensing. See [LICENSE](LICENSE).
+## Spanish Support
+
+This port includes Spanish item and block names, with `es_cl` as the main reviewed translation.
+
+Additional Spanish locale files are currently copied from the Chilean Spanish translation as placeholders:
+
+- `es_ar`
+- `es_ec`
+- `es_es`
+- `es_mx`
+- `es_uy`
+- `es_ve`
+
+Translation follow-up notes are tracked in:
+
+- `docs/traducciones_todo.md`
+
+## Recipe Documentation
+
+The in-game recipe book should show recipes once they are unlocked normally. For manual testing, this repo also includes Spanish recipe references:
+
+- `docs/recetas_es_CL.md`
+- `docs/cortapiedras_es_CL.md`
+
+During local testing, a diagnostic gallery datapack can be generated under `build/datapacks` to place Cluttered blocks for broad render and placement checks.
+
+## Building
+
+Build the mod with:
+
+```sh
+sh ./gradlew build
+```
+
+The jar will be created in:
+
+```text
+build/libs/
+```
+
+## Testing Notes
+
+This branch has been built successfully and tested in a Fabric client on Minecraft 26.1.2. The diagnostic gallery command has placed the registered Cluttered blocks without a crash in the current test pass.
+
+Shader packs are not specially integrated. Blocks that emit light use vanilla Minecraft light emission, which most shader packs can read normally, but emissive visuals still depend on the shader/resource-pack setup.
+
+## Distribution Notes
+
+If you share this build, label it clearly as an unofficial Fabric port for Minecraft 26.1.2 and include or link to the matching source code for this branch.
+
+The project declares GNU GPL 3.0 licensing. See [LICENSE](LICENSE).
+
+## Credits
+
+Original Cluttered mod by YellowChuJelly.
+
+Logo/banner image from the official [Cluttered Modrinth page](https://modrinth.com/mod/cluttered).
+
+The original README credited Kaupenjoe and McJty for modding tutorials used while learning and building Cluttered.
