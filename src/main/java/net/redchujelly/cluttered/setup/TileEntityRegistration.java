@@ -44,6 +44,7 @@ public class TileEntityRegistration {
             BlockRegistration.ENDTABLE_CHARCOAL,
             BlockRegistration.ENDTABLE_MEADOW,
             BlockRegistration.ENDTABLE_PERIWINKLE,
+            BlockRegistration.ENDTABLE_SUNSHINE,
             BlockRegistration.ENDTABLE_WOOD,
             BlockRegistration.COTTAGE_SIDE_TABLE,
             BlockRegistration.NIGHTSTAND_GREEN,
