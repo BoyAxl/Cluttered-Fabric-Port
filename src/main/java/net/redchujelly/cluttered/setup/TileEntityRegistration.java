@@ -69,7 +69,6 @@ public class TileEntityRegistration {
             BlockRegistration.KITCHEN_SET_YELLOW_CABINET_OPEN,
             BlockRegistration.KITCHEN_SET_YELLOW_CABINET_GLASS,
 
-            BlockRegistration.COTTAGE_BOOKCASE,
             BlockRegistration.DESK_GREEN,
             BlockRegistration.DESK_GREEN_CLUTTERED,
             BlockRegistration.DESK_BROWN,
@@ -108,6 +107,7 @@ public class TileEntityRegistration {
             BlockRegistration.BRIEFCASE_ROVER,
 
             BlockRegistration.CHINA_CABINET,
+            BlockRegistration.COTTAGE_BOOKCASE,
 
             BlockRegistration.PASTEL_CABINET,
     };
