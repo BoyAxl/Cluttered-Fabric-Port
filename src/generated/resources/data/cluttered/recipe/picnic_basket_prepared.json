@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:apple",
+    "minecraft:bread",
+    "cluttered:picnic_basket"
+  ],
+  "result": {
+    "id": "cluttered:picnic_basket_prepared"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "t": "minecraft:yellow_concrete"
+  },
+  "pattern": [
+    "tt",
+    "tt"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:tiles_yellow"
+  },
+  "show_notification": false
+}

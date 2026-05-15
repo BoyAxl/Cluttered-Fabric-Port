@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": "minecraft:calcite",
+    "s": "minecraft:string"
+  },
+  "pattern": [
+    "ps",
+    "ps",
+    "pp"
+  ],
+  "result": {
+    "count": 3,
+    "id": "cluttered:alabaster_screen_door"
+  },
+  "show_notification": false
+}

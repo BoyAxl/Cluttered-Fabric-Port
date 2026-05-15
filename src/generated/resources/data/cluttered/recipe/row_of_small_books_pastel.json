@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:book",
+    "d": "minecraft:pink_dye"
+  },
+  "pattern": [
+    " d ",
+    "bbb",
+    " d "
+  ],
+  "result": {
+    "id": "cluttered:row_of_small_books_pastel"
+  },
+  "show_notification": false
+}

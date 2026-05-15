@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:copper_ingot",
+    "p": "minecraft:paper"
+  },
+  "pattern": [
+    "pcp",
+    "p p",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:filing_box"
+  },
+  "show_notification": false
+}

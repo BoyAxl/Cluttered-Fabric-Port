@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:black_wool",
+    "i": "minecraft:iron_ingot",
+    "n": "minecraft:iron_nugget",
+    "p": "minecraft:purple_wool",
+    "y": "minecraft:yellow_wool"
+  },
+  "pattern": [
+    "nin",
+    "ypb",
+    "ypb"
+  ],
+  "result": {
+    "id": "cluttered:animated_flag_nonbinary"
+  },
+  "show_notification": false
+}

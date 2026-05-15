@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:pastry_plate",
+    "#forge:crops/wheat",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "cluttered:cinnamon_bun"
+  }
+}

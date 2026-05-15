@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "o": "minecraft:orange_carpet",
+    "p": "minecraft:pink_carpet",
+    "s": "#forge:rods/wooden",
+    "w": "minecraft:white_carpet"
+  },
+  "pattern": [
+    "owp",
+    "owp",
+    "s  "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:mini_flag_lesbian"
+  },
+  "show_notification": false
+}

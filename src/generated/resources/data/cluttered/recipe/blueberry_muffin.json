@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:pastry_plate",
+    "minecraft:sugar",
+    "#forge:dyes/blue",
+    "minecraft:sweet_berries"
+  ],
+  "result": {
+    "id": "cluttered:blueberry_muffin"
+  }
+}

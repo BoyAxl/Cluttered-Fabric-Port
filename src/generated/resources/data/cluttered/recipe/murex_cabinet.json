@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "p": "cluttered:willow_planks",
+    "s": "minecraft:dark_oak_slab"
+  },
+  "pattern": [
+    "pcp",
+    "sss",
+    "pcp"
+  ],
+  "result": {
+    "id": "cluttered:murex_cabinet"
+  },
+  "show_notification": false
+}

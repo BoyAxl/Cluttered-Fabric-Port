@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "j": "minecraft:jukebox",
+    "p": "#minecraft:planks",
+    "w": "minecraft:white_dye"
+  },
+  "pattern": [
+    "pjp",
+    "pwp"
+  ],
+  "result": {
+    "id": "cluttered:record_player_white"
+  },
+  "show_notification": false
+}

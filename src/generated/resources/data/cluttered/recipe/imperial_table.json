@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:black_dye",
+    "f": "#minecraft:wooden_fences",
+    "r": "minecraft:red_dye",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "rrr",
+    "sss",
+    "fbf"
+  ],
+  "result": {
+    "id": "cluttered:imperial_table"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "j": "minecraft:jukebox",
+    "p": "#minecraft:planks",
+    "r": "minecraft:red_dye"
+  },
+  "pattern": [
+    "pjp",
+    "prp"
+  ],
+  "result": {
+    "id": "cluttered:record_player_red"
+  },
+  "show_notification": false
+}

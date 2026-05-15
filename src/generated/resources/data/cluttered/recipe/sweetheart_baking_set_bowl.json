@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bowl",
+    "#forge:rods/wooden",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "id": "cluttered:sweetheart_baking_set_bowl"
+  }
+}

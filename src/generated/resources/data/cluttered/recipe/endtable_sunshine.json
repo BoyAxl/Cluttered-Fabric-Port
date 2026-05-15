@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:yellow_dye",
+    "cluttered:endtable_wood"
+  ],
+  "result": {
+    "id": "cluttered:endtable_sunshine"
+  }
+}

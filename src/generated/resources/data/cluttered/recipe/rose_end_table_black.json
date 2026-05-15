@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:black_dye",
+    "p": "#minecraft:wooden_slabs",
+    "r": "minecraft:rose_bush",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "prp",
+    "sds",
+    "s s"
+  ],
+  "result": {
+    "id": "cluttered:rose_end_table_black"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:glass_pane",
+    "p": "#minecraft:planks",
+    "w": "minecraft:white_glazed_terracotta"
+  },
+  "pattern": [
+    "pwp",
+    "pgp",
+    "pwp"
+  ],
+  "result": {
+    "id": "cluttered:china_cabinet"
+  },
+  "show_notification": false
+}

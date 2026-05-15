@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "cluttered:darkwood_chair_geometric"
+  },
+  "pattern": [
+    "cc"
+  ],
+  "result": {
+    "id": "cluttered:darkwood_sofa_geometric"
+  },
+  "show_notification": false
+}

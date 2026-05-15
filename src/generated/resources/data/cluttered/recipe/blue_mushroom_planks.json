@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#minecraft:blue_mushroom_log"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:blue_mushroom_planks"
+  }
+}

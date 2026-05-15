@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": "minecraft:string",
+    "w": "cluttered:stars_pendant"
+  },
+  "pattern": [
+    "sss",
+    "w w",
+    " w "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:garland_starry"
+  },
+  "show_notification": false
+}

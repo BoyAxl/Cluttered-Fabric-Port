@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:blue_dye",
+    "f": "#minecraft:wooden_fences",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "ddd",
+    "sss",
+    "f f"
+  ],
+  "result": {
+    "id": "cluttered:confectionery_table_blue"
+  },
+  "show_notification": false
+}

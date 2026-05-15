@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:glass_bottle",
+    "c": "minecraft:cauldron",
+    "l": "minecraft:bone",
+    "p": "minecraft:mangrove_slab",
+    "s": "minecraft:bookshelf"
+  },
+  "pattern": [
+    "ppp",
+    "lbc",
+    "sss"
+  ],
+  "result": {
+    "id": "cluttered:retro_cafe_shelf"
+  },
+  "show_notification": false
+}

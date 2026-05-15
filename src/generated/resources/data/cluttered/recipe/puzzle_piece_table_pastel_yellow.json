@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:yellow_dye",
+    "f": "#minecraft:wooden_fences",
+    "s": "#minecraft:wooden_slabs",
+    "w": "minecraft:white_dye"
+  },
+  "pattern": [
+    "dsw",
+    " f ",
+    " f "
+  ],
+  "result": {
+    "id": "cluttered:puzzle_piece_table_pastel_yellow"
+  },
+  "show_notification": false
+}

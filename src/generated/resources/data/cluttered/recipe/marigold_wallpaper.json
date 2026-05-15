@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "d": "minecraft:dandelion",
+    "p": "minecraft:paper",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "pdp",
+    "pdp",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:marigold_wallpaper"
+  },
+  "show_notification": false
+}

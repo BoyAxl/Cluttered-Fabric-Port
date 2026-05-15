@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "cluttered:marble_picket_fence",
+    "p": "cluttered:marble_slab"
+  },
+  "pattern": [
+    "fff",
+    "ppp",
+    "f f"
+  ],
+  "result": {
+    "id": "cluttered:cupid_bench"
+  },
+  "show_notification": false
+}

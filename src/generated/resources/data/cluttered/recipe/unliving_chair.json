@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "cluttered:cottage_chair",
+    "p": "minecraft:phantom_membrane",
+    "w": "minecraft:white_carpet"
+  },
+  "pattern": [
+    " w ",
+    "wpw",
+    "wcw"
+  ],
+  "result": {
+    "id": "cluttered:unliving_chair"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:book",
+    "g": "minecraft:glowstone_dust"
+  },
+  "pattern": [
+    " b ",
+    "gbg",
+    " b "
+  ],
+  "result": {
+    "id": "cluttered:lunar_observatory_books"
+  },
+  "show_notification": false
+}

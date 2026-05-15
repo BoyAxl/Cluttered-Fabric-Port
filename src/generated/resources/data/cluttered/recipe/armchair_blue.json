@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:gold_nugget",
+    "p": "#minecraft:planks",
+    "w": "minecraft:blue_wool"
+  },
+  "pattern": [
+    "www",
+    "gwg",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:armchair_blue"
+  },
+  "show_notification": false
+}

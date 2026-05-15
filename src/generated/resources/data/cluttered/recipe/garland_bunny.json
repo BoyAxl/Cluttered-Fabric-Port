@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "minecraft:paper",
+    "s": "minecraft:string",
+    "w": "minecraft:white_dye"
+  },
+  "pattern": [
+    "sss",
+    "wpw",
+    " w "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:garland_bunny"
+  },
+  "show_notification": false
+}

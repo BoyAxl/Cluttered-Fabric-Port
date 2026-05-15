@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "#minecraft:willow_log",
+    "p": "cluttered:willow_planks"
+  },
+  "pattern": [
+    "pb",
+    "pp",
+    "pb"
+  ],
+  "result": {
+    "count": 3,
+    "id": "cluttered:willow_log_door"
+  },
+  "show_notification": false
+}

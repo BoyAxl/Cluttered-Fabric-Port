@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": "minecraft:redstone_lamp",
+    "r": "cluttered:red_mushroom_cap",
+    "s": "#cluttered:red_mushroom_log"
+  },
+  "pattern": [
+    "r",
+    "l",
+    "s"
+  ],
+  "result": {
+    "id": "cluttered:red_mushroom_lamp"
+  },
+  "show_notification": false
+}

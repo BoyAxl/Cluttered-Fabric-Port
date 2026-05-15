@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:light_blue_carpet",
+    "p": "minecraft:pink_carpet",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "bpb",
+    "bpb",
+    "s  "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:mini_flag_trans"
+  },
+  "show_notification": false
+}

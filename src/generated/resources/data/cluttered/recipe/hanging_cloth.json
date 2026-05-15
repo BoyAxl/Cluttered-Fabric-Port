@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "minecraft:pink_carpet",
+    "r": "minecraft:red_carpet",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "sss",
+    "ppp",
+    "rrr"
+  ],
+  "result": {
+    "id": "cluttered:hanging_cloth"
+  },
+  "show_notification": false
+}

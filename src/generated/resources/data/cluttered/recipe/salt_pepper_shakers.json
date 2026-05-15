@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:glass_bottle",
+    "d": "minecraft:dried_kelp",
+    "p": "minecraft:blaze_powder",
+    "s": "minecraft:sugar",
+    "w": "minecraft:pumpkin_seeds"
+  },
+  "pattern": [
+    "d p",
+    "s w",
+    "b b"
+  ],
+  "result": {
+    "id": "cluttered:salt_pepper_shakers"
+  },
+  "show_notification": false
+}

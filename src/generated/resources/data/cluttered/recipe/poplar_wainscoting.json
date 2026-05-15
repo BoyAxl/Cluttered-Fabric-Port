@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "cluttered:poplar_slab",
+    "p": "cluttered:poplar_planks"
+  },
+  "pattern": [
+    "bbb",
+    "ppp"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:poplar_wainscoting"
+  },
+  "show_notification": false
+}

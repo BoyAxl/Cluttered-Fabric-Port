@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "j": "minecraft:jukebox",
+    "n": "minecraft:note_block",
+    "p": "#minecraft:planks"
+  },
+  "pattern": [
+    " p ",
+    "njn",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:traditional_radio"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:rose_bush",
+    "p": "#minecraft:planks",
+    "w": "minecraft:white_wool"
+  },
+  "pattern": [
+    "www",
+    "gwg",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:armchair_heart"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:cyan_wool",
+    "i": "minecraft:iron_ingot",
+    "m": "minecraft:magenta_wool",
+    "n": "minecraft:iron_nugget",
+    "y": "minecraft:yellow_wool"
+  },
+  "pattern": [
+    "nin",
+    "myc",
+    "myc"
+  ],
+  "result": {
+    "id": "cluttered:animated_flag_pansexual"
+  },
+  "show_notification": false
+}

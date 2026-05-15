@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "p": "minecraft:jungle_planks",
+    "t": "cluttered:marble_subway_tiles"
+  },
+  "pattern": [
+    "ttt",
+    "pcp",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:sweetheart_counter_drawers"
+  },
+  "show_notification": false
+}

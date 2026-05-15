@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:small_glass_jars",
+    "minecraft:hanging_roots",
+    "minecraft:blaze_powder",
+    "minecraft:cocoa_beans",
+    "minecraft:dried_kelp"
+  ],
+  "result": {
+    "id": "cluttered:small_spice_jars"
+  }
+}

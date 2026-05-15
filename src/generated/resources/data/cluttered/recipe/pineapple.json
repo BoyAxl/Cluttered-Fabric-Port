@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:cactus",
+    "d": "minecraft:yellow_dye",
+    "g": "minecraft:grass"
+  },
+  "pattern": [
+    "g",
+    "c",
+    "d"
+  ],
+  "result": {
+    "id": "cluttered:pineapple"
+  },
+  "show_notification": false
+}

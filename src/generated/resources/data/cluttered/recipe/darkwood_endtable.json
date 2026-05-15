@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bookshelf",
+    "s": "minecraft:spruce_log"
+  },
+  "pattern": [
+    " s ",
+    "sbs",
+    " s "
+  ],
+  "result": {
+    "id": "cluttered:darkwood_endtable"
+  },
+  "show_notification": false
+}

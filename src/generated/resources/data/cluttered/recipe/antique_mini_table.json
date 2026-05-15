@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "#minecraft:planks",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "ppp",
+    " s ",
+    "s s"
+  ],
+  "result": {
+    "id": "cluttered:antique_mini_table"
+  },
+  "show_notification": false
+}

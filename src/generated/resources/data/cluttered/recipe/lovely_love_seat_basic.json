@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:pink_concrete",
+    "w": "minecraft:pink_wool"
+  },
+  "pattern": [
+    "www",
+    "cwc"
+  ],
+  "result": {
+    "id": "cluttered:lovely_love_seat_basic"
+  },
+  "show_notification": false
+}

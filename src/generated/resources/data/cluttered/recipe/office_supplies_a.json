@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:redstone",
+    "minecraft:iron_ingot",
+    "minecraft:slime_ball",
+    "minecraft:string"
+  ],
+  "result": {
+    "id": "cluttered:office_supplies_a"
+  }
+}

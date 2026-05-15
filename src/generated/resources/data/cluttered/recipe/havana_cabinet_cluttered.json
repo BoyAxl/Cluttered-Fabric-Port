@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:havana_cabinet",
+    "minecraft:glass_bottle",
+    "minecraft:paper",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "cluttered:havana_cabinet_cluttered"
+  }
+}

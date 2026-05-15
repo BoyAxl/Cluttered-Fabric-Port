@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:garland_polaroid_a"
+  ],
+  "result": {
+    "id": "cluttered:garland_polaroid_b"
+  }
+}

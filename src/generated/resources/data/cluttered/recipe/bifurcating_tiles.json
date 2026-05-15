@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "minecraft:wheat_seeds",
+    "t": "minecraft:terracotta"
+  },
+  "pattern": [
+    "ttt",
+    "tbt",
+    "ttt"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:bifurcating_tiles"
+  },
+  "show_notification": false
+}

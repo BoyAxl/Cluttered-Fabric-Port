@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:wooden_fences",
+    "l": "#minecraft:flowers",
+    "p": "minecraft:purple_carpet",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "plp",
+    "sss",
+    "f f"
+  ],
+  "result": {
+    "id": "cluttered:sewing_table_with_tablecloth"
+  },
+  "show_notification": false
+}

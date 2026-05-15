@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "d": "minecraft:pink_dye",
+    "p": "#minecraft:planks"
+  },
+  "pattern": [
+    "pdp",
+    " c ",
+    "pdp"
+  ],
+  "result": {
+    "id": "cluttered:kitchen_set_pink_cabinet_open"
+  },
+  "show_notification": false
+}

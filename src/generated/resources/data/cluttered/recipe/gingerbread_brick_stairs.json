@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "s": "cluttered:gingerbread_bricks"
+  },
+  "pattern": [
+    "s  ",
+    "ss ",
+    "sss"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:gingerbread_brick_stairs"
+  },
+  "show_notification": false
+}

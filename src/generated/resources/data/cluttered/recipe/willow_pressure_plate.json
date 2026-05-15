@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": "cluttered:willow_planks"
+  },
+  "pattern": [
+    "pp"
+  ],
+  "result": {
+    "id": "cluttered:willow_pressure_plate"
+  },
+  "show_notification": false
+}

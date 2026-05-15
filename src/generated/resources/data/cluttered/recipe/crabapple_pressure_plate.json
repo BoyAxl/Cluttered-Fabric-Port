@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": "cluttered:crabapple_planks"
+  },
+  "pattern": [
+    "pp"
+  ],
+  "result": {
+    "id": "cluttered:crabapple_pressure_plate"
+  },
+  "show_notification": false
+}

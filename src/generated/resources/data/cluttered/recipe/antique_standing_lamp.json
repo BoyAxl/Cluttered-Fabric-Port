@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:wooden_fences",
+    "g": "minecraft:green_stained_glass_pane",
+    "l": "minecraft:redstone_lamp",
+    "r": "minecraft:red_stained_glass_pane",
+    "y": "minecraft:yellow_stained_glass_pane"
+  },
+  "pattern": [
+    "rgy",
+    " l ",
+    " f "
+  ],
+  "result": {
+    "id": "cluttered:antique_standing_lamp"
+  },
+  "show_notification": false
+}

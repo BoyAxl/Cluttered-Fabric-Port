@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:cactus",
+    "p": "minecraft:flower_pot"
+  },
+  "pattern": [
+    "cc",
+    "pp"
+  ],
+  "result": {
+    "id": "cluttered:mini_cactus_set"
+  },
+  "show_notification": false
+}

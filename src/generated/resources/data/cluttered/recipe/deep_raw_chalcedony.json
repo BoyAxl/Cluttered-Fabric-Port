@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": "minecraft:amethyst_shard",
+    "l": "minecraft:lapis_lazuli",
+    "q": "minecraft:quartz"
+  },
+  "pattern": [
+    "qaq",
+    "ala",
+    "qaq"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:deep_raw_chalcedony"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "t": "minecraft:purple_concrete"
+  },
+  "pattern": [
+    "tt",
+    "tt"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:tiles_purple"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:blue_dye",
+    "g": "minecraft:glass_pane",
+    "i": "minecraft:iron_ingot",
+    "s": "minecraft:sugar"
+  },
+  "pattern": [
+    "did",
+    "gsg",
+    " i "
+  ],
+  "result": {
+    "id": "cluttered:gumball_machine_blue"
+  },
+  "show_notification": false
+}

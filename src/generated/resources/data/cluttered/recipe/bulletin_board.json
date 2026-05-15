@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": "minecraft:item_frame",
+    "l": "#minecraft:logs"
+  },
+  "pattern": [
+    "lil"
+  ],
+  "result": {
+    "id": "cluttered:bulletin_board"
+  },
+  "show_notification": false
+}

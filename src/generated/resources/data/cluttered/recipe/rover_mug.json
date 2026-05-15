@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:flower_pot",
+    "p": "minecraft:blue_dye"
+  },
+  "pattern": [
+    "p p",
+    "pcp"
+  ],
+  "result": {
+    "id": "cluttered:rover_mug"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bread",
+    "p": "minecraft:heavy_weighted_pressure_plate"
+  },
+  "pattern": [
+    "b",
+    "p"
+  ],
+  "result": {
+    "id": "cluttered:sliced_bread"
+  },
+  "show_notification": false
+}

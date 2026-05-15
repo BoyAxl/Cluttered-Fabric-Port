@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "m": "minecraft:brown_mushroom",
+    "p": "minecraft:paper",
+    "s": "#forge:rods/wooden",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "psp",
+    "sms",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:diamond_wallpaper_brown_mushroom"
+  },
+  "show_notification": false
+}

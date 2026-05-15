@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": "cluttered:sycamore_planks"
+  },
+  "pattern": [
+    "pp"
+  ],
+  "result": {
+    "id": "cluttered:sycamore_pressure_plate"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:cyan_dye",
+    "i": "minecraft:iron_nugget",
+    "p": "minecraft:pink_dye",
+    "w": "minecraft:white_dye",
+    "y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    " y ",
+    "cip",
+    " w "
+  ],
+  "result": {
+    "id": "cluttered:rubiks_cube_pastel"
+  },
+  "show_notification": false
+}

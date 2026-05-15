@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:carrot",
+    "g": "minecraft:wheat",
+    "p": "minecraft:potato",
+    "w": "cluttered:wicker_block"
+  },
+  "pattern": [
+    "cpg",
+    "w w",
+    "www"
+  ],
+  "result": {
+    "id": "cluttered:basket_of_produce"
+  },
+  "show_notification": false
+}

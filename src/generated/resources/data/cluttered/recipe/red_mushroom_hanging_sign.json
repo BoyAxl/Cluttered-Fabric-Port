@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "c": "minecraft:chain",
+    "p": "cluttered:red_mushroom_log"
+  },
+  "pattern": [
+    "c c",
+    "ppp",
+    "ppp"
+  ],
+  "result": {
+    "count": 6,
+    "id": "cluttered:red_mushroom_hanging_sign"
+  },
+  "show_notification": false
+}

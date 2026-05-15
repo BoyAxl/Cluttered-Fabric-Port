@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "n": "minecraft:paper",
+    "p": "#minecraft:planks"
+  },
+  "pattern": [
+    "ppp",
+    "cnc",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:card_index"
+  },
+  "show_notification": false
+}

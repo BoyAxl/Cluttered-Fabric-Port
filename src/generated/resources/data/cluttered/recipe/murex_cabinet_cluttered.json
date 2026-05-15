@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:murex_cabinet",
+    "minecraft:glass_bottle",
+    "minecraft:paper",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "cluttered:murex_cabinet_cluttered"
+  }
+}

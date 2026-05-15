@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:blue_wool",
+    "i": "minecraft:iron_ingot",
+    "m": "minecraft:magenta_wool",
+    "n": "minecraft:iron_nugget",
+    "p": "minecraft:purple_wool"
+  },
+  "pattern": [
+    "nin",
+    "mpb",
+    "mpb"
+  ],
+  "result": {
+    "id": "cluttered:animated_flag_bisexual"
+  },
+  "show_notification": false
+}

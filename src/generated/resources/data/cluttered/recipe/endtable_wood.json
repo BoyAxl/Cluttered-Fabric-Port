@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "#minecraft:wooden_buttons",
+    "p": "#minecraft:wooden_slabs",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "ppp",
+    "sbs",
+    "s s"
+  ],
+  "result": {
+    "id": "cluttered:endtable_wood"
+  },
+  "show_notification": false
+}

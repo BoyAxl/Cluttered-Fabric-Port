@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "d": "minecraft:dandelion",
+    "p": "minecraft:paper",
+    "v": "minecraft:vine",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "ppp",
+    "vdv",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:chic_wallpaper"
+  },
+  "show_notification": false
+}

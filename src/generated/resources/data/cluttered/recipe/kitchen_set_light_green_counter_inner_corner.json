@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:lime_dye",
+    "p": "#minecraft:planks",
+    "s": "#minecraft:stone_crafting_materials"
+  },
+  "pattern": [
+    "sss",
+    "pdp",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:kitchen_set_light_green_counter_inner_corner"
+  },
+  "show_notification": false
+}

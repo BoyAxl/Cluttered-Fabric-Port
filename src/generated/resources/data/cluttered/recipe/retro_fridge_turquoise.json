@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:iron_block",
+    "d": "minecraft:cyan_dye",
+    "f": "minecraft:packed_ice",
+    "i": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "idi",
+    "ifi",
+    "ibi"
+  ],
+  "result": {
+    "id": "cluttered:retro_fridge_turquoise"
+  },
+  "show_notification": false
+}

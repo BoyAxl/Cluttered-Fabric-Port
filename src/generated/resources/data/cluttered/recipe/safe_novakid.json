@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:iron_block",
+    "c": "minecraft:chest",
+    "i": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "iii",
+    "ici",
+    "ibi"
+  ],
+  "result": {
+    "id": "cluttered:safe_novakid"
+  },
+  "show_notification": false
+}

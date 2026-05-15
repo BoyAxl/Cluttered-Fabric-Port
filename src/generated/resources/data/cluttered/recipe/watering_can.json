@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bowl",
+    "i": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "  i",
+    "ibi",
+    "iii"
+  ],
+  "result": {
+    "id": "cluttered:watering_can"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:pink_tulip",
+    "p": "#minecraft:planks",
+    "w": "minecraft:lime_wool"
+  },
+  "pattern": [
+    "www",
+    "gwg",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:armchair_watermelon"
+  },
+  "show_notification": false
+}

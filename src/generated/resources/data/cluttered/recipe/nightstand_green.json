@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:pink_carpet",
+    "f": "minecraft:sunflower",
+    "p": "cluttered:sycamore_planks",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "cfc",
+    "ppp",
+    "s s"
+  ],
+  "result": {
+    "id": "cluttered:nightstand_green"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "cluttered:stars_pendant",
+    "m": "cluttered:moon_pendant",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "sss",
+    "fmf"
+  ],
+  "result": {
+    "id": "cluttered:heavenly_ornamental_array"
+  },
+  "show_notification": false
+}

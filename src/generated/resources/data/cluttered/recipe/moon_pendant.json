@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:glowstone_dust",
+    "s": "minecraft:string"
+  },
+  "pattern": [
+    " sg",
+    "gg ",
+    " gg"
+  ],
+  "result": {
+    "id": "cluttered:moon_pendant"
+  },
+  "show_notification": false
+}

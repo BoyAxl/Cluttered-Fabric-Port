@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "j": "minecraft:carved_pumpkin",
+    "p": "minecraft:paper",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "ppp",
+    "pjp",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:halloween_wallpaper"
+  },
+  "show_notification": false
+}

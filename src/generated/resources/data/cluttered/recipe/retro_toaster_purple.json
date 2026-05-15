@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:purple_dye",
+    "i": "minecraft:iron_ingot",
+    "l": "minecraft:lever",
+    "m": "minecraft:magma_block"
+  },
+  "pattern": [
+    "idl",
+    "imi"
+  ],
+  "result": {
+    "id": "cluttered:retro_toaster_purple"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "g": "minecraft:green_dye",
+    "p": "minecraft:paper",
+    "s": "#forge:rods/wooden",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "psp",
+    "sgs",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:diamond_wallpaper_pear"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "g": "#minecraft:fence_gates",
+    "t": "#minecraft:wooden_fences"
+  },
+  "pattern": [
+    "tgt"
+  ],
+  "result": {
+    "id": "cluttered:wooden_picket_fence_gate"
+  },
+  "show_notification": false
+}

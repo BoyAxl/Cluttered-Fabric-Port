@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "o": "minecraft:orange_dye",
+    "p": "minecraft:paper",
+    "s": "#forge:rods/wooden",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "psp",
+    "sos",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:diamond_wallpaper_orange"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "c": "minecraft:chain",
+    "p": "cluttered:stripped_fluorescent_maple_log"
+  },
+  "pattern": [
+    "c c",
+    "ppp",
+    "ppp"
+  ],
+  "result": {
+    "count": 6,
+    "id": "cluttered:fluorescent_maple_hanging_sign"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "cluttered:darkwood_stool",
+    "s": "minecraft:spruce_slab"
+  },
+  "pattern": [
+    "sss",
+    "d d"
+  ],
+  "result": {
+    "id": "cluttered:darkwood_table"
+  },
+  "show_notification": false
+}

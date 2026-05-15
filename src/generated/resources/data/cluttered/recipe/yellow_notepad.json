@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "#minecraft:coals",
+    "g": "minecraft:yellow_dye",
+    "p": "minecraft:paper",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "gcs",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:yellow_notepad"
+  },
+  "show_notification": false
+}

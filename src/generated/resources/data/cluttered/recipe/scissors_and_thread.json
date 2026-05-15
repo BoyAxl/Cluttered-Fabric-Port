@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:string",
+    "minecraft:string"
+  ],
+  "result": {
+    "id": "cluttered:scissors_and_thread"
+  }
+}

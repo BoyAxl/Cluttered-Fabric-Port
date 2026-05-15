@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "cluttered:willow_planks",
+    "t": "cluttered:subway_tiles_purple"
+  },
+  "pattern": [
+    "ttt",
+    "p p",
+    "p p"
+  ],
+  "result": {
+    "id": "cluttered:black_cat_table"
+  },
+  "show_notification": false
+}

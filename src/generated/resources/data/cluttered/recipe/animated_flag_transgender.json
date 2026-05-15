@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:light_blue_wool",
+    "i": "minecraft:iron_ingot",
+    "n": "minecraft:iron_nugget",
+    "p": "minecraft:pink_wool"
+  },
+  "pattern": [
+    "nin",
+    "bpb",
+    "bpb"
+  ],
+  "result": {
+    "id": "cluttered:animated_flag_transgender"
+  },
+  "show_notification": false
+}

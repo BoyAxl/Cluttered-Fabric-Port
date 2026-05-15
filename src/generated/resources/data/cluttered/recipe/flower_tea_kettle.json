@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:flowers",
+    "g": "minecraft:white_glazed_terracotta",
+    "t": "minecraft:tripwire_hook"
+  },
+  "pattern": [
+    " t ",
+    "gfg",
+    "ggg"
+  ],
+  "result": {
+    "id": "cluttered:flower_tea_kettle"
+  },
+  "show_notification": false
+}

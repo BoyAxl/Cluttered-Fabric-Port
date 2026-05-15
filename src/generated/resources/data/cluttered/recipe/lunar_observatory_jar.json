@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:potion",
+    "minecraft:potion",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "id": "cluttered:lunar_observatory_jar"
+  }
+}

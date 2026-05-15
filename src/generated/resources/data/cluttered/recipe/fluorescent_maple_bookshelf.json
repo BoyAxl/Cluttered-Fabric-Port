@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "minecraft:book",
+    "p": "cluttered:fluorescent_maple_planks"
+  },
+  "pattern": [
+    "ppp",
+    "bbb",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:fluorescent_maple_bookshelf"
+  },
+  "show_notification": false
+}

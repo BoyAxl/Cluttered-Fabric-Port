@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "cluttered:blue_mushroom_slab",
+    "p": "cluttered:blue_mushroom_planks"
+  },
+  "pattern": [
+    "bbb",
+    "ppp"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:blue_mushroom_wainscoting"
+  },
+  "show_notification": false
+}

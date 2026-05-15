@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "d": "minecraft:brown_dye",
+    "p": "#minecraft:planks"
+  },
+  "pattern": [
+    "pdp",
+    "pcp",
+    "pdp"
+  ],
+  "result": {
+    "id": "cluttered:kitchen_set_brown_cabinet"
+  },
+  "show_notification": false
+}

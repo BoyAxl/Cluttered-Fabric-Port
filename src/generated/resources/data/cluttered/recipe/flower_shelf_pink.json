@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:pink_dye",
+    "p": "#minecraft:planks",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "dpd",
+    "p p",
+    "dsd"
+  ],
+  "result": {
+    "count": 3,
+    "id": "cluttered:flower_shelf_pink"
+  },
+  "show_notification": false
+}

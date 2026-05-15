@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:glass_pane",
+    "m": "minecraft:red_mushroom",
+    "p": "minecraft:podzol"
+  },
+  "pattern": [
+    "ggg",
+    "gmg",
+    "gpg"
+  ],
+  "result": {
+    "id": "cluttered:mushroom_terrarium_red"
+  },
+  "show_notification": false
+}

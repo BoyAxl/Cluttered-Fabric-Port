@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:yellow_dye",
+    "g": "minecraft:glass",
+    "h": "minecraft:honey_bottle",
+    "s": "minecraft:sugar"
+  },
+  "pattern": [
+    "gdg",
+    "ghg",
+    "gsg"
+  ],
+  "result": {
+    "id": "cluttered:jam_jar_honey"
+  },
+  "show_notification": false
+}

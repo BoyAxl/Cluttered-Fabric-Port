@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:green_bed",
+    "r": "minecraft:red_bed",
+    "s": "minecraft:spruce_log"
+  },
+  "pattern": [
+    "ss",
+    "gr",
+    "ss"
+  ],
+  "result": {
+    "id": "cluttered:darkwood_bed_southern_flair"
+  },
+  "show_notification": false
+}

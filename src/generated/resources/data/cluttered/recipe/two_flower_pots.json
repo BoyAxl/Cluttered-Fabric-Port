@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:flowers",
+    "p": "minecraft:flower_pot"
+  },
+  "pattern": [
+    "ff",
+    "pp"
+  ],
+  "result": {
+    "id": "cluttered:two_flower_pots"
+  },
+  "show_notification": false
+}

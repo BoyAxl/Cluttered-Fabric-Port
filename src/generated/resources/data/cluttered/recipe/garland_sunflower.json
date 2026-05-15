@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": "minecraft:string",
+    "w": "minecraft:sunflower"
+  },
+  "pattern": [
+    "sss",
+    "w w",
+    " w "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:garland_sunflower"
+  },
+  "show_notification": false
+}

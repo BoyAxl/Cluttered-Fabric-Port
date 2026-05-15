@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:black_wool",
+    "i": "minecraft:iron_ingot",
+    "n": "minecraft:iron_nugget",
+    "p": "minecraft:purple_wool",
+    "w": "minecraft:white_wool"
+  },
+  "pattern": [
+    "nin",
+    "bwp",
+    "bwp"
+  ],
+  "result": {
+    "id": "cluttered:animated_flag_asexual"
+  },
+  "show_notification": false
+}

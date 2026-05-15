@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "minecraft:flower_pot",
+    "v": "minecraft:vine"
+  },
+  "pattern": [
+    "vv",
+    "pv"
+  ],
+  "result": {
+    "count": 3,
+    "id": "cluttered:flower_shelf_plant"
+  },
+  "show_notification": false
+}

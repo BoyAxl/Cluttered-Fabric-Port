@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "s": "#forge:rods/wooden",
+    "y": "minecraft:string"
+  },
+  "pattern": [
+    "sys",
+    "sys",
+    "sys"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:wicker_block"
+  },
+  "show_notification": false
+}

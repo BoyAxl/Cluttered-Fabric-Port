@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:fishes",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "fsf",
+    "fsf"
+  ],
+  "result": {
+    "id": "cluttered:fwish_armchair"
+  },
+  "show_notification": false
+}

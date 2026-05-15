@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "minecraft:pink_wool",
+    "w": "minecraft:white_wool"
+  },
+  "pattern": [
+    "pwp",
+    "pwp"
+  ],
+  "result": {
+    "id": "cluttered:cottage_ottoman"
+  },
+  "show_notification": false
+}

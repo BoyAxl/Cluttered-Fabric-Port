@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "p": "#minecraft:planks",
+    "s": "minecraft:string",
+    "y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "sps",
+    "sys",
+    "sps"
+  ],
+  "result": {
+    "id": "cluttered:spool_of_thread_yellow"
+  },
+  "show_notification": false
+}

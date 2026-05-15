@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": "minecraft:redstone_lamp",
+    "m": "minecraft:moss_carpet",
+    "s": "minecraft:spore_blossom",
+    "v": "minecraft:vine"
+  },
+  "pattern": [
+    "vsl",
+    "v  ",
+    "mm "
+  ],
+  "result": {
+    "id": "cluttered:flower_desk_lamp"
+  },
+  "show_notification": false
+}

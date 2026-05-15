@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:milk_bucket",
+    "c": "minecraft:beetroot",
+    "e": "minecraft:egg",
+    "s": "minecraft:sugar",
+    "w": "minecraft:wheat"
+  },
+  "pattern": [
+    "bcb",
+    "ses",
+    "wcw"
+  ],
+  "result": {
+    "id": "cluttered:heart_cake"
+  },
+  "show_notification": false
+}

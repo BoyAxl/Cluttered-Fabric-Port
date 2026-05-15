@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:blue_dye",
+    "g": "minecraft:green_dye",
+    "i": "minecraft:iron_nugget",
+    "r": "minecraft:red_dye",
+    "y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    " y ",
+    "bir",
+    " g "
+  ],
+  "result": {
+    "id": "cluttered:rubiks_cube"
+  },
+  "show_notification": false
+}

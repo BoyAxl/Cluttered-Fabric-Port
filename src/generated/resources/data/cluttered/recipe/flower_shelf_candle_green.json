@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:lime_dye",
+    "w": "minecraft:honeycomb"
+  },
+  "pattern": [
+    "d",
+    "w"
+  ],
+  "result": {
+    "count": 3,
+    "id": "cluttered:flower_shelf_candle_green"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bowl",
+    "minecraft:wheat",
+    "minecraft:cocoa_beans",
+    "minecraft:egg"
+  ],
+  "result": {
+    "id": "cluttered:sweetheart_baking_set_ingredients"
+  }
+}

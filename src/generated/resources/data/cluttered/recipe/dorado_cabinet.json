@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "p": "minecraft:spruce_planks",
+    "s": "minecraft:oak_slab"
+  },
+  "pattern": [
+    "pcp",
+    "sss",
+    "pcp"
+  ],
+  "result": {
+    "id": "cluttered:dorado_cabinet"
+  },
+  "show_notification": false
+}

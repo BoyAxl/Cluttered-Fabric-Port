@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bamboo_block",
+    "s": "minecraft:bookshelf"
+  },
+  "pattern": [
+    "bsb",
+    "bsb",
+    "bsb"
+  ],
+  "result": {
+    "id": "cluttered:bamboo_bookshelf"
+  },
+  "show_notification": false
+}

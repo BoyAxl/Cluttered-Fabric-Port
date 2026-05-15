@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bone_block",
+    "d": "minecraft:dirt",
+    "w": "cluttered:willow_planks"
+  },
+  "pattern": [
+    "wdw",
+    "wbw",
+    "wbw"
+  ],
+  "result": {
+    "id": "cluttered:tarrey_town_planter_purple"
+  },
+  "show_notification": false
+}

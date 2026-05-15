@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "minecraft:book",
+    "p": "minecraft:pumpkin"
+  },
+  "pattern": [
+    "ppp",
+    "bbb",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:pumpkin_bookshelf"
+  },
+  "show_notification": false
+}

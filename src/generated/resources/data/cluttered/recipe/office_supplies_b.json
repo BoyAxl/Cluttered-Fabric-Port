@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#minecraft:coals",
+    "minecraft:stick",
+    "minecraft:paper",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "id": "cluttered:office_supplies_b"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:decorated_pot",
+    "i": "minecraft:seagrass"
+  },
+  "pattern": [
+    "i",
+    "c"
+  ],
+  "result": {
+    "id": "cluttered:seaweed_planter"
+  },
+  "show_notification": false
+}

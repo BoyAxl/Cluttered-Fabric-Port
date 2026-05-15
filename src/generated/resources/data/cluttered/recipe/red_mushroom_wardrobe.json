@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "p": "#cluttered:red_mushroom_log",
+    "r": "cluttered:red_mushroom_cap"
+  },
+  "pattern": [
+    "rcr",
+    "rcr",
+    " p "
+  ],
+  "result": {
+    "id": "cluttered:red_mushroom_wardrobe"
+  },
+  "show_notification": false
+}

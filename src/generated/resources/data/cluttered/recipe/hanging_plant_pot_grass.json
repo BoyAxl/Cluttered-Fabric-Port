@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "minecraft:grass",
+    "p": "minecraft:flower_pot",
+    "s": "minecraft:tripwire_hook"
+  },
+  "pattern": [
+    "s",
+    "f",
+    "p"
+  ],
+  "result": {
+    "id": "cluttered:hanging_plant_pot_grass"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": "minecraft:lightning_rod",
+    "p": "minecraft:tinted_glass",
+    "r": "cluttered:red_mushroom_cap",
+    "s": "minecraft:redstone"
+  },
+  "pattern": [
+    " l ",
+    "rpr",
+    "rsr"
+  ],
+  "result": {
+    "id": "cluttered:red_mushroom_tv"
+  },
+  "show_notification": false
+}

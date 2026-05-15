@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "minecraft:blue_dye",
+    "p": "minecraft:paper",
+    "r": "minecraft:rose_bush",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "pbp",
+    "prp",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:blue_rose_striped_wallpaper"
+  },
+  "show_notification": false
+}

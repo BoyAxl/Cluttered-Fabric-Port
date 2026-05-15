@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:blue_dye",
+    "minecraft:paper",
+    "cluttered:briefcase_blank"
+  ],
+  "result": {
+    "id": "cluttered:briefcase_rover"
+  }
+}

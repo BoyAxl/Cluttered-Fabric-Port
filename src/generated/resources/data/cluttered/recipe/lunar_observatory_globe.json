@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "#forge:storage_blocks/gold",
+    "g": "#forge:ingots/gold"
+  },
+  "pattern": [
+    "gbg",
+    " g ",
+    " g "
+  ],
+  "result": {
+    "id": "cluttered:lunar_observatory_globe"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:cyan_carpet",
+    "m": "minecraft:magenta_carpet",
+    "s": "#forge:rods/wooden",
+    "y": "minecraft:yellow_carpet"
+  },
+  "pattern": [
+    "myc",
+    "myc",
+    "s  "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:mini_flag_pan"
+  },
+  "show_notification": false
+}

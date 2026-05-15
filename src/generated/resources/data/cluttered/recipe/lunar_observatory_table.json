@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "minecraft:spruce_fence",
+    "o": "minecraft:oak_slab",
+    "s": "minecraft:spruce_planks"
+  },
+  "pattern": [
+    "sos",
+    "f f"
+  ],
+  "result": {
+    "id": "cluttered:lunar_observatory_table"
+  },
+  "show_notification": false
+}

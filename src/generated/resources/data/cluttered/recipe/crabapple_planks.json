@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#minecraft:crabapple_log"
+  ],
+  "result": {
+    "count": 4,
+    "id": "cluttered:crabapple_planks"
+  }
+}

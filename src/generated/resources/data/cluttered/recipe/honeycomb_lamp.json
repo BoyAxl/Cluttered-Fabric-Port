@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "h": "minecraft:honeycomb_block",
+    "l": "minecraft:redstone_lamp",
+    "m": "minecraft:moss_carpet"
+  },
+  "pattern": [
+    "h",
+    "l",
+    "m"
+  ],
+  "result": {
+    "id": "cluttered:honeycomb_lamp"
+  },
+  "show_notification": false
+}

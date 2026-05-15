@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:blue_wool",
+    "f": "#minecraft:fishes"
+  },
+  "pattern": [
+    "bbb",
+    "fff"
+  ],
+  "result": {
+    "id": "cluttered:fwish_ottoman"
+  },
+  "show_notification": false
+}

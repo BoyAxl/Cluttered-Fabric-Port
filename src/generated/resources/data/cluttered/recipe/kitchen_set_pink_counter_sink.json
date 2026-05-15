@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bucket",
+    "d": "minecraft:pink_dye",
+    "p": "#minecraft:planks",
+    "s": "#minecraft:stone_crafting_materials"
+  },
+  "pattern": [
+    "sbs",
+    "pdp",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:kitchen_set_pink_counter_sink"
+  },
+  "show_notification": false
+}

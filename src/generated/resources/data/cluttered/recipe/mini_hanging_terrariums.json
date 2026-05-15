@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:flowers",
+    "m": "minecraft:red_mushroom",
+    "p": "#minecraft:wooden_slabs",
+    "s": "minecraft:string"
+  },
+  "pattern": [
+    "ppp",
+    "s s",
+    "m f"
+  ],
+  "result": {
+    "id": "cluttered:mini_hanging_terrariums"
+  },
+  "show_notification": false
+}

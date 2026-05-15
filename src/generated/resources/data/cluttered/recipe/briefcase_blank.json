@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "l": "minecraft:leather",
+    "t": "minecraft:tripwire_hook"
+  },
+  "pattern": [
+    " t ",
+    "lcl",
+    " l "
+  ],
+  "result": {
+    "id": "cluttered:briefcase_blank"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "s": "#minecraft:wooden_slabs",
+    "w": "cluttered:wine_bottles"
+  },
+  "pattern": [
+    "s",
+    "w",
+    "s"
+  ],
+  "result": {
+    "id": "cluttered:wine_bottle_rack"
+  },
+  "show_notification": false
+}

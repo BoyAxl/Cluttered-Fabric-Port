@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "g": "minecraft:poppy",
+    "p": "#minecraft:planks",
+    "w": "minecraft:magenta_wool"
+  },
+  "pattern": [
+    "www",
+    "gwg",
+    "ppp"
+  ],
+  "result": {
+    "id": "cluttered:armchair_fuchsia"
+  },
+  "show_notification": false
+}

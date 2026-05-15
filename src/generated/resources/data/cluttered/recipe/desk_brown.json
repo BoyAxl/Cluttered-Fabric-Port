@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "minecraft:dark_oak_fence",
+    "p": "minecraft:dark_oak_planks",
+    "s": "minecraft:dark_oak_slab"
+  },
+  "pattern": [
+    "sss",
+    "ppp",
+    "f f"
+  ],
+  "result": {
+    "id": "cluttered:desk_brown"
+  },
+  "show_notification": false
+}

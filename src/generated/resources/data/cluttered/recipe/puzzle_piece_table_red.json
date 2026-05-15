@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:red_dye",
+    "f": "#minecraft:wooden_fences",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "dsd",
+    " f ",
+    " f "
+  ],
+  "result": {
+    "id": "cluttered:puzzle_piece_table_red"
+  },
+  "show_notification": false
+}

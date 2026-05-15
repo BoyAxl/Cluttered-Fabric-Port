@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:flowers",
+    "o": "minecraft:orange_dye",
+    "p": "minecraft:flower_pot"
+  },
+  "pattern": [
+    " f ",
+    "opo",
+    " o "
+  ],
+  "result": {
+    "id": "cluttered:cat_plant_pot_orange"
+  },
+  "show_notification": false
+}

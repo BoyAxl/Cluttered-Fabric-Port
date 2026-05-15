@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": "minecraft:ladder",
+    "p": "minecraft:flower_pot",
+    "s": "#minecraft:wooden_slabs"
+  },
+  "pattern": [
+    "lp ",
+    "lsp",
+    "lss"
+  ],
+  "result": {
+    "id": "cluttered:plant_ladder"
+  },
+  "show_notification": false
+}

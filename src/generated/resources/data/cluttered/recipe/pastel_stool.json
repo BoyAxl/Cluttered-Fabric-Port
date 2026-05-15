@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:cyan_wool",
+    "p": "minecraft:purple_wool"
+  },
+  "pattern": [
+    "ccc",
+    "p p"
+  ],
+  "result": {
+    "id": "cluttered:pastel_stool"
+  },
+  "show_notification": false
+}

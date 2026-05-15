@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "d": "minecraft:green_dye",
+    "p": "minecraft:paper",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "dpd",
+    "dpd",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:checkered_green_wallpaper"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:pastry_plate",
+    "minecraft:wheat",
+    "minecraft:egg",
+    "minecraft:sugar",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "cluttered:pancake_stack"
+  }
+}

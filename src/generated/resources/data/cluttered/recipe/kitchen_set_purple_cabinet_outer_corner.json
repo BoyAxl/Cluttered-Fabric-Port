@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "d": "minecraft:purple_dye",
+    "g": "minecraft:glass_pane",
+    "p": "#minecraft:planks"
+  },
+  "pattern": [
+    "pg",
+    "dc",
+    "pg"
+  ],
+  "result": {
+    "id": "cluttered:kitchen_set_purple_cabinet_outer_corner"
+  },
+  "show_notification": false
+}

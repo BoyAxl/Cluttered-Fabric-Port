@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": "minecraft:apple",
+    "p": "minecraft:paper",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "ppp",
+    "apa",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:apple_wallpaper"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:honeycomb",
+    "l": "minecraft:redstone_lamp"
+  },
+  "pattern": [
+    "blb"
+  ],
+  "result": {
+    "id": "cluttered:bee_lamp"
+  },
+  "show_notification": false
+}

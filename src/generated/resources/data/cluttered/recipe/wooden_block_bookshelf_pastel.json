@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:book",
+    "p": "minecraft:pink_dye",
+    "s": "#minecraft:wooden_slabs",
+    "y": "minecraft:yellow_dye"
+  },
+  "pattern": [
+    "sps",
+    "bbb",
+    "sys"
+  ],
+  "result": {
+    "id": "cluttered:wooden_block_bookshelf_pastel"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "cluttered:pastry_plate",
+    "minecraft:bread",
+    "minecraft:cooked_porkchop"
+  ],
+  "result": {
+    "id": "cluttered:ham_sandwich"
+  }
+}

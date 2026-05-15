@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "d": "minecraft:light_blue_dye",
+    "g": "minecraft:glass_pane",
+    "l": "minecraft:glowstone_dust",
+    "m": "minecraft:red_mushroom",
+    "p": "minecraft:podzol"
+  },
+  "pattern": [
+    "gdg",
+    "gmg",
+    "lpl"
+  ],
+  "result": {
+    "id": "cluttered:glowshroom_terrarium_blue"
+  },
+  "show_notification": false
+}

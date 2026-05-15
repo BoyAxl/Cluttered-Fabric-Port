@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": "cluttered:flowering_crabapple_planks",
+    "s": "#forge:rods/wooden"
+  },
+  "pattern": [
+    "sps",
+    "sps"
+  ],
+  "result": {
+    "id": "cluttered:flowering_crabapple_fence_gate"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "f": "#minecraft:fishes",
+    "s": "minecraft:bookshelf"
+  },
+  "pattern": [
+    "fff",
+    "sss",
+    "sss"
+  ],
+  "result": {
+    "id": "cluttered:fwish_bookcase"
+  },
+  "show_notification": false
+}

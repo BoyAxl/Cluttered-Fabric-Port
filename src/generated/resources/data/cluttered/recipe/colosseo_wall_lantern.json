@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": "minecraft:iron_bars",
+    "l": "minecraft:lantern"
+  },
+  "pattern": [
+    "  l",
+    "iii",
+    "ii "
+  ],
+  "result": {
+    "id": "cluttered:colosseo_wall_lantern"
+  },
+  "show_notification": false
+}

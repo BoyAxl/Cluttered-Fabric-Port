@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "minecraft:brush"
+  ],
+  "result": {
+    "id": "cluttered:paint_water_jar"
+  }
+}

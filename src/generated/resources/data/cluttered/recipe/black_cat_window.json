@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "minecraft:black_concrete",
+    "g": "minecraft:glass"
+  },
+  "pattern": [
+    "b b",
+    "gbg",
+    "bbb"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:black_cat_window"
+  },
+  "show_notification": false
+}

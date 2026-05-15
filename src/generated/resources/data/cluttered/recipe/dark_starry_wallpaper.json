@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "g": "minecraft:glowstone_dust",
+    "i": "minecraft:black_dye",
+    "p": "minecraft:paper",
+    "w": "#minecraft:planks"
+  },
+  "pattern": [
+    "pgp",
+    "gig",
+    "www"
+  ],
+  "result": {
+    "count": 8,
+    "id": "cluttered:dark_starry_wallpaper"
+  },
+  "show_notification": false
+}

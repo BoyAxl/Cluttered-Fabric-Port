@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:blue_wool",
+    "g": "minecraft:green_wool",
+    "i": "minecraft:iron_ingot",
+    "n": "minecraft:iron_nugget",
+    "o": "minecraft:orange_wool",
+    "p": "minecraft:purple_wool",
+    "r": "minecraft:red_wool",
+    "y": "minecraft:yellow_wool"
+  },
+  "pattern": [
+    "nin",
+    "ryp",
+    "ogb"
+  ],
+  "result": {
+    "id": "cluttered:animated_flag_rainbow"
+  },
+  "show_notification": false
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": "minecraft:bookshelf",
+    "c": "minecraft:blue_carpet",
+    "s": "minecraft:spruce_slab",
+    "t": "minecraft:light_blue_carpet"
+  },
+  "pattern": [
+    " ct",
+    "sss",
+    "bbb"
+  ],
+  "result": {
+    "id": "cluttered:darkwood_decorative_shelves_quilted"
+  },
+  "show_notification": false
+}
