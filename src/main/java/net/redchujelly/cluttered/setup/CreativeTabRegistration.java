@@ -118,7 +118,6 @@ public class CreativeTabRegistration {
                         output.accept(BlockRegistration.FLOWERING_POPLAR_BUTTON.get());
                         output.accept(ItemRegistration.FLOWERING_POPLAR_SIGN.get());
                         output.accept(ItemRegistration.FLOWERING_POPLAR_HANGING_SIGN.get());
-                        output.accept(BlockRegistration.FLOWERING_POPLAR_BUTTON.get());
                         output.accept(BlockRegistration.FLOWERING_POPLAR_BOOKSHELF.get());
                         output.accept(BlockRegistration.FLOWERING_POPLAR_WINDOW.get());
                         output.accept(BlockRegistration.FLOWERING_POPLAR_WINDOW_PANE.get());
