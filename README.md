@@ -1,4 +1,4 @@
-# Cluttered
+# Cluttered (Unofficial Fabric Port)
 
 ![Cluttered logo](docs/cluttered_logo.png)
 
@@ -91,7 +91,9 @@ The project declares GNU GPL 3.0 licensing. See [LICENSE](LICENSE).
 
 ## Credits
 
-Original Cluttered mod by YellowChuJelly.
+Cluttered was originally created by YellowChuJelly. Huge thanks to the original creator and contributors for the mod, its art direction, assets, models, textures, and the work that made this unofficial port possible.
+
+This repository is an unofficial compatibility port. All original Cluttered rights, authorship, branding, and licensing remain with their respective owners.
 
 Logo/banner image from the official [Cluttered Modrinth page](https://modrinth.com/mod/cluttered).
 
