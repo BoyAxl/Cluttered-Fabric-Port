@@ -1260,11 +1260,11 @@ public class BlockRegistration {
             () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR).setId(BLOCKS.key("dynasty_door")).mapColor(DyeColor.CYAN)), 300);
 
     public static final RegistryObject<Block> FLOWERING_CARPET_CRABAPPLE = registerBlock("flower_carpet_crabapple",
-            () -> new FlowerCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).setId(BLOCKS.key("flower_carpet_crabapple")).mapColor(DyeColor.GREEN)));
+            () -> new FlowerCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).setId(BLOCKS.key("flower_carpet_crabapple")).mapColor(DyeColor.GREEN).lightLevel(p -> 0)));
     public static final RegistryObject<Block> FLOWERING_CARPET_WILLOW = registerBlock("flower_carpet_willow",
-            () -> new FlowerCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).setId(BLOCKS.key("flower_carpet_willow")).mapColor(DyeColor.GREEN)));
+            () -> new FlowerCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).setId(BLOCKS.key("flower_carpet_willow")).mapColor(DyeColor.GREEN).lightLevel(p -> 0)));
     public static final RegistryObject<Block> FLOWERING_CARPET_POPLAR = registerBlock("flower_carpet_poplar",
-            () -> new FlowerCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).setId(BLOCKS.key("flower_carpet_poplar")).mapColor(DyeColor.GREEN)));
+            () -> new FlowerCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOW_LICHEN).setId(BLOCKS.key("flower_carpet_poplar")).mapColor(DyeColor.GREEN).lightLevel(p -> 0)));
 
     public static final RegistryObject<Block> ALABASTER_WINDOW_DIVIDED = registerBlock("alabaster_window_divided",
             () -> new CustomGlassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("alabaster_window_divided"))));
@@ -1459,9 +1459,9 @@ public class BlockRegistration {
             () -> new PolaroidCameraBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_WOOL).setId(BLOCKS.key("polaroid_camera")).sound(SoundType.SCAFFOLDING)));
 
     public static final RegistryObject<Block> RED_MUSHROOM_TV = registerBlock("red_mushroom_tv",
-            () -> new MushroomTVBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("red_mushroom_tv")).mapColor(DyeColor.RED)));
+            () -> new MushroomTVBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("red_mushroom_tv")).mapColor(DyeColor.RED).lightLevel(p -> p.getValue(MushroomTVBlock.CHANNEL) == 0 ? 0 : 6)));
     public static final RegistryObject<Block> RED_MUSHROOM_LAMP = registerBlock("red_mushroom_lamp",
-            () -> new MushroomLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("red_mushroom_lamp")).mapColor(DyeColor.BLUE)));
+            () -> new MushroomLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("red_mushroom_lamp")).mapColor(DyeColor.BLUE).lightLevel(p -> 15)));
     public static final RegistryObject<Block> RED_MUSHROOM_TABLE = registerBlock("red_mushroom_table",
             () -> new MushroomTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("red_mushroom_table")).mapColor(DyeColor.RED)));
     public static final RegistryObject<Block> RED_MUSHROOM_WARDROBE = registerBlock("red_mushroom_wardrobe",
@@ -1470,9 +1470,9 @@ public class BlockRegistration {
             () -> new MushroomBedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("red_mushroom_bed")).mapColor(DyeColor.RED)));
 
     public static final RegistryObject<Block> BLUE_MUSHROOM_TV = registerBlock("blue_mushroom_tv",
-            () -> new MushroomTVBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("blue_mushroom_tv")).mapColor(DyeColor.BLUE)));
+            () -> new MushroomTVBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("blue_mushroom_tv")).mapColor(DyeColor.BLUE).lightLevel(p -> p.getValue(MushroomTVBlock.CHANNEL) == 0 ? 0 : 6)));
     public static final RegistryObject<Block> BLUE_MUSHROOM_LAMP = registerBlock("blue_mushroom_lamp",
-            () -> new MushroomLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("blue_mushroom_lamp")).mapColor(DyeColor.BLUE)));
+            () -> new MushroomLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("blue_mushroom_lamp")).mapColor(DyeColor.BLUE).lightLevel(p -> 15)));
     public static final RegistryObject<Block> BLUE_MUSHROOM_TABLE = registerBlock("blue_mushroom_table",
             () -> new MushroomTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("blue_mushroom_table")).mapColor(DyeColor.BLUE)));
     public static final RegistryObject<Block> BLUE_MUSHROOM_WARDROBE = registerBlock("blue_mushroom_wardrobe",
@@ -1488,7 +1488,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> ENVELOPE_STACK = registerBlock("envelope_stack",
             () -> new FlatClutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_WOOL).setId(BLOCKS.key("envelope_stack")).sound(SoundType.SPORE_BLOSSOM).strength(0.2f)));
     public static final RegistryObject<Block> FLOWER_DESK_LAMP = registerBlock("flower_desk_lamp",
-            () -> new FlowerDeskLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_WOOL).setId(BLOCKS.key("flower_desk_lamp")).strength(0.4f).sound(SoundType.CHERRY_LEAVES)));
+            () -> new FlowerDeskLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_WOOL).setId(BLOCKS.key("flower_desk_lamp")).strength(0.4f).sound(SoundType.CHERRY_LEAVES).lightLevel(p -> 15)));
     public static final RegistryObject<Block> FLOWER_SHELF_BLUE = registerBlock("flower_shelf_blue",
             () -> new FlowerShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("flower_shelf_blue")).strength(0.4f)));
     public static final RegistryObject<Block> FLOWER_SHELF_GREEN = registerBlock("flower_shelf_green",
@@ -1502,23 +1502,23 @@ public class BlockRegistration {
     public static final RegistryObject<Block> FLOWER_SHELF_YELLOW = registerBlock("flower_shelf_yellow",
             () -> new FlowerShelfBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("flower_shelf_yellow")).strength(0.4f)));
     public static final RegistryObject<Block> FLOWER_SHELF_CANDLE_BLUE = registerBlock("flower_shelf_candle_blue",
-            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_blue")).sound(SoundType.CANDLE).strength(0.1f)));
+            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_blue")).sound(SoundType.CANDLE).strength(0.1f).lightLevel(p -> p.getValue(ShelfCandleBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> FLOWER_SHELF_CANDLE_GREEN = registerBlock("flower_shelf_candle_green",
-            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_green")).sound(SoundType.CANDLE).strength(0.1f)));
+            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_green")).sound(SoundType.CANDLE).strength(0.1f).lightLevel(p -> p.getValue(ShelfCandleBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> FLOWER_SHELF_CANDLE_PASTEL_YELLOW = registerBlock("flower_shelf_candle_pastel_yellow",
-            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_pastel_yellow")).sound(SoundType.CANDLE).strength(0.1f)));
+            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_pastel_yellow")).sound(SoundType.CANDLE).strength(0.1f).lightLevel(p -> p.getValue(ShelfCandleBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> FLOWER_SHELF_CANDLE_PINK = registerBlock("flower_shelf_candle_pink",
-            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_pink")).sound(SoundType.CANDLE).strength(0.1f)));
+            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_pink")).sound(SoundType.CANDLE).strength(0.1f).lightLevel(p -> p.getValue(ShelfCandleBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> FLOWER_SHELF_CANDLE_PURPLE = registerBlock("flower_shelf_candle_purple",
-            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_purple")).sound(SoundType.CANDLE).strength(0.1f)));
+            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_purple")).sound(SoundType.CANDLE).strength(0.1f).lightLevel(p -> p.getValue(ShelfCandleBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> FLOWER_SHELF_CANDLE_YELLOW = registerBlock("flower_shelf_candle_yellow",
-            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_yellow")).sound(SoundType.CANDLE).strength(0.1f)));
+            () -> new ShelfCandleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_candle_yellow")).sound(SoundType.CANDLE).strength(0.1f).lightLevel(p -> p.getValue(ShelfCandleBlock.LIT) ? 10 : 0)));
     public static final RegistryObject<Block> FLOWER_SHELF_PLANT = registerBlock("flower_shelf_plant",
             () -> new FlowerShelfPlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_shelf_plant")).sound(SoundType.DECORATED_POT).strength(0.2f)));
     public static final RegistryObject<Block> FLOWER_TEA_KETTLE = registerBlock("flower_tea_kettle",
             () -> new TeaKettleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("flower_tea_kettle")).sound(SoundType.DECORATED_POT)));
     public static final RegistryObject<Block> HEAVENLY_ORNAMENTAL_ARRAY = registerBlock("heavenly_ornamental_array",
-            () -> new HeavenlyArrayBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("heavenly_ornamental_array")).sound(SoundType.AMETHYST).strength(0.3f).noOcclusion()));
+            () -> new HeavenlyArrayBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("heavenly_ornamental_array")).sound(SoundType.AMETHYST).strength(0.3f).lightLevel(p -> 4).noOcclusion()));
     public static final RegistryObject<Block> SALT_PEPPER_SHAKERS = registerBlock("salt_pepper_shakers",
             () -> new SaltAndPepperBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("salt_pepper_shakers"))));
     public static final RegistryObject<Block> SAND_SEAL_PLUSH_BLUE = registerBlock("sand_seal_plush_blue",
@@ -1554,7 +1554,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> PINEAPPLE = registerBlock("pineapple",
             () -> new PineappleBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON).setId(BLOCKS.key("pineapple")).strength(0.3f)));
     public static final RegistryObject<Block> HONEYCOMB_LAMP = registerBlock("honeycomb_lamp",
-            () -> new HoneycombLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("honeycomb_lamp")).sound(SoundType.HONEY_BLOCK)));
+            () -> new HoneycombLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("honeycomb_lamp")).sound(SoundType.HONEY_BLOCK).lightLevel(p -> 15)));
     public static final RegistryObject<Block> SEAWEED_PLANTER = registerBlock("seaweed_planter",
             () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA).setId(BLOCKS.key("seaweed_planter")).sound(SoundType.DECORATED_POT).mapColor(DyeColor.GREEN)));
     //TODO remove maybe?
@@ -1750,31 +1750,31 @@ public class BlockRegistration {
     public static final RegistryObject<Block> SEWING_MANNEQUIN = registerBlock("sewing_mannequin",
             () -> new SewingMannequinBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("sewing_mannequin"))));
     public static final RegistryObject<Block> STARS_PENDANT = registerBlock("stars_pendant",
-            () -> new StarPendantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("stars_pendant")).sound(SoundType.SMALL_AMETHYST_BUD).mapColor(DyeColor.YELLOW).noCollision()));
+            () -> new StarPendantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("stars_pendant")).sound(SoundType.SMALL_AMETHYST_BUD).mapColor(DyeColor.YELLOW).lightLevel(p -> 10).noCollision()));
     public static final RegistryObject<Block> MOON_PENDANT = registerBlock("moon_pendant",
-            () -> new StarPendantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("moon_pendant")).sound(SoundType.SMALL_AMETHYST_BUD).mapColor(DyeColor.YELLOW).noCollision()));
+            () -> new StarPendantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("moon_pendant")).sound(SoundType.SMALL_AMETHYST_BUD).mapColor(DyeColor.YELLOW).lightLevel(p -> 10).noCollision()));
 
     public static final RegistryObject<Block> OSSON_PENDANT_BLACK = registerBlock("osson_pendant_black",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_black"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_black")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_BROWN = registerBlock("osson_pendant_brown",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_brown"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_brown")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_ORANGE = registerBlock("osson_pendant_orange",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_orange"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_orange")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_RACING_GREEN = registerBlock("osson_pendant_racing_green",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_racing_green"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_racing_green")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_SAGE_GREEN = registerBlock("osson_pendant_sage_green",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_sage_green"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_sage_green")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_RED = registerBlock("osson_pendant_red",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_red"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_red")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_YELLOW = registerBlock("osson_pendant_yellow",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_yellow"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_yellow")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> OSSON_PENDANT_WHITE = registerBlock("osson_pendant_white",
-            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_white"))));
+            () -> new PendantLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("osson_pendant_white")).lightLevel(p -> 15)));
 
     public static final RegistryObject<Block> COTTAGE_BOOKCASE = registerBlock("cottage_bookcase",
             () -> new CottageBookcaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("cottage_bookcase")).noOcclusion()));
     public static final RegistryObject<Block> COTTAGE_STANDING_LAMP = registerBlock("cottage_standing_lamp",
-            () -> new CottageLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).setId(BLOCKS.key("cottage_standing_lamp")).strength(0.5f)));
+            () -> new CottageLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).setId(BLOCKS.key("cottage_standing_lamp")).strength(0.5f).lightLevel(p -> 15)));
     public static final RegistryObject<Block> DRYING_HERBS = registerBlock("drying_herbs",
             () -> new DryingHerbsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).setId(BLOCKS.key("drying_herbs"))));
     public static final RegistryObject<Block> HANGING_CLOTH = registerBlock("hanging_cloth",
@@ -1796,15 +1796,15 @@ public class BlockRegistration {
     public static final RegistryObject<Block> SMALL_CAULDRON = registerBlock("small_cauldron_set",
             () -> new MediumFurnitureBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).setId(BLOCKS.key("small_cauldron_set")).strength(1.0f).sound(SoundType.COPPER)));
     public static final RegistryObject<Block> STEAMPUNK_LAMP = registerBlock("steampunk_lamp",
-            () -> new SteampunkLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).setId(BLOCKS.key("steampunk_lamp")).sound(SoundType.COPPER)));
+            () -> new SteampunkLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).setId(BLOCKS.key("steampunk_lamp")).sound(SoundType.COPPER).lightLevel(p -> 15)));
     public static final RegistryObject<Block> TARRY_TOWN_STOVE = registerBlock("tarrytown_stove",
-            () -> new TarrytownStoveBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).setId(BLOCKS.key("tarrytown_stove")).sound(SoundType.COPPER).noOcclusion()));
+            () -> new TarrytownStoveBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).setId(BLOCKS.key("tarrytown_stove")).sound(SoundType.COPPER).lightLevel(p -> p.getValue(TarrytownStoveBlock.LIT) ? 15 : 0).noOcclusion()));
 
     //TODO
     public static final RegistryObject<Block> HOPPIN_PARK_LANTERN = registerBlock("hoppin_park_lantern",
-            () -> new HoppinParkLantern(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("hoppin_park_lantern"))));
+            () -> new HoppinParkLantern(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("hoppin_park_lantern")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> SEA_GEM_LANTERN = registerBlock("sea_gem_lantern",
-            () -> new SeaGemLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("sea_gem_lantern"))));
+            () -> new SeaGemLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("sea_gem_lantern")).lightLevel(p -> 15)));
     public static final RegistryObject<Block> HANGING_SHELVES_PLANTS = registerBlock("hanging_shelves_plants",
             () -> new HangingShelvesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).setId(BLOCKS.key("hanging_shelves_plants")).strength(0.4f)));
     public static final RegistryObject<Block> HANGING_SHELVES_POTTERY = registerBlock("hanging_shelves_pottery",
@@ -1895,7 +1895,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> MOON_DECORATION = registerBlock("moon_decoration",
             () -> new FlatDirectionalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("moon_decoration")).lightLevel(p -> 10).sound(SoundType.SMALL_AMETHYST_BUD).mapColor(DyeColor.YELLOW).noOcclusion().noCollision()));
     public static final RegistryObject<Block> CAGED_BULB = registerBlock("caged_bulb",
-            () -> new CagedBulbBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("caged_bulb")).mapColor(DyeColor.BLACK)));
+            () -> new CagedBulbBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("caged_bulb")).mapColor(DyeColor.BLACK).lightLevel(p -> 15)));
     public static final RegistryObject<Block> POLAROIDS_A = registerBlock("polaroids_a",
             () -> new FlatDirectionalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPORE_BLOSSOM).setId(BLOCKS.key("polaroids_a"))));
     public static final RegistryObject<Block> POLAROIDS_B = registerBlock("polaroids_b",
@@ -1984,7 +1984,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> PASTEL_STOOL = registerBlock("pastel_stool",
             () -> new PastelStoolBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).setId(BLOCKS.key("pastel_stool")).mapColor(DyeColor.PINK)));
     public static final RegistryObject<Block> PASTEL_LIGHT = registerBlock("pastel_light",
-            () -> new PastelLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).setId(BLOCKS.key("pastel_light")).mapColor(DyeColor.PINK)));
+            () -> new PastelLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).setId(BLOCKS.key("pastel_light")).mapColor(DyeColor.PINK).lightLevel(p -> 15)));
     public static final RegistryObject<Block> PASTEL_TABLE = registerBlock("pastel_table",
             () -> new TableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).setId(BLOCKS.key("pastel_table")).mapColor(DyeColor.PINK)));
     public static final RegistryObject<Block> PASTEL_PLUSH = registerBlock("pastel_bunny_plushie",
@@ -1994,25 +1994,25 @@ public class BlockRegistration {
 
     //LAMPS
     public static final RegistryObject<Block> BEE_LAMP = registerBlock("bee_lamp",
-            () -> new BeeLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("bee_lamp")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW), false));
+            () -> new BeeLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("bee_lamp")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW).lightLevel(p -> 15), false));
     public static final RegistryObject<Block> BEE_LAMP_ANGRY = registerBlock("bee_lamp_angry",
-            () -> new BeeLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("bee_lamp_angry")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW), true));
+            () -> new BeeLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("bee_lamp_angry")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW).lightLevel(p -> 7), true));
     public static final RegistryObject<Block> STAINED_GLASS_LAMP = registerBlock("stained_glass_lamp",
-            () -> new StainedGlassLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("stained_glass_lamp")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW)));
+            () -> new StainedGlassLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("stained_glass_lamp")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW).lightLevel(p -> 15)));
     public static final RegistryObject<Block> COLOSSEO_WALL_LANTERN = registerBlock("colosseo_wall_lantern",
-            () -> new ColosseoLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("colosseo_wall_lantern")).mapColor(DyeColor.GREEN)));
+            () -> new ColosseoLanternBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).setId(BLOCKS.key("colosseo_wall_lantern")).mapColor(DyeColor.GREEN).lightLevel(p -> 15)));
 
     //TERRARIUMS
     public static final RegistryObject<Block> GLOWSHROOM_TERRARIUM_YELLOW = registerBlock("glowshroom_terrarium_yellow",
-            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_yellow")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW), true));
+            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_yellow")).sound(SoundType.GLASS).mapColor(DyeColor.YELLOW).lightLevel(p -> 15), true));
     public static final RegistryObject<Block> GLOWSHROOM_TERRARIUM_GREEN = registerBlock("glowshroom_terrarium_green",
-            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_green")).sound(SoundType.GLASS).mapColor(DyeColor.GREEN), true));
+            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_green")).sound(SoundType.GLASS).mapColor(DyeColor.GREEN).lightLevel(p -> 15), true));
     public static final RegistryObject<Block> GLOWSHROOM_TERRARIUM_BLUE = registerBlock("glowshroom_terrarium_blue",
-            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_blue")).sound(SoundType.GLASS).mapColor(DyeColor.BLUE), true));
+            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_blue")).sound(SoundType.GLASS).mapColor(DyeColor.BLUE).lightLevel(p -> 15), true));
     public static final RegistryObject<Block> GLOWSHROOM_TERRARIUM_PURPLE = registerBlock("glowshroom_terrarium_purple",
-            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_purple")).sound(SoundType.GLASS).mapColor(DyeColor.PURPLE), true));
+            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_purple")).sound(SoundType.GLASS).mapColor(DyeColor.PURPLE).lightLevel(p -> 15), true));
     public static final RegistryObject<Block> GLOWSHROOM_TERRARIUM_PINK = registerBlock("glowshroom_terrarium_pink",
-            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_pink")).sound(SoundType.GLASS).mapColor(DyeColor.PINK), true));
+            () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("glowshroom_terrarium_pink")).sound(SoundType.GLASS).mapColor(DyeColor.PINK).lightLevel(p -> 15), true));
     public static final RegistryObject<Block> MUSHROOM_TERRARIUM_RED = registerBlock("mushroom_terrarium_red",
             () -> new MushroomTerrariumBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_WOOL).setId(BLOCKS.key("mushroom_terrarium_red")).sound(SoundType.GLASS).mapColor(DyeColor.RED), false));
     public static final RegistryObject<Block> MUSHROOM_TERRARIUM_BROWN = registerBlock("mushroom_terrarium_brown",
@@ -2202,7 +2202,7 @@ public class BlockRegistration {
     public static final RegistryObject<Block> CUPID_BENCH = registerBlock("cupid_bench",
             () -> new CupidBenchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK).setId(BLOCKS.key("cupid_bench")).mapColor(DyeColor.WHITE).noOcclusion()));
     public static final RegistryObject<Block> SEWING_CLUTTER = registerBlock("sewing_clutter",
-            () -> new SewingClutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_CARPET).setId(BLOCKS.key("sewing_clutter")).mapColor(DyeColor.GREEN).noOcclusion()));
+            () -> new SewingClutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_CARPET).setId(BLOCKS.key("sewing_clutter")).mapColor(DyeColor.GREEN).lightLevel(p -> p.getValue(SewingClutterBlock.MULTIBLOCK_PART) == 2 ? 10 : 0).noOcclusion()));
     public static final RegistryObject<Block> PASTRY_DISPLAY_CASE = registerBlock("pastry_display_case",
             () -> new PastryDisplayCaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("pastry_display_case")).mapColor(DyeColor.BLACK).noOcclusion()));
     public static final RegistryObject<Block> IMPERIAL_CHAIR = registerBlock("imperial_chair",
@@ -2248,7 +2248,7 @@ public class BlockRegistration {
 
     //LAMPS
     public static final RegistryObject<Block> ANTIQUE_STANDING_LAMP = registerBlock("antique_standing_lamp",
-            () -> new AntiqueLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("antique_standing_lamp")).mapColor(DyeColor.BROWN)));
+            () -> new AntiqueLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).setId(BLOCKS.key("antique_standing_lamp")).mapColor(DyeColor.BROWN).lightLevel(p -> 15)));
 
     //CHAIRS
     public static final RegistryObject<Block> LOVELY_LOVE_SEAT = registerBlock("lovely_love_seat_basic",
