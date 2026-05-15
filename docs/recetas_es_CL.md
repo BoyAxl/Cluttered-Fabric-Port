@@ -12,9 +12,9 @@ Total de recetas: `700`. Con forma: `630`. Sin forma: `69`. Horno: `1`.
 - `#minecraft:...`, `#cluttered:...` o `#forge:...` indica una etiqueta: puedes usar cualquier ítem que pertenezca a esa etiqueta.
 - Algunas variantes decorativas no tienen receta directa porque se obtienen usando el `Taladro manual` (`cluttered:hand_drill`) sobre otro bloque del mod.
 
-## Obtención de maderas y retoños
+## Obtención de maderas y brotes
 
-Los troncos nuevos del mod, como `cluttered:willow_log`, no se fabrican en la mesa de crafteo. La ruta survival prevista es comprar el retoño al vendedor ambulante, plantarlo, hacerlo crecer y cortar el árbol.
+Los troncos nuevos del mod, como `cluttered:willow_log`, no se fabrican en la mesa de crafteo. La ruta survival prevista es comprar el brote al vendedor ambulante, plantarlo, hacerlo crecer y cortar el árbol.
 
 - `cluttered:willow_sapling`: lo vende el vendedor ambulante por esmeraldas.
 - `cluttered:willow_log`: se obtiene cortando un sauce crecido desde `cluttered:willow_sapling`.
@@ -860,8 +860,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de arce fluorescente descortezado (`cluttered:stripped_fluorescent_maple_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de arce fluorescente sin corteza (`cluttered:stripped_fluorescent_maple_log`)
 
 ### Letrero colgante de hongo azul (`cluttered:blue_mushroom_hanging_sign`) x6
 
@@ -876,7 +876,7 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
 - `p` = Hongo azul stem (`cluttered:blue_mushroom_log`)
 
 ### Letrero colgante de hongo rojo (`cluttered:red_mushroom_hanging_sign`) x6
@@ -892,7 +892,7 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
 - `p` = Hongo rojo stem (`cluttered:red_mushroom_log`)
 
 ### Letrero colgante de manzano silvestre (`cluttered:crabapple_hanging_sign`) x6
@@ -908,8 +908,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de manzano silvestre descortezado (`cluttered:stripped_crabapple_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de manzano silvestre sin corteza (`cluttered:stripped_crabapple_log`)
 
 ### Letrero colgante de manzano silvestre florido (`cluttered:flowering_crabapple_hanging_sign`) x6
 
@@ -924,8 +924,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de manzano silvestre florido descortezado (`cluttered:stripped_flowering_crabapple_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de manzano silvestre florido sin corteza (`cluttered:stripped_flowering_crabapple_log`)
 
 ### Letrero colgante de sauce (`cluttered:willow_hanging_sign`) x6
 
@@ -940,8 +940,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de sauce descortezado (`cluttered:stripped_willow_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de sauce sin corteza (`cluttered:stripped_willow_log`)
 
 ### Letrero colgante de sauce florido (`cluttered:flowering_willow_hanging_sign`) x6
 
@@ -956,8 +956,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de sauce florido descortezado (`cluttered:stripped_flowering_willow_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de sauce florido sin corteza (`cluttered:stripped_flowering_willow_log`)
 
 ### Letrero colgante de sicomoro (`cluttered:sycamore_hanging_sign`) x6
 
@@ -972,8 +972,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de sicomoro descortezado (`cluttered:stripped_sycamore_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de sicomoro sin corteza (`cluttered:stripped_sycamore_log`)
 
 ### Letrero colgante de álamo (`cluttered:poplar_hanging_sign`) x6
 
@@ -988,8 +988,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de álamo descortezado (`cluttered:stripped_poplar_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de álamo sin corteza (`cluttered:stripped_poplar_log`)
 
 ### Letrero colgante de álamo florido (`cluttered:flowering_poplar_hanging_sign`) x6
 
@@ -1004,8 +1004,8 @@ Patrón:
 ```
 
 Ingredientes:
-- `c` = Cadena (`minecraft:chain`)
-- `p` = Tronco de álamo florido descortezado (`cluttered:stripped_flowering_poplar_log`)
+- `c` = Cadena de hierro (`minecraft:iron_chain`)
+- `p` = Tronco de álamo florido sin corteza (`cluttered:stripped_flowering_poplar_log`)
 
 ### Letrero de arce fluorescente (`cluttered:fluorescent_maple_sign`) x3
 
@@ -2031,7 +2031,7 @@ Patrón:
 Ingredientes:
 - `f` = etiqueta Pequeño flores (`#minecraft:small_flowers`)
 - `p` = Papel (`minecraft:paper`)
-- `t` = etiqueta Tall flores (`#minecraft:tall_flowers`)
+- `t` = etiqueta Flores altas (`#minecraft:tall_flowers`)
 - `w` = etiqueta Tablones (`#minecraft:planks`)
 
 ### Papel mural de ghost (`cluttered:ghost_wallpaper`) x8
@@ -2405,7 +2405,7 @@ Patrón:
 Ingredientes:
 - `f` = etiqueta Pequeño flores (`#minecraft:small_flowers`)
 - `p` = Papel (`minecraft:paper`)
-- `t` = etiqueta Tall flores (`#minecraft:tall_flowers`)
+- `t` = etiqueta Flores altas (`#minecraft:tall_flowers`)
 - `w` = etiqueta Tablones (`#minecraft:planks`)
 
 ### Papel mural de tartan amarillo (`cluttered:tartan_yellow_wallpaper`) x8
@@ -2621,7 +2621,7 @@ Patrón:
 Ingredientes:
 - `p` = Tablones de álamo florido (`cluttered:flowering_poplar_planks`)
 
-### Portón de valla de arce fluorescente (`cluttered:fluorescent_maple_fence_gate`) x1
+### Puerta de valla de arce fluorescente (`cluttered:fluorescent_maple_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2636,7 +2636,7 @@ Ingredientes:
 - `p` = Tablones de arce fluorescente (`cluttered:fluorescent_maple_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de hongo azul (`cluttered:blue_mushroom_fence_gate`) x1
+### Puerta de valla de hongo azul (`cluttered:blue_mushroom_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2651,7 +2651,7 @@ Ingredientes:
 - `p` = Tablones de hongo azul (`cluttered:blue_mushroom_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de hongo rojo (`cluttered:red_mushroom_fence_gate`) x1
+### Puerta de valla de hongo rojo (`cluttered:red_mushroom_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2666,7 +2666,7 @@ Ingredientes:
 - `p` = Tablones de hongo rojo (`cluttered:red_mushroom_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de manzano silvestre (`cluttered:crabapple_fence_gate`) x1
+### Puerta de valla de manzano silvestre (`cluttered:crabapple_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2681,7 +2681,7 @@ Ingredientes:
 - `p` = Tablones de manzano silvestre (`cluttered:crabapple_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de manzano silvestre florido (`cluttered:flowering_crabapple_fence_gate`) x1
+### Puerta de valla de manzano silvestre florido (`cluttered:flowering_crabapple_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2696,7 +2696,7 @@ Ingredientes:
 - `p` = Tablones de manzano silvestre florido (`cluttered:flowering_crabapple_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de sauce (`cluttered:willow_fence_gate`) x1
+### Puerta de valla de sauce (`cluttered:willow_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2711,7 +2711,7 @@ Ingredientes:
 - `p` = Tablones de sauce (`cluttered:willow_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de sauce florido (`cluttered:flowering_willow_fence_gate`) x1
+### Puerta de valla de sauce florido (`cluttered:flowering_willow_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2726,7 +2726,7 @@ Ingredientes:
 - `p` = Tablones de sauce florido (`cluttered:flowering_willow_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de sicomoro (`cluttered:sycamore_fence_gate`) x1
+### Puerta de valla de sicomoro (`cluttered:sycamore_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2741,7 +2741,7 @@ Ingredientes:
 - `p` = Tablones de sicomoro (`cluttered:sycamore_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de wood picket (`cluttered:wooden_picket_fence_gate`) x1
+### Puerta de valla decorativa de madera (`cluttered:wooden_picket_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2755,7 +2755,7 @@ Ingredientes:
 - `g` = etiqueta Fence gates (`#minecraft:fence_gates`)
 - `t` = etiqueta Madera fences (`#minecraft:wooden_fences`)
 
-### Portón de valla de álamo (`cluttered:poplar_fence_gate`) x1
+### Puerta de valla de álamo (`cluttered:poplar_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -2770,7 +2770,7 @@ Ingredientes:
 - `p` = Tablones de álamo (`cluttered:poplar_planks`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
-### Portón de valla de álamo florido (`cluttered:flowering_poplar_fence_gate`) x1
+### Puerta de valla de álamo florido (`cluttered:flowering_poplar_fence_gate`) x1
 
 - Tipo: Mesa de crafteo - con forma
 
@@ -4972,7 +4972,7 @@ Patrón:
 
 Ingredientes:
 - `f` = etiqueta Pequeño flores (`#minecraft:small_flowers`)
-- `t` = etiqueta Tall flores (`#minecraft:tall_flowers`)
+- `t` = etiqueta Flores altas (`#minecraft:tall_flowers`)
 - `w` = Bloque de wicker (`cluttered:wicker_block`)
 
 ### Canasta of produce (`cluttered:basket_of_produce`) x1
@@ -5213,7 +5213,7 @@ Patrón:
 Ingredientes:
 - `c` = Cactus (`minecraft:cactus`)
 - `d` = Tinte amarillo (`minecraft:yellow_dye`)
-- `g` = Grass (`minecraft:grass`)
+- `g` = Pasto corto (`minecraft:short_grass`)
 
 ### Drying herbs (`cluttered:drying_herbs`) x1
 
@@ -5228,7 +5228,7 @@ Patrón:
 
 Ingredientes:
 - `f` = Fern (`minecraft:fern`)
-- `g` = Grass (`minecraft:grass`)
+- `g` = Pasto corto (`minecraft:short_grass`)
 - `s` = etiqueta Varillas madera (`#forge:rods/wooden`)
 
 ### Endtable decor (`cluttered:endtable_decor`) x1
@@ -6285,7 +6285,7 @@ Patrón:
 ```
 
 Ingredientes:
-- `f` = Grass (`minecraft:grass`)
+- `f` = Pasto corto (`minecraft:short_grass`)
 - `p` = Maceta (`minecraft:flower_pot`)
 - `s` = Tripwire hook (`minecraft:tripwire_hook`)
 
@@ -7284,7 +7284,7 @@ Patrón:
 Ingredientes:
 - `b` = Botón de roble oscuro (`minecraft:dark_oak_button`)
 - `d` = Tablones de roble oscuro (`minecraft:dark_oak_planks`)
-- `s` = Tronco de abedul descortezado (`minecraft:stripped_birch_log`)
+- `s` = Tronco de abedul sin corteza (`minecraft:stripped_birch_log`)
 
 ### Mesa de gato negro (`cluttered:black_cat_table`) x1
 

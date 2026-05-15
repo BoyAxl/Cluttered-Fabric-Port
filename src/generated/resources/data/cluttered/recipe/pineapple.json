@@ -4,7 +4,7 @@
   "key": {
     "c": "minecraft:cactus",
     "d": "minecraft:yellow_dye",
-    "g": "minecraft:grass"
+    "g": "minecraft:short_grass"
   },
   "pattern": [
     "g",

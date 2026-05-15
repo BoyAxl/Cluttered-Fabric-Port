@@ -60,9 +60,12 @@ public class ArmchairBlock extends MultiblockChair{
 
     @Override
     protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pCurrentPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
+        if (!hasMultiblockProperties(pState)) {
+            return super.updateShape(pState, pLevel, pTicks, pCurrentPos, pDirection, pNeighborPos, pNeighborState, pRandom);
+        }
         BlockPos otherHalfPos = getOtherHalfPos(pState, pCurrentPos);
         BlockState updatedState = pState;
-        if (pNeighborState.getBlock().equals(this.asBlock())){
+        if (pNeighborState.getBlock().equals(this.asBlock()) && pNeighborState.hasProperty(OCCUPIED)){
             if (!pNeighborState.getValue(OCCUPIED) && pNeighborPos.equals(otherHalfPos)){
                 updatedState = pState.setValue(OCCUPIED, false);
             }
@@ -73,7 +76,7 @@ public class ArmchairBlock extends MultiblockChair{
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        int part = pState.getValue(MULTIBLOCK_PART);
+        int part = getMultiblockPartValue(pState);
         Direction facing = pState.getValue(FACING);
         return switch (facing) {
             case SOUTH -> part == 1 ? SHAPE_SOUTH_1 : SHAPE_SOUTH_2;
@@ -84,7 +87,7 @@ public class ArmchairBlock extends MultiblockChair{
     }
 
     private BlockPos getOtherHalfPos(BlockState state1, BlockPos pos1){
-        int part = state1.getValue(MULTIBLOCK_PART);
+        int part = getMultiblockPartValue(state1);
         Direction facing = state1.getValue(FACING);
 
         if (facing.equals(Direction.NORTH)){return part == 1 ? pos1.east() : pos1.west();}
@@ -99,12 +102,16 @@ public class ArmchairBlock extends MultiblockChair{
     }
 
     private float[] getSeatXZOffset(BlockState state1, BlockPos pos1){
-        int part = state1.getValue(MULTIBLOCK_PART);
+        int part = getMultiblockPartValue(state1);
         Direction facing = state1.getValue(FACING);
 
         if (facing.equals(Direction.NORTH)){return part == 1 ? new float[]{0.5f, 0f} : new float[]{-0.5f, 0f};}
         if (facing.equals(Direction.EAST)){return part == 1 ? new float[]{0f, 0.5f} : new float[]{0f, -0.5f};}
         if (facing.equals(Direction.SOUTH)){return part == 1 ? new float[]{-0.5f, 0f} : new float[]{0.5f, 0f};}
         else {return part == 1 ? new float[]{0f, -0.5f} : new float[]{0f, 0.5f};}
+    }
+
+    protected int getMultiblockPartValue(BlockState state) {
+        return state.hasProperty(getMultiblockPart()) ? state.getValue(getMultiblockPart()) : 1;
     }
 }

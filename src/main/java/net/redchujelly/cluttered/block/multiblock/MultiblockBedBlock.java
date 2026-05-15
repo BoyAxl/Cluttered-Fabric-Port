@@ -10,6 +10,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -84,22 +85,35 @@ public class MultiblockBedBlock extends MultiblockPlacer{
         level.setBlock(pos, state.setValue(OCCUPIED, occupied), 2);
     }
 
-    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    @Override
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHit) {
+        return useBed(pState, pLevel, pPos, pPlayer);
+    }
+
+    @Override
+    protected InteractionResult useItemOn(ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        return useBed(pState, pLevel, pPos, pPlayer);
+    }
+
+    private InteractionResult useBed(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
         if (pLevel.isClientSide()) {
             return InteractionResult.CONSUME;
         } else {
-            int part = pState.getValue(MULTIBLOCK_PART);
+            if (!hasMultiblockProperties(pState)) {
+                return InteractionResult.CONSUME;
+            }
+            int part = getMultiblockPartValue(pState);
             if(part == 3 || part == 4){
                 pPos = pPos.relative(pState.getValue(FACING));
                 pState = pLevel.getBlockState(pPos);
-                if (!pState.is(this)) {
+                if (!pState.is(this) || !hasMultiblockProperties(pState)) {
                     return InteractionResult.CONSUME;
                 }
             }
             if (part == 1 || part == 2){
                 pPos = pPos.relative(pState.getValue(FACING), 2);
                 pState = pLevel.getBlockState(pPos);
-                if (!pState.is(this)) {
+                if (!pState.is(this) || !hasMultiblockProperties(pState)) {
                     return InteractionResult.CONSUME;
                 }
             }
@@ -118,11 +132,15 @@ public class MultiblockBedBlock extends MultiblockPlacer{
 
                 return InteractionResult.SUCCESS;
             } else {
-                pPlayer.startSleepInBed(pPos).ifLeft((sleepingProblem) -> {
+                BlockPos sleepPos = pPos;
+                BlockState sleepState = pState;
+                var sleepResult = pPlayer.startSleepInBed(sleepPos);
+                sleepResult.ifLeft((sleepingProblem) -> {
                     if (sleepingProblem.message() != null) {
                         pPlayer.sendOverlayMessage(sleepingProblem.message());
                     }
                 });
+                sleepResult.ifRight((unit) -> pLevel.setBlock(sleepPos, sleepState.setValue(OCCUPIED, true), 3));
             }
             return InteractionResult.SUCCESS;
         }

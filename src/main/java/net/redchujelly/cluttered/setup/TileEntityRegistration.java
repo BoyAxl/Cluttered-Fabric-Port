@@ -1,6 +1,7 @@
 package net.redchujelly.cluttered.setup;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityType;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
@@ -228,6 +229,19 @@ public class TileEntityRegistration {
 
     public static void register(BusGroup eventBus) {
         BLOCK_ENTITIES.register(eventBus);
+        registerJukeboxBlocks();
+    }
+
+    private static void registerJukeboxBlocks() {
+        FabricBlockEntityType jukeboxType = (FabricBlockEntityType) (Object) BlockEntityType.JUKEBOX;
+        jukeboxType.addValidBlock(BlockRegistration.TRADITIONAL_RADIO.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_BLUE.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_BROWN.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_PINK.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_PURPLE.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_RED.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_WHITE.get());
+        jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_YELLOW.get());
     }
 
 

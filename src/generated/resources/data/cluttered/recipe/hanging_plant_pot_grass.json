@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "f": "minecraft:grass",
+    "f": "minecraft:short_grass",
     "p": "minecraft:flower_pot",
     "s": "minecraft:tripwire_hook"
   },

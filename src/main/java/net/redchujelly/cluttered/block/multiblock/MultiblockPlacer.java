@@ -113,6 +113,9 @@ public class MultiblockPlacer extends Block {
 
     @Override
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        if (!hasMultiblockProperties(pState)) {
+            return;
+        }
         BlockPos state1Pos = null;
         if (pState.getValue(getMultiblockPart()) != 1) {
             state1Pos = findBlockState1(pPos, pLevel);
@@ -131,6 +134,9 @@ public class MultiblockPlacer extends Block {
 
     @Override
     protected BlockState updateShape(BlockState pState, net.minecraft.world.level.LevelReader pLevel, net.minecraft.world.level.ScheduledTickAccess pTicks, BlockPos pCurrentPos, Direction pDirection, BlockPos pNeighborPos, BlockState pNeighborState, net.minecraft.util.RandomSource pRandom) {
+        if (!hasMultiblockProperties(pState)) {
+            return super.updateShape(pState, pLevel, pTicks, pCurrentPos, pDirection, pNeighborPos, pNeighborState, pRandom);
+        }
         BlockPos state1Pos = null;
         if (pState.getValue(getMultiblockPart()) != 1) {
             state1Pos = findBlockState1(pCurrentPos, pLevel);
@@ -151,6 +157,7 @@ public class MultiblockPlacer extends Block {
     public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
         //this lets you place the block
         if (!pLevel.getBlockState(pPos).is(this)) {return true;}
+        if (!hasMultiblockProperties(pState)) {return true;}
 
         Direction facing = pState.getValue(FACING);
         if (pState.getValue(getMultiblockPart()) != 1) {
@@ -184,13 +191,14 @@ public class MultiblockPlacer extends Block {
 
     protected BlockPos findBlockState1(BlockPos currentPos, LevelReader level) {
 
-        if (!level.getBlockState(currentPos).hasProperty(FACING)) {
+        BlockState currentState = level.getBlockState(currentPos);
+        if (!hasMultiblockProperties(currentState)) {
             return null;
         }
-        Direction facing = level.getBlockState(currentPos).getValue(FACING);
+        Direction facing = currentState.getValue(FACING);
         int[][][] multiblockShape = getMultiblockShape();
 
-        int partNum = level.getBlockState(currentPos).getValue(getMultiblockPart());
+        int partNum = currentState.getValue(getMultiblockPart());
 
         //Subtracts relative X, Y, Z from blockpos. This probably works.
         for(int y = 0; y < multiblockShape.length; y++) {
@@ -200,7 +208,8 @@ public class MultiblockPlacer extends Block {
                         int xOffset = -getXOffset(facing, x, z);
                         int zOffset = -getZOffset(facing, x, z);
                         BlockPos possibleState1 = new BlockPos(currentPos.getX() + xOffset, currentPos.getY() - y, currentPos.getZ() + zOffset);
-                        if (level.getBlockState(possibleState1).is(this.asBlock()) && level.getBlockState(possibleState1).getValue(FACING).equals(facing)) {
+                        BlockState possibleState = level.getBlockState(possibleState1);
+                        if (possibleState.is(this.asBlock()) && possibleState.hasProperty(FACING) && possibleState.getValue(FACING).equals(facing)) {
                             return possibleState1;
                         }
                     }
@@ -214,6 +223,9 @@ public class MultiblockPlacer extends Block {
     @Override
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
         if (!pLevel.isClientSide()) {
+            if (!hasMultiblockProperties(pState)) {
+                return;
+            }
             Direction direction = pState.getValue(FACING);
             int[][][] multiblockShape = getMultiblockShape();
             int OGx = pPos.getX();
@@ -235,5 +247,13 @@ public class MultiblockPlacer extends Block {
                 }
             }
         }
+    }
+
+    protected boolean hasMultiblockProperties(BlockState state) {
+        return state.hasProperty(FACING) && state.hasProperty(getMultiblockPart());
+    }
+
+    protected int getMultiblockPartValue(BlockState state) {
+        return state.hasProperty(getMultiblockPart()) ? state.getValue(getMultiblockPart()) : 1;
     }
 }

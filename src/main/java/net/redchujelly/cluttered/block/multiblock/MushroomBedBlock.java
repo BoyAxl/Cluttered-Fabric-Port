@@ -6,6 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -45,7 +46,7 @@ public class MushroomBedBlock extends MultiblockBedBlock{
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         Direction facing = pState.getValue(FACING);
-        if (pState.getValue(MULTIBLOCK_PART) == 1){
+        if (getMultiblockPartValue(pState) == 1){
             return switch (facing){
                 case SOUTH -> SHAPE_S_1;
                 case EAST -> SHAPE_E_1;
@@ -61,15 +62,28 @@ public class MushroomBedBlock extends MultiblockBedBlock{
             };
     }
 
-    protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    @Override
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHit) {
+        return useBed(pState, pLevel, pPos, pPlayer);
+    }
+
+    @Override
+    protected InteractionResult useItemOn(ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        return useBed(pState, pLevel, pPos, pPlayer);
+    }
+
+    private InteractionResult useBed(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
         if (pLevel.isClientSide()) {
             return InteractionResult.CONSUME;
         } else {
-            int part = pState.getValue(MULTIBLOCK_PART);
+            if (!hasMultiblockProperties(pState)) {
+                return InteractionResult.CONSUME;
+            }
+            int part = getMultiblockPartValue(pState);
             if (part == 1){
                 pPos = pPos.relative(pState.getValue(FACING));
                 pState = pLevel.getBlockState(pPos);
-                if (!pState.is(this)) {
+                if (!pState.is(this) || !hasMultiblockProperties(pState)) {
                     return InteractionResult.CONSUME;
                 }
             }
@@ -88,11 +102,15 @@ public class MushroomBedBlock extends MultiblockBedBlock{
 
                 return InteractionResult.SUCCESS;
             } else {
-                pPlayer.startSleepInBed(pPos).ifLeft((sleepingProblem) -> {
+                BlockPos sleepPos = pPos;
+                BlockState sleepState = pState;
+                var sleepResult = pPlayer.startSleepInBed(sleepPos);
+                sleepResult.ifLeft((sleepingProblem) -> {
                     if (sleepingProblem.message() != null) {
                         pPlayer.sendOverlayMessage(sleepingProblem.message());
                     }
                 });
+                sleepResult.ifRight((unit) -> pLevel.setBlock(sleepPos, sleepState.setValue(OCCUPIED, true), 3));
             }
             return InteractionResult.SUCCESS;
         }

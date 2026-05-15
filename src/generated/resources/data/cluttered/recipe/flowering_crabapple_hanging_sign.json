@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "c": "minecraft:chain",
+    "c": "minecraft:iron_chain",
     "p": "cluttered:stripped_flowering_crabapple_log"
   },
   "pattern": [

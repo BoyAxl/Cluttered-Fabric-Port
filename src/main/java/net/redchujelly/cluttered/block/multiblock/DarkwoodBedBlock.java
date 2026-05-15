@@ -5,7 +5,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -42,20 +41,13 @@ public class DarkwoodBedBlock extends MultiblockBedBlock {
     private static final VoxelShape SHAPE_E_6 = Shapes.or(Block.box(0,3,0,16,10,15), Block.box(13,3,0,16,20,16), Block.box(12,0,12,16,20,16));
     private static final VoxelShape SHAPE_W_6 = Shapes.or(Block.box(0,3,1,16,10,16), Block.box(0,3,0,3,20,16), Block.box(0,0,0,4,20,4));
 
-    public static final IntegerProperty MULTIBLOCK_PART = IntegerProperty.create("part", 1, 6);
-    private static final int[][][] MULTIBLOCK_SHAPE = {
-            {
-                    {1,3,5},
-                    {2,4,6}
-            },
-    };
     public DarkwoodBedBlock(Properties pProperties) {
         super(pProperties);
     }
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        int part = pState.getValue(MULTIBLOCK_PART);
+        int part = getMultiblockPartValue(pState);
         Direction facing = pState.getValue(FACING);
         switch (part){
             case 1 -> {
@@ -107,15 +99,5 @@ public class DarkwoodBedBlock extends MultiblockBedBlock {
                 }
             }
         }
-    }
-
-    @Override
-    public IntegerProperty getMultiblockPart() {
-        return MULTIBLOCK_PART;
-    }
-
-    @Override
-    public int[][][] getMultiblockShape() {
-        return MULTIBLOCK_SHAPE;
     }
 }
