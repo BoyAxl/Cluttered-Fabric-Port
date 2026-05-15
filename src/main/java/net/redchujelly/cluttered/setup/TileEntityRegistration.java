@@ -27,11 +27,17 @@ public class TileEntityRegistration {
 
     static RegistryObject<?>[] oneRow = new RegistryObject[]{
             BlockRegistration.KITCHEN_SET_BROWN_CABINET_MINI,
+            BlockRegistration.KITCHEN_SET_BROWN_CABINET_OUTER_CORNER,
             BlockRegistration.KITCHEN_SET_PINK_CABINET_MINI,
+            BlockRegistration.KITCHEN_SET_PINK_CABINET_OUTER_CORNER,
             BlockRegistration.KITCHEN_SET_LIGHT_GREEN_CABINET_MINI,
+            BlockRegistration.KITCHEN_SET_LIGHT_GREEN_CABINET_OUTER_CORNER,
             BlockRegistration.KITCHEN_SET_PURPLE_CABINET_MINI,
+            BlockRegistration.KITCHEN_SET_PURPLE_CABINET_OUTER_CORNER,
             BlockRegistration.KITCHEN_SET_WHITE_CABINET_MINI,
+            BlockRegistration.KITCHEN_SET_WHITE_CABINET_OUTER_CORNER,
             BlockRegistration.KITCHEN_SET_YELLOW_CABINET_MINI,
+            BlockRegistration.KITCHEN_SET_YELLOW_CABINET_OUTER_CORNER,
 
             BlockRegistration.ENDTABLE_AMETHYST,
             BlockRegistration.ENDTABLE_BUBBLEGUM,
