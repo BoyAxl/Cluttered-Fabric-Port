@@ -1,12 +1,14 @@
 package net.redchujelly.cluttered.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,6 +28,17 @@ public class ChairEntity extends Entity {
         super(pEntityType, pLevel);
         CHAIR_POS = pos;
         CHAIR_LEVEL = pLevel;
+    }
+
+    public void mountPlayer(Player player, Direction sittingDirection) {
+        float yRot = sittingDirection.toYRot();
+        setYRot(yRot);
+        setXRot(0.0F);
+        player.startRiding(this);
+        player.setYRot(yRot);
+        player.setYHeadRot(yRot);
+        player.setYBodyRot(yRot);
+        player.setXRot(0.0F);
     }
 
     @Override

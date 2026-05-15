@@ -4,7 +4,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -48,10 +47,10 @@ public class ArmchairBlock extends MultiblockChair{
                 if (otherHalfReal){
                     pLevel.setBlock(otherHalf, pLevel.getBlockState(otherHalf).setValue(OCCUPIED, true), 2);
                 }
-                Entity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
+                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
                 seat.setPos(pPos.getX() + .5f + seatOffset[0], pPos.getY() - 1 + getSeatOffset(), pPos.getZ() +.5f + seatOffset[1]);
                 pLevel.addFreshEntity(seat);
-                pPlayer.startRiding(seat);
+                seat.mountPlayer(pPlayer, pState.getValue(FACING).getOpposite());
             }
             return InteractionResult.SUCCESS;
         }
