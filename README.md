@@ -4,7 +4,7 @@
 
 The GitHub repository for the Cluttered mod.
 
-Cluttered is a furniture and decoration mod originally created by YellowChuJelly. This repository is currently carrying an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.1.2.
+Cluttered is a furniture and decoration mod originally created by blake and YellowChuJelly. This repository is currently carrying an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.1.2.
 
 ## Unofficial Fabric Port
 
@@ -105,7 +105,7 @@ This note is included so players, pack makers, and contributors can understand t
 
 ## Credits
 
-Cluttered was originally created by YellowChuJelly. Huge thanks to the original creator and contributors for the mod, its art direction, assets, models, textures, and the work that made this unofficial port possible.
+Cluttered was originally created by blake and YellowChuJelly. Huge thanks to the original creators and contributors for the mod, its art direction, assets, models, textures, and the work that made this unofficial port possible.
 
 This repository is an unofficial compatibility port. All original Cluttered rights, authorship, branding, and licensing remain with their respective owners.
 
