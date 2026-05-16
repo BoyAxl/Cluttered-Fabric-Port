@@ -89,6 +89,20 @@ If you share this build, label it clearly as an unofficial Fabric port for Minec
 
 The project declares GNU GPL 3.0 licensing. See [LICENSE](LICENSE).
 
+## Issues and Contributions
+
+Players and modpack makers are welcome to open issues for bugs, crashes, missing translations, recipe problems, rendering issues, or other possible problems found in this unofficial port.
+
+Pull requests are also welcome, but changes will be reviewed before they are merged.
+
+## AI Transparency
+
+This unofficial port was made possible with help from OpenAI Codex, an AI coding assistant, alongside human testing, review, debugging, and release work.
+
+The original Cluttered authors gave permission for this unofficial port to be published. That permission should not be understood as an endorsement of AI tools or AI-assisted creative workflows. In particular, the original artists have made clear that they do not endorse the use of AI as artists.
+
+This note is included so players, pack makers, and contributors can understand the context of this port and decide for themselves whether they want to use or support it.
+
 ## Credits
 
 Cluttered was originally created by YellowChuJelly. Huge thanks to the original creator and contributors for the mod, its art direction, assets, models, textures, and the work that made this unofficial port possible.
