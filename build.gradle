@@ -17,9 +17,6 @@ java {
 
 sourceSets {
     main {
-        java {
-            exclude 'net/redchujelly/cluttered/datagen/**'
-        }
         resources {
             srcDir 'src/generated/resources'
         }
