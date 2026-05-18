@@ -19,12 +19,9 @@ sourceSets {
     main {
         java {
             exclude 'net/redchujelly/cluttered/datagen/**'
-            exclude 'net/redchujelly/cluttered/loot/**'
-            exclude 'net/redchujelly/cluttered/setup/ClutteredLootModifiers.java'
         }
         resources {
             srcDir 'src/generated/resources'
-            exclude 'META-INF/mods.toml'
         }
     }
 }

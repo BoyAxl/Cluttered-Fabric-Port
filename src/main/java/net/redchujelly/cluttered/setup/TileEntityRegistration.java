@@ -13,7 +13,7 @@ import net.redchujelly.cluttered.platform.RegistryObject;
 import net.redchujelly.cluttered.Cluttered;
 import net.redchujelly.cluttered.block.entity.*;
 
-import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -22,11 +22,7 @@ public class TileEntityRegistration {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(FabricRegistries.BLOCK_ENTITY_TYPES, Cluttered.MODID);
 
-    /* In all honesty I don't know what this list is good for. The field it ultimately goes in apparently lists blocks that
-    the block entity can be tied to? But I tried it without adding some and they worked fine so I dunno.
-    I'm gonna keep adding them though. Also, maybe I did it in a sketchy way.*/
-
-    static RegistryObject<?>[] oneRow = new RegistryObject[]{
+    private static final List<RegistryObject<? extends Block>> ONE_ROW = List.of(
             BlockRegistration.KITCHEN_SET_BROWN_CABINET_MINI,
             BlockRegistration.KITCHEN_SET_BROWN_CABINET_OUTER_CORNER,
             BlockRegistration.KITCHEN_SET_PINK_CABINET_MINI,
@@ -48,10 +44,10 @@ public class TileEntityRegistration {
             BlockRegistration.ENDTABLE_SUNSHINE,
             BlockRegistration.ENDTABLE_WOOD,
             BlockRegistration.COTTAGE_SIDE_TABLE,
-            BlockRegistration.NIGHTSTAND_GREEN,
-    };
+            BlockRegistration.NIGHTSTAND_GREEN
+    );
 
-    static RegistryObject<?>[] twoRows = new RegistryObject[]{
+    private static final List<RegistryObject<? extends Block>> TWO_ROWS = List.of(
             BlockRegistration.KITCHEN_SET_BROWN_CABINET,
             BlockRegistration.KITCHEN_SET_BROWN_CABINET_INNER_CORNER,
             BlockRegistration.KITCHEN_SET_BROWN_CABINET_OPEN,
@@ -81,10 +77,10 @@ public class TileEntityRegistration {
             BlockRegistration.DESK_GREEN_CLUTTERED,
             BlockRegistration.DESK_BROWN,
             BlockRegistration.DESK_BROWN_CLUTTERED,
-            BlockRegistration.FILING_BOX,
-    };
+            BlockRegistration.FILING_BOX
+    );
 
-    static RegistryObject<?>[] threeRows = new RegistryObject[]{
+    private static final List<RegistryObject<? extends Block>> THREE_ROWS = List.of(
             BlockRegistration.KITCHEN_SET_BROWN_COUNTER,
             BlockRegistration.KITCHEN_SET_BROWN_COUNTER_OUTER_CORNER_LEFT,
             BlockRegistration.KITCHEN_SET_BROWN_COUNTER_OUTER_CORNER_RIGHT,
@@ -117,10 +113,10 @@ public class TileEntityRegistration {
             BlockRegistration.CHINA_CABINET,
             BlockRegistration.COTTAGE_BOOKCASE,
 
-            BlockRegistration.PASTEL_CABINET,
-    };
+            BlockRegistration.PASTEL_CABINET
+    );
 
-    static RegistryObject<?>[] sixRows = new RegistryObject[]{
+    private static final List<RegistryObject<? extends Block>> SIX_ROWS = List.of(
             BlockRegistration.CARD_INDEX,
             BlockRegistration.GENERAL_STORE_CABINET,
             BlockRegistration.DARKWOOD_CABINET,
@@ -133,10 +129,10 @@ public class TileEntityRegistration {
             BlockRegistration.RED_MUSHROOM_WARDROBE,
             BlockRegistration.BLUE_MUSHROOM_WARDROBE,
             BlockRegistration.PASTEL_WARDROBE,
-            BlockRegistration.MERMAID_DRESSER,
-    };
+            BlockRegistration.MERMAID_DRESSER
+    );
 
-    static RegistryObject<?>[] fridges = new RegistryObject[]{
+    private static final List<RegistryObject<? extends Block>> FRIDGES = List.of(
             BlockRegistration.RETRO_FRIDGE_BLACK,
             BlockRegistration.RETRO_FRIDGE_BLUE,
             BlockRegistration.RETRO_FRIDGE_PINK,
@@ -144,35 +140,33 @@ public class TileEntityRegistration {
             BlockRegistration.RETRO_FRIDGE_PURPLE,
             BlockRegistration.RETRO_FRIDGE_YELLOW,
             BlockRegistration.RETRO_FRIDGE_TURQUOISE,
-            BlockRegistration.RETRO_FRIDGE_WHITE,
-    };
+            BlockRegistration.RETRO_FRIDGE_WHITE
+    );
 
-    static RegistryObject<?>[] cardboardBox = new RegistryObject[]{
-            BlockRegistration.CARDBOARD_BOX,
-    };
+    private static final List<RegistryObject<? extends Block>> CARDBOARD_BOX = List.of(
+            BlockRegistration.CARDBOARD_BOX
+    );
 
-    static RegistryObject<?>[] safe = new RegistryObject[]{
-            BlockRegistration.SAFE_NOVAKID,
-    };
+    private static final List<RegistryObject<? extends Block>> SAFE = List.of(
+            BlockRegistration.SAFE_NOVAKID
+    );
 
-
-    //IntelliJ keeps telling me not to do it this way basically but...
     public static final RegistryObject<BlockEntityType<CustomStorageBlockEntity>> ONE_ROW_BE = registerWithStorage(
-            () -> TileEntityRegistration.ONE_ROW_BE, 1,  (RegistryObject<Block>[]) oneRow, "one_row_be");
+            () -> TileEntityRegistration.ONE_ROW_BE, 1, ONE_ROW, "one_row_be");
     public static final RegistryObject<BlockEntityType<CustomStorageBlockEntity>> TWO_ROWS_BE = registerWithStorage(
-            () -> TileEntityRegistration.TWO_ROWS_BE, 2,  (RegistryObject<Block>[]) twoRows, "two_rows_be");
+            () -> TileEntityRegistration.TWO_ROWS_BE, 2, TWO_ROWS, "two_rows_be");
     public static final RegistryObject<BlockEntityType<CustomStorageBlockEntity>> THREE_ROWS_BE = registerWithStorage(
-            () -> TileEntityRegistration.THREE_ROWS_BE, 3,  (RegistryObject<Block>[]) threeRows, "three_rows_be");
+            () -> TileEntityRegistration.THREE_ROWS_BE, 3, THREE_ROWS, "three_rows_be");
 
     public static final RegistryObject<BlockEntityType<CustomStorageBlockEntity>> SIX_ROWS_BE = registerWithStorage(
-            () -> TileEntityRegistration.SIX_ROWS_BE, 6,  (RegistryObject<Block>[]) sixRows, "six_rows_be");
+            () -> TileEntityRegistration.SIX_ROWS_BE, 6, SIX_ROWS, "six_rows_be");
 
     public static final RegistryObject<BlockEntityType<CustomStorageBlockEntity>> SAFE_BE = registerWithStorageAndSounds(
-            () -> TileEntityRegistration.SAFE_BE, 4,  (RegistryObject<Block>[]) safe, "safe_be", SoundEvents.IRON_TRAPDOOR_OPEN, SoundEvents.IRON_TRAPDOOR_CLOSE);
+            () -> TileEntityRegistration.SAFE_BE, 4, SAFE, "safe_be", SoundEvents.IRON_TRAPDOOR_OPEN, SoundEvents.IRON_TRAPDOOR_CLOSE);
     public static final RegistryObject<BlockEntityType<FridgeBlockEntity>> RETRO_FRIDGE_BE = registerFridge(
-            () -> TileEntityRegistration.RETRO_FRIDGE_BE, 6,  (RegistryObject<Block>[]) fridges, "retro_fridge_be");
+            () -> TileEntityRegistration.RETRO_FRIDGE_BE, 6, FRIDGES, "retro_fridge_be");
     public static final RegistryObject<BlockEntityType<CardboardBoxBlockEntity>> CARDBOARD_BOX_BE = registerCardboardBox(
-            () -> TileEntityRegistration.CARDBOARD_BOX_BE, 2,  (RegistryObject<Block>[]) cardboardBox, "cardboard_box_be");
+            () -> TileEntityRegistration.CARDBOARD_BOX_BE, 2, CARDBOARD_BOX, "cardboard_box_be");
 
     public static final RegistryObject<BlockEntityType<ClutteredSignBlockEntity>> CLUTTERED_SIGN_BE = BLOCK_ENTITIES.register(
             "cluttered_sign", () -> FabricBlockEntityTypeBuilder.create(ClutteredSignBlockEntity::new,
@@ -245,8 +239,7 @@ public class TileEntityRegistration {
     }
 
 
-    //Basically from the tanuki-decor code with some changes (i made it worse sorry)
-    private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorage(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
+    private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorage(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, List<RegistryObject<? extends Block>> block, String name){
 
         return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
                 .create((blockPos, blockState) -> new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows))
@@ -254,7 +247,7 @@ public class TileEntityRegistration {
                 .build());
     }
 
-    private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorageAndSounds(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name, SoundEvent openSound, SoundEvent closeSound){
+    private static RegistryObject<BlockEntityType<CustomStorageBlockEntity>> registerWithStorageAndSounds(Supplier<Supplier<BlockEntityType<CustomStorageBlockEntity>>> type, int rows, List<RegistryObject<? extends Block>> block, String name, SoundEvent openSound, SoundEvent closeSound){
 
         return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
                 .create((blockPos, blockState) -> new CustomStorageBlockEntity(type.get().get(), blockPos, blockState, rows, openSound, closeSound))
@@ -262,7 +255,7 @@ public class TileEntityRegistration {
                 .build());
     }
 
-    private static RegistryObject<BlockEntityType<FridgeBlockEntity>> registerFridge(Supplier<Supplier<BlockEntityType<FridgeBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
+    private static RegistryObject<BlockEntityType<FridgeBlockEntity>> registerFridge(Supplier<Supplier<BlockEntityType<FridgeBlockEntity>>> type, int rows, List<RegistryObject<? extends Block>> block, String name){
 
         return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
                 .create((blockPos, blockState) -> new FridgeBlockEntity(type.get().get(), blockPos, blockState, rows))
@@ -270,7 +263,7 @@ public class TileEntityRegistration {
                 .build());
     }
 
-    private static RegistryObject<BlockEntityType<CardboardBoxBlockEntity>> registerCardboardBox(Supplier<Supplier<BlockEntityType<CardboardBoxBlockEntity>>> type, int rows, RegistryObject<Block>[] block, String name){
+    private static RegistryObject<BlockEntityType<CardboardBoxBlockEntity>> registerCardboardBox(Supplier<Supplier<BlockEntityType<CardboardBoxBlockEntity>>> type, int rows, List<RegistryObject<? extends Block>> block, String name){
 
         return BLOCK_ENTITIES.register(name, () -> FabricBlockEntityTypeBuilder
                 .create((blockPos, blockState) -> new CardboardBoxBlockEntity(type.get().get(), blockPos, blockState, rows))
@@ -278,8 +271,8 @@ public class TileEntityRegistration {
                 .build());
     }
 
-    private static Set<Block> blockSet(RegistryObject<Block>[] blocks) {
-        return Arrays.stream(blocks).map(RegistryObject::get).collect(Collectors.toSet());
+    private static Set<Block> blockSet(List<RegistryObject<? extends Block>> blocks) {
+        return blocks.stream().map(RegistryObject::get).collect(Collectors.toSet());
     }
 
 }

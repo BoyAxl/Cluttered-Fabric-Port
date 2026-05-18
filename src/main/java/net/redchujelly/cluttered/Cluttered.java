@@ -2,14 +2,13 @@ package net.redchujelly.cluttered;
 
 import com.mojang.logging.LogUtils;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.world.level.block.ComposterBlock;
+import net.fabricmc.fabric.api.registry.CompostableRegistry;
 import net.redchujelly.cluttered.platform.BusGroup;
 import net.redchujelly.cluttered.setup.BlockRegistration;
 import net.redchujelly.cluttered.setup.CreativeTabRegistration;
 import net.redchujelly.cluttered.setup.EntityTypeRegistration;
 import net.redchujelly.cluttered.setup.FoliagePlacerTypeRegistration;
 import net.redchujelly.cluttered.setup.ItemRegistration;
-import net.redchujelly.cluttered.setup.PaintingRegistration;
 import net.redchujelly.cluttered.setup.SoundRegistration;
 import net.redchujelly.cluttered.setup.TileEntityRegistration;
 import net.redchujelly.cluttered.setup.TreeDecoratorTypeRegistration;
@@ -30,7 +29,6 @@ public class Cluttered implements ModInitializer {
         BlockRegistration.register(eventBus);
         TileEntityRegistration.register(eventBus);
         EntityTypeRegistration.register(eventBus);
-        PaintingRegistration.register(eventBus);
         TrunkPlacerTypeRegistration.register(eventBus);
         FoliagePlacerTypeRegistration.register(eventBus);
         TreeDecoratorTypeRegistration.register(eventBus);
@@ -43,24 +41,23 @@ public class Cluttered implements ModInitializer {
     }
 
     private void commonSetup() {
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.WILLOW_LEAVES.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.FLOWERING_CARPET_WILLOW.get().asItem(), 0.075F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.WILLOW_SAPLING.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.WILLOW_VINES.get().asItem(), 0.5F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.POPLAR_LEAVES.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.FLOWERING_CARPET_POPLAR.get().asItem(), 0.075F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.FLOWERING_POPLAR_LEAVES.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.POPLAR_SAPLING.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.CRABAPPLE_LEAVES.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.FLOWERING_CARPET_CRABAPPLE.get().asItem(), 0.075F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.CRABAPPLE_SAPLING.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.SYCAMORE_LEAVES.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.SYCAMORE_SAPLING.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.MAPLE_LEAVES_FLOWERING.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.MAPLE_LEAVES.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.MAPLE_SAPLING.get().asItem(), 0.3F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.BLUE_MUSHROOM_SAPLING.get().asItem(), 0.65F);
-        ComposterBlock.COMPOSTABLES.put(BlockRegistration.RED_MUSHROOM_SAPLING.get().asItem(), 0.65F);
-
+        CompostableRegistry.INSTANCE.add(BlockRegistration.WILLOW_LEAVES.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.FLOWERING_CARPET_WILLOW.get().asItem(), 0.075F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.WILLOW_SAPLING.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.WILLOW_VINES.get().asItem(), 0.5F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.POPLAR_LEAVES.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.FLOWERING_CARPET_POPLAR.get().asItem(), 0.075F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.FLOWERING_POPLAR_LEAVES.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.POPLAR_SAPLING.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.CRABAPPLE_LEAVES.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.FLOWERING_CARPET_CRABAPPLE.get().asItem(), 0.075F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.CRABAPPLE_SAPLING.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.SYCAMORE_LEAVES.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.SYCAMORE_SAPLING.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.MAPLE_LEAVES_FLOWERING.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.MAPLE_LEAVES.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.MAPLE_SAPLING.get().asItem(), 0.3F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.BLUE_MUSHROOM_SAPLING.get().asItem(), 0.65F);
+        CompostableRegistry.INSTANCE.add(BlockRegistration.RED_MUSHROOM_SAPLING.get().asItem(), 0.65F);
     }
 }
