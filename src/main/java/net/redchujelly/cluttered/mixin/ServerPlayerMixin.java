@@ -22,6 +22,7 @@ public abstract class ServerPlayerMixin {
     private static Block cluttered$treatCustomBedAsVanillaBed(BlockState state) {
         Block block = state.getBlock();
         if (block instanceof MultiblockBedBlock) {
+            // Let vanilla run its BedBlock respawn branch while keeping the real Cluttered state for facing/position.
             return Blocks.WHITE_BED;
         }
 

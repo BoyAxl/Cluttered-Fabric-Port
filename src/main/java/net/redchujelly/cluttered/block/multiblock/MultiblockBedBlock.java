@@ -6,12 +6,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.*;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -23,10 +23,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Optional;
 
 public class MultiblockBedBlock extends MultiblockPlacer{
     private static final VoxelShape SHAPE = Block.box(0,0,0,16,9,16);
@@ -45,6 +42,7 @@ public class MultiblockBedBlock extends MultiblockPlacer{
         this.registerDefaultState(this.defaultBlockState().setValue(OCCUPIED, false));
     }
 
+    // Forge-compatible bed hooks kept for parity with the official jar; Fabric paths are bridged by mixins.
     public boolean isBed(BlockState state, BlockGetter level, BlockPos pos, @Nullable Entity player) {
         return true;
     }
@@ -57,29 +55,6 @@ public class MultiblockBedBlock extends MultiblockPlacer{
     public Direction getBedDirection(BlockState state, LevelReader level, BlockPos pos) {
         return state.getValue(FACING);
     }
-
-    //@Override
-    //public void setBedOccupied(BlockState state, Level level, BlockPos pos, LivingEntity sleeper, boolean occupied) {
-    //    BlockPos pos1 = findBlockState1(pos, level);
-    //    Direction facing = state.getValue(FACING);
-    //    if(state.getValue(MULTIBLOCK_PART) % 2 != 0){
-    //        BlockPos[] posList = new BlockPos[]{pos1, pos1.relative(facing), pos1.relative(facing, 2)};
-    //        for (BlockPos block : posList){
-    //            if (level.getBlockState(block).is(this.asBlock())){
-    //                level.setBlock(block, state.setValue(OCCUPIED, occupied), 10);
-    //            }
-    //        }
-    //    }
-    //    else {
-    //        pos1 = pos1.relative(facing.getClockWise());
-    //        BlockPos[] posList = new BlockPos[]{pos1, pos1.relative(facing), pos1.relative(facing, 2)};
-    //        for (BlockPos block : posList){
-    //            if (level.getBlockState(block).is(this.asBlock())){
-    //                level.setBlock(block, state.setValue(OCCUPIED, occupied), 10);
-    //            }
-    //        }
-    //    }
-    //}
 
     public void setBedOccupied(BlockState state, Level level, BlockPos pos, LivingEntity sleeper, boolean occupied) {
         level.setBlock(pos, state.setValue(OCCUPIED, occupied), 2);
