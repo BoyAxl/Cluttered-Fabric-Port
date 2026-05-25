@@ -1,4 +1,4 @@
-# Recetas de cortapiedras de Cluttered 3.0.3 para Minecraft 26.1.2 (es_CL)
+# Recetas de cortapiedras de Cluttered 3.0.3 para Minecraft 26.1.x (es_CL)
 
 Total de recetas de cortapiedras: `210`.
 

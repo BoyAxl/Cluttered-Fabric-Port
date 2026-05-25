@@ -40,7 +40,9 @@ jobs:
           changelog: ${{ github.event.release.body }}
 
           loaders: fabric
-          game-versions: 26.1.2
+          game-versions: |
+            26.1
+            26.1.2
           java: 25
 
           curseforge-dependencies: |
