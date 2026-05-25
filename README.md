@@ -18,7 +18,7 @@ This branch targets:
 The generated jar uses an `unofficial` suffix so it is easy to distinguish from official releases:
 
 ```text
-build/libs/cluttered-3.0.3-26.1.x-0.1.4-fabric-unofficial.jar
+build/libs/cluttered-3.0.3-26.1.x-0.2.0-fabric-unofficial.jar
 ```
 
 This is not an official upstream release, and it is not a Forge jar.

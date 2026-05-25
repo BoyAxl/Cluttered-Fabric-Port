@@ -14,8 +14,8 @@ This build is not a Forge jar and is not an official upstream release.
 
 ## Included Artifacts
 
-- `cluttered-3.0.3-26.1.x-0.1.4-fabric-unofficial.jar`
-- `cluttered-3.0.3-26.1.x-0.1.4-fabric-unofficial-sources.jar`
+- `cluttered-3.0.3-26.1.x-0.2.0-fabric-unofficial.jar`
+- `cluttered-3.0.3-26.1.x-0.2.0-fabric-unofficial-sources.jar`
 
 ## Highlights
 
