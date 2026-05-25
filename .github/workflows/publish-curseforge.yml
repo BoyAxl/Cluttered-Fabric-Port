@@ -42,6 +42,7 @@ jobs:
           loaders: fabric
           game-versions: |
             26.1
+            26.1.1
             26.1.2
           java: 25
 

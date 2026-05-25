@@ -18,7 +18,7 @@ This branch targets:
 The generated jar uses an `unofficial` suffix so it is easy to distinguish from official releases:
 
 ```text
-build/libs/cluttered-3.0.3-26.1.x-0.2.0-fabric-unofficial.jar
+build/libs/cluttered-3.0.3-26.1.x-0.2.1-fabric-unofficial.jar
 ```
 
 This is not an official upstream release, and it is not a Forge jar.
@@ -79,7 +79,7 @@ build/libs/
 
 ## Testing Notes
 
-This branch has been built successfully against Minecraft 26.1 with Fabric Loader 0.19.2 and Fabric API 0.144.3+26.1. The compatibility metadata allows Minecraft 26.1.x, including 26.1 and 26.1.2, and the current mixin targets were checked against both versions.
+This branch has been built successfully against Minecraft 26.1 with Fabric Loader 0.19.2 and Fabric API 0.144.3+26.1. The compatibility metadata allows Minecraft 26.1.x, including 26.1, 26.1.1, and 26.1.2, and the current mixin targets were checked against the 26.1 patch line.
 
 Shader packs are not specially integrated. Blocks that emit light use vanilla Minecraft light emission, which most shader packs can read normally, but emissive visuals still depend on the shader/resource-pack setup.
 

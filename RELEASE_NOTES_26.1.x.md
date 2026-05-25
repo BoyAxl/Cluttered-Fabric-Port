@@ -4,7 +4,7 @@ This is an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.1.x.
 
 ## Compatibility
 
-- Minecraft: 26.1.x, including 26.1 and 26.1.2
+- Minecraft: 26.1.x, including 26.1, 26.1.1, and 26.1.2
 - Fabric Loader: 0.19.2 or newer
 - Fabric API: 0.144.3 or newer
 - Java: 25
@@ -14,8 +14,8 @@ This build is not a Forge jar and is not an official upstream release.
 
 ## Included Artifacts
 
-- `cluttered-3.0.3-26.1.x-0.2.0-fabric-unofficial.jar`
-- `cluttered-3.0.3-26.1.x-0.2.0-fabric-unofficial-sources.jar`
+- `cluttered-3.0.3-26.1.x-0.2.1-fabric-unofficial.jar`
+- `cluttered-3.0.3-26.1.x-0.2.1-fabric-unofficial-sources.jar`
 
 ## Highlights
 
@@ -37,7 +37,7 @@ This build is not a Forge jar and is not an official upstream release.
 ## Testing Status
 
 - `sh ./gradlew build` has completed successfully against the 26.1 baseline.
-- The bed-related mixin targets used by this port were checked against both Minecraft 26.1 and 26.1.2.
+- The bed-related mixin targets used by this port were checked against the Minecraft 26.1 patch line, including 26.1 and 26.1.2.
 - The previous 26.1.2 porting pass launched in a Fabric client, created a world successfully, and tested creative inventory, names, models, textures, placement, storage blocks, beds, chairs, record players, lighting tweaks, recipes, and the diagnostic block gallery.
 
 ## Notes
