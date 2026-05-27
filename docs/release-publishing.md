@@ -105,6 +105,8 @@ Cluttered 3.0.3 - 26.1.x Fabric 0.2.1 (Unofficial Port)
 
 GitHub Actions will build the mod, attach the jar to the GitHub Release, and upload the same jar to CurseForge project `1545340`. If Modrinth credentials are configured, it will also upload the same jar to Modrinth. The GitHub Release body becomes the platform changelog.
 
+Modrinth version numbers have a stricter length limit than GitHub tags. The workflow keeps the full tag for GitHub and CurseForge, but publishes Modrinth using the same version without the leading `v` and trailing `-unofficial`.
+
 ## Publishing an existing release to Modrinth
 
 Use this when a GitHub Release already exists and only Modrinth needs to be backfilled.

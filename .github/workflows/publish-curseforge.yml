@@ -53,6 +53,12 @@ jobs:
           GITHUB_TAG: ${{ env.RELEASE_TAG }}
         run: sh ./gradlew build
 
+      - name: Resolve Modrinth version
+        run: |
+          version="${RELEASE_TAG#v}"
+          version="${version%-unofficial}"
+          echo "MODRINTH_VERSION=${version}" >> "${GITHUB_ENV}"
+
       - name: Publish to CurseForge
         if: ${{ github.event_name == 'release' || inputs.publish_curseforge }}
         uses: Kir-Antipov/mc-publish@v3.3
@@ -88,6 +94,7 @@ jobs:
           files: build/libs/!(*-@(dev|sources|javadoc|javadocs)).jar
           name: ${{ env.RELEASE_NAME }}
           version: ${{ env.RELEASE_TAG }}
+          modrinth-version: ${{ env.MODRINTH_VERSION }}
           version-type: release
           changelog: ${{ env.RELEASE_CHANGELOG }}
 
