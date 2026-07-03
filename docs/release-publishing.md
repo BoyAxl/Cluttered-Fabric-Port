@@ -103,7 +103,7 @@ Cluttered 3.0.3 - 26.2.x Fabric 0.1.0 (Unofficial Port)
 6. Write the changelog in the release body.
 7. Click Publish release.
 
-GitHub Actions will build the mod, attach the jar to the GitHub Release, and upload the same jar to CurseForge project `1545340`. If Modrinth credentials are configured, it will also upload the same jar to Modrinth. The GitHub Release body becomes the platform changelog.
+GitHub Actions will build the mod, attach the jar to the GitHub Release, and upload the same jar to CurseForge project `1545340`. If Modrinth credentials are configured, it will also upload the same jar to Modrinth. The GitHub Release body becomes the platform changelog. The publish workflow targets the Minecraft release range `[26.2,26.3)`, so new `26.2.x` patch releases should be picked up automatically by `mc-publish` once CurseForge and Modrinth expose them.
 
 Modrinth version numbers have a stricter length limit than GitHub tags. The workflow keeps the full tag for GitHub and CurseForge, but publishes Modrinth using the same version without the leading `v` and trailing `-unofficial`.
 

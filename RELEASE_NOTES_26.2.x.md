@@ -1,8 +1,8 @@
-# Cluttered 3.0.3 - Unofficial Fabric 26.2.x Port
+# 🚀 Cluttered 3.0.3 - Fabric 26.2.x Unofficial Port
 
 This is an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.2.x.
 
-## Compatibility
+## 📦 Compatibility
 
 - Minecraft: 26.2.x
 - Minecraft metadata range: `~26.2` (`>=26.2 <26.3`)
@@ -13,30 +13,35 @@ This is an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.2.x.
 
 This build is not a Forge jar and is not an official upstream release.
 
-## Included Artifacts
+## 🧱 Included Artifacts
 
 - `cluttered-3.0.3-26.2.x-0.1.0-fabric-unofficial.jar`
 - `cluttered-3.0.3-26.2.x-0.1.0-fabric-unofficial-sources.jar`
 
-## Highlights
+## ✨ Highlights
 
 - Updated the Fabric port baseline from Minecraft 26.1.x to Minecraft 26.2.x.
 - Updated Fabric Loader to 0.19.3 and Fabric API to 0.154.0+26.2.
 - Kept the existing Cluttered 3.0.3 content, assets, translations, recipes, storage blocks, record player support, multiblock beds, chair seating, light emission tweaks, and stonecutter coverage from the 26.1.x port.
 
-## Testing Status
+## 🪑 Fixes
 
-- `sh ./gradlew build` completed successfully against the 26.2 baseline.
+- Fixed the initial seating direction for Cluttered chairs, armchairs, and multiblock chairs so the player starts facing the correct side.
+- Kept the seated player rotation vanilla-friendly after mounting instead of continuously locking the camera or body rotation.
+
+## 🧪 Testing Status
+
+- `sh ./gradlew clean build` completed successfully against the 26.2 baseline.
 - The test jar was placed in `/Users/axlboy/Documents/curseforge/minecraft/Instances/NetTestFabric/mods`.
 - In-game testing should verify startup, creative inventory, names, models, textures, placement, storage blocks, beds, bouncy mushroom behavior, chairs, record players, lighting tweaks, recipes, and the diagnostic block gallery.
 
-## Notes
+## 📝 Notes
 
 - Shader packs are not specially integrated. Light-emitting blocks use vanilla Minecraft light emission, so shader behavior depends on the shader pack/resource-pack setup.
 - This release should be labeled clearly as an unofficial Fabric port if shared.
 - The project declares GNU GPL 3.0 licensing. Include or link to the matching source code when distributing this build.
 
-## Credits
+## 🙏 Credits
 
 Cluttered was originally created by blake and YellowChuJelly. Huge thanks to the original creators and contributors for the mod, its art direction, assets, models, textures, and the work that made this unofficial port possible.
 
