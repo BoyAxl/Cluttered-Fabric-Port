@@ -1,4 +1,4 @@
-# Recetas de Cluttered 3.0.3 para Minecraft 26.1.x (es_CL)
+# Recetas de Cluttered 3.0.3 para Minecraft 26.2.x (es_CL)
 
 Documento de apoyo generado desde `src/generated/resources/data/cluttered/recipe`.
 

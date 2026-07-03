@@ -1,6 +1,7 @@
 package net.redchujelly.cluttered.block.multiblock;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -39,12 +40,15 @@ public class MultiblockChair extends MultiblockPlacer{
     @Override
     protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pState.getValue(OCCUPIED) && !pPlayer.isShiftKeyDown()){
-            if (!pLevel.isClientSide()) {
+            Direction sittingDirection = pState.getValue(FACING).getOpposite();
+            if (pLevel.isClientSide()) {
+                ChairEntity.snapPassengerRotation(pPlayer, sittingDirection);
+            } else {
                 pLevel.setBlock(pPos, pState.setValue(OCCUPIED, true), 2);
-                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
+                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos, sittingDirection);
                 seat.setPos(pPos.getX() + .5, pPos.getY() - 1 + getSeatOffset(), pPos.getZ() + .5);
                 pLevel.addFreshEntity(seat);
-                seat.mountPlayer(pPlayer, pState.getValue(FACING).getOpposite());
+                seat.mountPlayer(pPlayer);
             }
             return InteractionResult.SUCCESS;
         }

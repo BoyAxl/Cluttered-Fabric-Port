@@ -2,6 +2,10 @@ package net.redchujelly.cluttered.setup;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
@@ -19,6 +23,9 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class TileEntityRegistration {
+    private static final ResourceKey<BlockEntityType<?>> VANILLA_JUKEBOX_BLOCK_ENTITY =
+            ResourceKey.create(Registries.BLOCK_ENTITY_TYPE, Identifier.withDefaultNamespace("jukebox"));
+
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(FabricRegistries.BLOCK_ENTITY_TYPES, Cluttered.MODID);
 
@@ -227,7 +234,7 @@ public class TileEntityRegistration {
     }
 
     private static void registerJukeboxBlocks() {
-        FabricBlockEntityType jukeboxType = (FabricBlockEntityType) (Object) BlockEntityType.JUKEBOX;
+        FabricBlockEntityType jukeboxType = (FabricBlockEntityType) BuiltInRegistries.BLOCK_ENTITY_TYPE.getValueOrThrow(VANILLA_JUKEBOX_BLOCK_ENTITY);
         jukeboxType.addValidBlock(BlockRegistration.TRADITIONAL_RADIO.get());
         jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_BLUE.get());
         jukeboxType.addValidBlock(BlockRegistration.RECORD_PLAYER_BROWN.get());

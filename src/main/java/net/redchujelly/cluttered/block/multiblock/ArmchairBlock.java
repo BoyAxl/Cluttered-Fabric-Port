@@ -38,7 +38,10 @@ public class ArmchairBlock extends MultiblockChair{
     @Override
     protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pState.getValue(OCCUPIED) && !pPlayer.isShiftKeyDown()){
-            if (!pLevel.isClientSide()) {
+            Direction sittingDirection = pState.getValue(FACING).getOpposite();
+            if (pLevel.isClientSide()) {
+                ChairEntity.snapPassengerRotation(pPlayer, sittingDirection);
+            } else {
                 BlockPos otherHalf = getOtherHalfPos(pState, pPos);
                 boolean otherHalfReal = pLevel.getBlockState(otherHalf).is(this.asBlock());
                 float[] seatOffset = getSeatXZOffset(pState, pPos);
@@ -47,10 +50,10 @@ public class ArmchairBlock extends MultiblockChair{
                 if (otherHalfReal){
                     pLevel.setBlock(otherHalf, pLevel.getBlockState(otherHalf).setValue(OCCUPIED, true), 2);
                 }
-                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
+                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos, sittingDirection);
                 seat.setPos(pPos.getX() + .5f + seatOffset[0], pPos.getY() - 1 + getSeatOffset(), pPos.getZ() +.5f + seatOffset[1]);
                 pLevel.addFreshEntity(seat);
-                seat.mountPlayer(pPlayer, pState.getValue(FACING).getOpposite());
+                seat.mountPlayer(pPlayer);
             }
             return InteractionResult.SUCCESS;
         }

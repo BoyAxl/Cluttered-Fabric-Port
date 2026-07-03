@@ -100,7 +100,7 @@ public class MultiblockBedBlock extends MultiblockPlacer{
                     pLevel.removeBlock(removePos, false);
                 }
 
-                Vec3 center = pPos.getCenter();
+                Vec3 center = Vec3.atCenterOf(pPos);
                 pLevel.explode(null, pLevel.damageSources().badRespawnPointExplosion(center), null, center, 5.0F, true, Level.ExplosionInteraction.BLOCK);
             } else if (pState.getValue(OCCUPIED)) {
                 pPlayer.sendOverlayMessage(Component.translatable("block.minecraft.bed.occupied"));
@@ -127,24 +127,6 @@ public class MultiblockBedBlock extends MultiblockPlacer{
 
     public void fallOn(Level pLevel, BlockState pState, BlockPos pPos, Entity pEntity, double pFallDistance) {
         super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance * 0.5F);
-    }
-
-    public void updateEntityMovementAfterFallOn(BlockGetter pLevel, Entity pEntity) {
-        if (pEntity.isSuppressingBounce()) {
-            super.updateEntityMovementAfterFallOn(pLevel, pEntity);
-        } else {
-            this.bounceUp(pEntity);
-        }
-
-    }
-
-    private void bounceUp(Entity pEntity) {
-        Vec3 $$1 = pEntity.getDeltaMovement();
-        if ($$1.y < (double)0.0F) {
-            double $$2 = pEntity instanceof LivingEntity ? (double)1.0F : 0.8;
-            pEntity.setDeltaMovement($$1.x, -$$1.y * (double)0.66F * $$2, $$1.z);
-        }
-
     }
 
     @Override

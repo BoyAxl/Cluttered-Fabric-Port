@@ -7,6 +7,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -22,6 +23,7 @@ import net.redchujelly.cluttered.worldgen.tree.custom.*;
 import java.util.List;
 
 public class ClutteredConfiguredFeatures {
+    private static final BlockStateProvider DIRT_PROVIDER = BlockStateProvider.simple(Blocks.DIRT);
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> WILLOW_KEY = registerKey("willow");
     public static final ResourceKey<ConfiguredFeature<?, ?>> POPLAR_KEY = registerKey("poplar");
@@ -43,7 +45,8 @@ public class ClutteredConfiguredFeatures {
                         .add(BlockRegistration.FLOWERING_WILLOW_LEAVES.get().defaultBlockState(), 2).build()),
                 new WillowFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1, 5),
 
-                new TwoLayersFeatureSize(5, 2, 4)).decorators(List.of(new WillowTreeDecorator(0.6f)))
+                new TwoLayersFeatureSize(5, 2, 4),
+                DIRT_PROVIDER).decorators(List.of(new WillowTreeDecorator(0.6f)))
                 .build()
         );
 
@@ -59,7 +62,8 @@ public class ClutteredConfiguredFeatures {
                         .add(BlockRegistration.FLOWERING_POPLAR_LEAVES.get().defaultBlockState(), 2).build()),
                 new PoplarFoliagePlacer(ConstantInt.of(4), ConstantInt.of(5), 8),
 
-                new TwoLayersFeatureSize(3, 0, 2)).build()
+                new TwoLayersFeatureSize(3, 0, 2),
+                DIRT_PROVIDER).build()
         );
 
         register(context, BLUE_MUSHROOM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -69,7 +73,8 @@ public class ClutteredConfiguredFeatures {
                 WeightedStateProvider.simple(BlockRegistration.BLUE_MUSHROOM_CAP.get()),
                 new BlueMushroomFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 3),
 
-                new TwoLayersFeatureSize(5, 0, 4)).build()
+                new TwoLayersFeatureSize(5, 0, 4),
+                DIRT_PROVIDER).build()
         );
 
         register(context, RED_MUSHROOM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -79,7 +84,8 @@ public class ClutteredConfiguredFeatures {
                 BlockStateProvider.simple(BlockRegistration.RED_MUSHROOM_CAP.get()),
                 new RedMushroomFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 5),
 
-                new TwoLayersFeatureSize(4, 1, 3)).build()
+                new TwoLayersFeatureSize(4, 1, 3),
+                DIRT_PROVIDER).build()
         );
 
         register(context, CRABAPPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -94,7 +100,8 @@ public class ClutteredConfiguredFeatures {
                         .add(BlockRegistration.FLOWERING_CRABAPPLE_LEAVES.get().defaultBlockState(), 5).build()),
                 new CrabappleFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), 3),
 
-                new TwoLayersFeatureSize(4, 0, 3)).build()
+                new TwoLayersFeatureSize(4, 0, 3),
+                DIRT_PROVIDER).build()
         );
 
         register(context, SYCAMORE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -104,7 +111,8 @@ public class ClutteredConfiguredFeatures {
                 BlockStateProvider.simple(BlockRegistration.SYCAMORE_LEAVES.get()),
                 new SycamoreFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 6),
 
-                new TwoLayersFeatureSize(4, 0, 3)).build()
+                new TwoLayersFeatureSize(4, 0, 3),
+                DIRT_PROVIDER).build()
         );
 
         register(context, MAPLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -117,7 +125,8 @@ public class ClutteredConfiguredFeatures {
                         .add(BlockRegistration.MAPLE_LEAVES_FLOWERING.get().defaultBlockState(), 5).build()),
                 new MapleFoliagePlacer(ConstantInt.of(4), ConstantInt.of(5)),
 
-                new TwoLayersFeatureSize(4, 0, 3)).build()
+                new TwoLayersFeatureSize(4, 0, 3),
+                DIRT_PROVIDER).build()
         );
     }
 

@@ -95,7 +95,7 @@ public class MushroomBedBlock extends MultiblockBedBlock{
                     pLevel.removeBlock(removePos, false);
                 }
 
-                Vec3 center = pPos.getCenter();
+                Vec3 center = Vec3.atCenterOf(pPos);
                 pLevel.explode(null, pLevel.damageSources().badRespawnPointExplosion(center), null, center, 5.0F, true, Level.ExplosionInteraction.BLOCK);
             } else if (pState.getValue(OCCUPIED)) {
                 pPlayer.sendOverlayMessage(Component.translatable("block.minecraft.bed.occupied"));

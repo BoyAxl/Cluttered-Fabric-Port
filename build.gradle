@@ -11,8 +11,8 @@ base {
 
 java {
     withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_25
-    targetCompatibility = JavaVersion.VERSION_25
+    sourceCompatibility = JavaVersion.toVersion(java_version)
+    targetCompatibility = JavaVersion.toVersion(java_version)
 }
 
 sourceSets {
@@ -52,6 +52,7 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range       : loader_version_range,
             fabric_api_version         : fabric_api_version,
             fabric_api_version_range   : fabric_api_version_range,
+            java_version               : java_version,
             mod_id                     : mod_id,
             mod_name                   : mod_name,
             mod_license                : mod_license,
@@ -75,5 +76,5 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-    options.release = 25
+    options.release = java_version.toInteger()
 }

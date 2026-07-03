@@ -63,21 +63,21 @@ Use this format:
 cluttered-<upstream-version>-<minecraft-version>-<port-version>-fabric-unofficial.jar
 ```
 
-Use `26.1.x` for a jar that is built against the 26.1 baseline and declares support for the whole 26.1 patch line.
+Use `26.2.x` for a jar that is built against the 26.2 baseline and declares support for the whole 26.2 patch line. In `fabric.mod.json`, `~26.2` resolves through Fabric Loader as `>=26.2 <26.3`.
 
 For this port, the current compatibility release is:
 
 ```properties
-mod_version=3.0.3-26.1.x-0.2.1-fabric-unofficial
+mod_version=3.0.3-26.2.x-0.1.0-fabric-unofficial
 ```
 
 That produces:
 
 ```text
-cluttered-3.0.3-26.1.x-0.2.1-fabric-unofficial.jar
+cluttered-3.0.3-26.2.x-0.1.0-fabric-unofficial.jar
 ```
 
-Future small fixes should become `0.2.2`, `0.2.3`, and so on. Use `0.3.0` when the port gets another larger feature or compatibility update.
+Future small fixes should become `0.1.1`, `0.1.2`, and so on. Use `0.2.0` when the port gets another larger feature or compatibility update.
 
 ## Publishing a new version
 
@@ -89,7 +89,7 @@ Future small fixes should become `0.2.2`, `0.2.3`, and so on. Use `0.3.0` when t
 For example:
 
 ```text
-v3.0.3-26.1.x-0.2.1-fabric-unofficial
+v3.0.3-26.2.x-0.1.0-fabric-unofficial
 ```
 
 5. Set the release title.
@@ -97,7 +97,7 @@ v3.0.3-26.1.x-0.2.1-fabric-unofficial
 For example:
 
 ```text
-Cluttered 3.0.3 - 26.1.x Fabric 0.2.1 (Unofficial Port)
+Cluttered 3.0.3 - 26.2.x Fabric 0.1.0 (Unofficial Port)
 ```
 
 6. Write the changelog in the release body.
@@ -117,7 +117,7 @@ Use this when a GitHub Release already exists and only Modrinth needs to be back
 4. Set `tag` to the existing release tag, for example:
 
 ```text
-v3.0.3-26.1.x-0.2.1-fabric-unofficial
+v3.0.3-26.2.x-0.1.0-fabric-unofficial
 ```
 
 5. Set `publish_curseforge` to `false`.

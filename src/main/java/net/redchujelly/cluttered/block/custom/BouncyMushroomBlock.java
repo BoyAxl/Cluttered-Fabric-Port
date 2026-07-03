@@ -28,14 +28,6 @@ public class BouncyMushroomBlock extends CustomWoodBlock {
             super.fallOn(pLevel, pState, pPos, pEntity, pFallDistance);
         } else {
             pEntity.causeFallDamage(pFallDistance, 0.0F, pLevel.damageSources().fall());
-        }
-    }
-
-    @Override
-    public void updateEntityMovementAfterFallOn(BlockGetter pLevel, Entity pEntity) {
-        if (pEntity.isSuppressingBounce()) {
-            super.updateEntityMovementAfterFallOn(pLevel, pEntity);
-        } else {
             this.bounceUp(pEntity);
         }
     }
