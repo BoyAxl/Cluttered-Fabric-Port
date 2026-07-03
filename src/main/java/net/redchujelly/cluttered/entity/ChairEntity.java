@@ -30,15 +30,29 @@ public class ChairEntity extends Entity {
         CHAIR_LEVEL = pLevel;
     }
 
-    public void mountPlayer(Player player, Direction sittingDirection) {
-        float yRot = sittingDirection.toYRot();
-        setYRot(yRot);
-        setXRot(0.0F);
-        player.startRiding(this);
-        player.setYRot(yRot);
-        player.setYHeadRot(yRot);
-        player.setYBodyRot(yRot);
-        player.setXRot(0.0F);
+    public ChairEntity(EntityType<?> pEntityType, Level pLevel, BlockPos pos, Direction sittingDirection) {
+        this(pEntityType, pLevel, pos);
+        setSittingDirection(sittingDirection);
+    }
+
+    private void setSittingDirection(Direction sittingDirection) {
+        absSnapRotationTo(sittingDirection.toYRot(), 0.0F);
+    }
+
+    public void mountPlayer(Player player) {
+        if (player.startRiding(this)) {
+            snapPassengerRotation(player, getYRot());
+        }
+    }
+
+    public static void snapPassengerRotation(Entity passenger, Direction sittingDirection) {
+        snapPassengerRotation(passenger, sittingDirection.toYRot());
+    }
+
+    private static void snapPassengerRotation(Entity passenger, float yRot) {
+        passenger.absSnapRotationTo(yRot, 0.0F);
+        passenger.setYHeadRot(yRot);
+        passenger.setYBodyRot(yRot);
     }
 
     @Override

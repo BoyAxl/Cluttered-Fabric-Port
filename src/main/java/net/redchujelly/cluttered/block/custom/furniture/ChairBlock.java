@@ -43,12 +43,15 @@ public class ChairBlock extends CustomHorizontalBlock implements SimpleWaterlogg
     @Override
     protected InteractionResult useItemOn(net.minecraft.world.item.ItemStack pUsedStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pState.getValue(OCCUPIED) && !pPlayer.isShiftKeyDown()){
-            if (!pLevel.isClientSide()) {
+            Direction sittingDirection = pState.getValue(FACING);
+            if (pLevel.isClientSide()) {
+                ChairEntity.snapPassengerRotation(pPlayer, sittingDirection);
+            } else {
                 pLevel.setBlock(pPos, pState.setValue(OCCUPIED, true), 2);
-                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos);
+                ChairEntity seat = new ChairEntity(EntityTypeRegistration.CHAIR_ENTITY.get(), pLevel, pPos, sittingDirection);
                 seat.setPos(pPos.getX() + .5f, pPos.getY() - 1 + getSeatOffset(), pPos.getZ() + .5f);
                 pLevel.addFreshEntity(seat);
-                seat.mountPlayer(pPlayer, pState.getValue(FACING));
+                seat.mountPlayer(pPlayer);
             }
             return InteractionResult.SUCCESS;
         }

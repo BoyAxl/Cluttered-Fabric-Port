@@ -1,8 +1,8 @@
-# Cluttered 3.0.3 - Unofficial Fabric 26.1.x Port
+# 🛋️ Cluttered 3.0.3 - Fabric 26.1.x Unofficial Port
 
 This is an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.1.x.
 
-## Compatibility
+## 📦 Compatibility
 
 - Minecraft: 26.1.x, including 26.1, 26.1.1, and 26.1.2
 - Fabric Loader: 0.19.2 or newer
@@ -12,12 +12,12 @@ This is an unofficial Fabric port of Cluttered 3.0.3 for Minecraft 26.1.x.
 
 This build is not a Forge jar and is not an official upstream release.
 
-## Included Artifacts
+## 🧱 Included Artifacts
 
-- `cluttered-3.0.3-26.1.x-0.2.1-fabric-unofficial.jar`
-- `cluttered-3.0.3-26.1.x-0.2.1-fabric-unofficial-sources.jar`
+- `cluttered-3.0.3-26.1.x-0.2.3-fabric-unofficial.jar`
+- `cluttered-3.0.3-26.1.x-0.2.3-fabric-unofficial-sources.jar`
 
-## Highlights
+## ✨ Highlights
 
 - Ported the Cluttered 3.0.3 Forge codebase to Fabric.
 - Restored the official 3.0.3 assets and data: models, blockstates, textures, item definitions, language entries, paintings, recipes, loot tables, and tags.
@@ -34,19 +34,25 @@ This build is not a Forge jar and is not an official upstream release.
 - Added light emission to decorative objects that should visibly glow, including lamps, pearls, glow-themed objects, and deep chalcedony star variants.
 - Added stonecutter recipe coverage for decorative material families.
 
-## Testing Status
+## 🪑 Fixes
 
-- `sh ./gradlew build` has completed successfully against the 26.1 baseline.
+- Backported the chair seating angle fix from the 26.2.x branch.
+- Chairs now snap the player to the intended initial facing direction when mounting.
+- Player camera/body rotation remains vanilla-friendly after mounting instead of being continuously locked.
+
+## 🧪 Testing Status
+
+- `sh ./gradlew clean build` has completed successfully against the 26.1 baseline.
 - The bed-related mixin targets used by this port were checked against the Minecraft 26.1 patch line, including 26.1 and 26.1.2.
 - The previous 26.1.2 porting pass launched in a Fabric client, created a world successfully, and tested creative inventory, names, models, textures, placement, storage blocks, beds, chairs, record players, lighting tweaks, recipes, and the diagnostic block gallery.
 
-## Notes
+## 📝 Notes
 
 - Shader packs are not specially integrated. Light-emitting blocks use vanilla Minecraft light emission, so shader behavior depends on the shader pack/resource-pack setup.
 - This release should be labeled clearly as an unofficial Fabric port if shared.
 - The project declares GNU GPL 3.0 licensing. Include or link to the matching source code when distributing this build.
 
-## Credits
+## 🙏 Credits
 
 Cluttered was originally created by blake and YellowChuJelly. Huge thanks to the original creators and contributors for the mod, its art direction, assets, models, textures, and the work that made this unofficial port possible.
 
