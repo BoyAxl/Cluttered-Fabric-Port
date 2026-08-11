@@ -18,7 +18,7 @@ This branch targets:
 The generated jar uses an `unofficial` suffix so it is easy to distinguish from official releases:
 
 ```text
-build/libs/cluttered-3.0.3-26.2.x-0.1.0-fabric-unofficial.jar
+build/libs/cluttered-3.0.3-26.2.x-0.1.1-fabric-unofficial.jar
 ```
 
 This is not an official upstream release, and it is not a Forge jar.
@@ -29,6 +29,7 @@ This is not an official upstream release, and it is not a Forge jar.
 - Restored the official 3.0.3 models, blockstates, textures, item definitions, language entries, paintings, recipes, loot tables, and tags.
 - Added Fabric registration for blocks, items, creative tabs, entities, block entities, render layers, composting, flammables, burn times, stripping, painting variants, and client renderers.
 - Fixed multiple Fabric gameplay issues found during in-game testing, including storage block entities, record players, multiblock beds, and chair seating orientation.
+- Migrated custom signs to Minecraft 26.2's rendering format and restored their text editor backgrounds.
 - Added recipe-book unlock notifications so new recipes appear when the player obtains relevant ingredients.
 - Added survival recipe fixes for Fabric tag and item name changes.
 - Added in-game light emission to decorative objects that should visibly glow, including lamps, pearls, glow-themed objects, and deep chalcedony star variants.

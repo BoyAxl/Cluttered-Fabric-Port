@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_hanging_sign_rot_2",
+  "textures": {
+    "all": "cluttered:block/flowering_poplar_hanging_sign",
+    "particle": "cluttered:block/flowering_poplar_planks"
+  }
+}

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "cluttered:block/blue_mushroom_hanging_sign"
+    "facing=east": {
+      "model": "cluttered:block/blue_mushroom_wall_hanging_sign",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "cluttered:block/blue_mushroom_wall_hanging_sign",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "cluttered:block/blue_mushroom_wall_hanging_sign"
+    },
+    "facing=west": {
+      "model": "cluttered:block/blue_mushroom_wall_hanging_sign",
+      "y": 90
     }
   }
 }

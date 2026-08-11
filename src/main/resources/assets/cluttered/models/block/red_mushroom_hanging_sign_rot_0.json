@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_hanging_sign_rot_0",
+  "textures": {
+    "all": "cluttered:block/red_mushroom_hanging_sign",
+    "particle": "cluttered:block/red_mushroom_planks"
+  }
+}

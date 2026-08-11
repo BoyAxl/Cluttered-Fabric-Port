@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "cluttered:block/flowering_crabapple_hanging_sign"
+    "facing=east": {
+      "model": "cluttered:block/flowering_crabapple_wall_hanging_sign",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "cluttered:block/flowering_crabapple_wall_hanging_sign",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "cluttered:block/flowering_crabapple_wall_hanging_sign"
+    },
+    "facing=west": {
+      "model": "cluttered:block/flowering_crabapple_wall_hanging_sign",
+      "y": 90
     }
   }
 }

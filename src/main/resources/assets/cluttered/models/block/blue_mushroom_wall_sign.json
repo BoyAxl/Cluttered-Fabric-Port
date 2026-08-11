@@ -1,5 +1,7 @@
 {
+  "parent": "minecraft:block/template_wall_sign",
   "textures": {
+    "all": "cluttered:block/blue_mushroom_sign",
     "particle": "cluttered:block/blue_mushroom_planks"
   }
 }

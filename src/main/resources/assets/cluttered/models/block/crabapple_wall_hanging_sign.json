@@ -1,5 +1,7 @@
 {
+  "parent": "minecraft:block/template_wall_hanging_sign",
   "textures": {
+    "all": "cluttered:block/crabapple_hanging_sign",
     "particle": "cluttered:block/crabapple_planks"
   }
 }

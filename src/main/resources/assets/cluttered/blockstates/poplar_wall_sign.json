@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "cluttered:block/poplar_sign"
+    "facing=east": {
+      "model": "cluttered:block/poplar_wall_sign",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "cluttered:block/poplar_wall_sign",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "cluttered:block/poplar_wall_sign"
+    },
+    "facing=west": {
+      "model": "cluttered:block/poplar_wall_sign",
+      "y": 90
     }
   }
 }
